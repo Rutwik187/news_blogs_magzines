@@ -1,0 +1,149 @@
+"use client";
+import Image from "next/image";
+import Link from "next/link";
+import React, { useEffect, useRef, useState } from "react";
+import Slider from "react-slick";
+import { slugify } from "../../utils";
+import useFetchCategories from "../../api/useFetchCategories";
+import { urlFor } from "../../client";
+
+const WidgetCategory = () => {
+  const CustomNavRef = useRef(null);
+
+  const { isLoading, isError, data: categoryData } = useFetchCategories();
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+  if (isError) {
+    return <div>An error occurred...</div>;
+  }
+
+  const categories = categoryData?.map((data) => {
+    const obj = {
+      name: data.title,
+      thumb: data.category_image,
+    };
+    return obj;
+  });
+
+  const category = categories?.reduce((prev, curr) => {
+    prev[curr.name] = (prev[curr.name] || 0) + 1;
+    return prev;
+  }, {});
+
+  var cateList = Object.keys(category).map((cateTitle) => {
+    const imgGet = categories.filter((post) => post.name === cateTitle);
+
+    console.log(imgGet[0].thumb);
+    return {
+      name: cateTitle,
+      slug: slugify(cateTitle),
+      count: 10,
+      cateImg: urlFor(imgGet[0].thumb)?.url(),
+    };
+  });
+
+  const slideSettings = {
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    dots: false,
+    adaptiveHeight: true,
+  };
+
+  return (
+    <div className="category-widget m-b-xs-40">
+      <div className="widget-title">
+        <h3>Categories</h3>
+        <div className="owl-nav">
+          <button
+            className="custom-owl-prev"
+            onClick={() => CustomNavRef?.current?.slickPrev()}
+          >
+            <i className="feather icon-chevron-left" />
+          </button>
+          <button
+            className="custom-owl-next"
+            onClick={() => CustomNavRef?.current?.slickNext()}
+          >
+            <i className="feather icon-chevron-right" />
+          </button>
+        </div>
+      </div>
+      <div className="category-carousel">
+        <Slider ref={CustomNavRef} {...slideSettings}>
+          <div className="cat-carousel-inner">
+            <ul className="category-list-wrapper">
+              {cateList.slice(0, 4).map((data) => (
+                <li className="category-list perfect-square" key={data.slug}>
+                  <Link className="list-inner" href={`/category/${data.slug}`}>
+                    <Image
+                      src={data.cateImg}
+                      alt={data.name}
+                      width={155}
+                      height={190}
+                    />
+                    <div className="post-info-wrapper overlay">
+                      <div className="counter-inner">
+                        <span className="counter">{data.count}</span>+
+                      </div>
+                      <h4 className="cat-title">{data.name}</h4>
+                    </div>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="cat-carousel-inner">
+            <ul className="category-list-wrapper">
+              {cateList.slice(5, 9).map((data) => (
+                <li className="category-list perfect-square" key={data.slug}>
+                  <Link className="list-inner" href={`/category/${data.slug}`}>
+                    <Image
+                      src={data.cateImg}
+                      alt={data.name}
+                      width={155}
+                      height={190}
+                    />
+                    <div className="post-info-wrapper overlay">
+                      <div className="counter-inner">
+                        <span className="counter">{data.count}</span>+
+                      </div>
+                      <h4 className="cat-title">{data.name}</h4>
+                    </div>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="cat-carousel-inner">
+            <ul className="category-list-wrapper">
+              {cateList.slice(10, 14).map((data) => (
+                <li className="category-list perfect-square" key={data.slug}>
+                  <Link className="list-inner" href={`/category/${data.slug}`}>
+                    <Image
+                      src={data.cateImg}
+                      alt={data.name}
+                      width={155}
+                      height={190}
+                    />
+                    <div className="post-info-wrapper overlay">
+                      <div className="counter-inner">
+                        <span className="counter">{data.count}</span>+
+                      </div>
+                      <h4 className="cat-title">{data.name}</h4>
+                    </div>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </Slider>
+      </div>
+    </div>
+  );
+};
+
+export default WidgetCategory;
