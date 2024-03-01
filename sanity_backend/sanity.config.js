@@ -7,7 +7,7 @@ export default defineConfig({
   name: 'default',
   title: 'The_Business_Masters',
 
-  projectId: 'c7z1yijy',
+  projectId: 'gaa41xdq',
   dataset: 'production',
 
   plugins: [structureTool(), visionTool()],
