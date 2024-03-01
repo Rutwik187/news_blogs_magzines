@@ -10,6 +10,8 @@ import PostSectionOne from "../components/post/PostSectionOne";
 import PostSectionSix from "../components/post/PostSectionSix";
 import PostSectionThree from "../components/post/PostSectionThree";
 import PostSectionTwo from "../components/post/PostSectionTwo";
+import Category from '../components/category/Categories';
+import Categories from '../components/category/Categories';
 
 const HomeOne = ({allPosts}) => {
  
@@ -18,6 +20,7 @@ const HomeOne = ({allPosts}) => {
     <HeadMeta metaTitle="Home One"/>
     <HeaderOne />
     <PostSectionOne postData={allPosts} />
+  <Categories/>
     <PostSectionTwo postData={allPosts} />
     <PostSectionThree postData={allPosts} />
     <PostSectionFour postData={allPosts} />
@@ -25,7 +28,7 @@ const HomeOne = ({allPosts}) => {
     <PostSectionSix postData={allPosts}/>
     <FooterOne />
     <ReactQueryDevtools initialIsOpen />
-    </>
+   </>
    );
 }
  

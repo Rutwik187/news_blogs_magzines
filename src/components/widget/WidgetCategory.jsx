@@ -33,14 +33,10 @@ const WidgetCategory = () => {
   }, {});
 
   var cateList = Object.keys(category).map((cateTitle) => {
-    const imgGet = categories.filter((post) => post.name === cateTitle);
-
-    console.log(imgGet[0].thumb);
     return {
       name: cateTitle,
       slug: slugify(cateTitle),
-      count: 10,
-      cateImg: urlFor(imgGet[0].thumb)?.url(),
+      // cateImg: urlFor(category[0]?.thumb)?.url(),
     };
   });
 
@@ -79,16 +75,13 @@ const WidgetCategory = () => {
               {cateList.slice(0, 4).map((data) => (
                 <li className="category-list perfect-square" key={data.slug}>
                   <Link className="list-inner" href={`/category/${data.slug}`}>
-                    <Image
+                    {/* <Image
                       src={data.cateImg}
                       alt={data.name}
                       width={155}
                       height={190}
-                    />
+                    /> */}
                     <div className="post-info-wrapper overlay">
-                      <div className="counter-inner">
-                        <span className="counter">{data.count}</span>+
-                      </div>
                       <h4 className="cat-title">{data.name}</h4>
                     </div>
                   </Link>
