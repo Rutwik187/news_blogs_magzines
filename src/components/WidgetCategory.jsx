@@ -1,44 +1,34 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef } from "react";
 import Slider from "react-slick";
-import { slugify } from "../../utils";
-import useFetchCategories from "../../api/useFetchCategories";
-import { urlFor } from "../../client";
+import { slugify } from "../utils";
+import { urlFor } from "../client";
+import { useQuery } from "@tanstack/react-query";
 
 const WidgetCategory = () => {
   const CustomNavRef = useRef(null);
 
-  const { isLoading, isError, data: categoryData } = useFetchCategories();
+  const {
+    isLoading,
+    isError,
+    data: categoryData,
+  } = useQuery({
+    queryKey: ["categories"],
+    queryFn: async () => {
+      const fetchResult = await client.fetch(`*[_type == "category"]`);
+      return fetchResult;
+    },
+  });
 
   if (isLoading) {
     return <div>Loading...</div>;
   }
   if (isError) {
+    console.log(isError);
     return <div>An error occurred...</div>;
   }
-
-  const categories = categoryData?.map((data) => {
-    const obj = {
-      name: data.title,
-      thumb: data.category_image,
-    };
-    return obj;
-  });
-
-  const category = categories?.reduce((prev, curr) => {
-    prev[curr.name] = (prev[curr.name] || 0) + 1;
-    return prev;
-  }, {});
-
-  var cateList = Object.keys(category).map((cateTitle) => {
-    return {
-      name: cateTitle,
-      slug: slugify(cateTitle),
-      // cateImg: urlFor(category[0]?.thumb)?.url(),
-    };
-  });
 
   const slideSettings = {
     infinite: true,
@@ -72,17 +62,23 @@ const WidgetCategory = () => {
         <Slider ref={CustomNavRef} {...slideSettings}>
           <div className="cat-carousel-inner">
             <ul className="category-list-wrapper">
-              {cateList.slice(0, 4).map((data) => (
-                <li className="category-list perfect-square" key={data.slug}>
-                  <Link className="list-inner" href={`/category/${data.slug}`}>
-                    {/* <Image
-                      src={data.cateImg}
-                      alt={data.name}
+              {categoryData.slice(0, 4).map((data) => (
+                <li
+                  className="category-list perfect-square"
+                  key={data.slug?.current}
+                >
+                  <Link
+                    className="list-inner"
+                    href={`/category/${data.slug?.current}`}
+                  >
+                    <Image
+                      src={urlFor(data.category_image).url()}
+                      alt={categoryData.title}
                       width={155}
                       height={190}
-                    /> */}
+                    />
                     <div className="post-info-wrapper overlay">
-                      <h4 className="cat-title">{data.name}</h4>
+                      <h4 className="cat-title">{data.title}</h4>
                     </div>
                   </Link>
                 </li>
@@ -91,20 +87,23 @@ const WidgetCategory = () => {
           </div>
           <div className="cat-carousel-inner">
             <ul className="category-list-wrapper">
-              {cateList.slice(5, 9).map((data) => (
-                <li className="category-list perfect-square" key={data.slug}>
-                  <Link className="list-inner" href={`/category/${data.slug}`}>
+              {categoryData.slice(5, 9).map((data) => (
+                <li
+                  className="category-list perfect-square"
+                  key={data.slug?.current}
+                >
+                  <Link
+                    className="list-inner"
+                    href={`/category/${data.slug?.current}`}
+                  >
                     <Image
-                      src={data.cateImg}
-                      alt={data.name}
+                      src={urlFor(data.category_image).url()}
+                      alt={categoryData.title}
                       width={155}
                       height={190}
                     />
                     <div className="post-info-wrapper overlay">
-                      <div className="counter-inner">
-                        <span className="counter">{data.count}</span>+
-                      </div>
-                      <h4 className="cat-title">{data.name}</h4>
+                      <h4 className="cat-title">{data.title}</h4>
                     </div>
                   </Link>
                 </li>
@@ -113,20 +112,23 @@ const WidgetCategory = () => {
           </div>
           <div className="cat-carousel-inner">
             <ul className="category-list-wrapper">
-              {cateList.slice(10, 14).map((data) => (
-                <li className="category-list perfect-square" key={data.slug}>
-                  <Link className="list-inner" href={`/category/${data.slug}`}>
+              {categoryData.slice(10, 14).map((data) => (
+                <li
+                  className="category-list perfect-square"
+                  key={data.slug?.current}
+                >
+                  <Link
+                    className="list-inner"
+                    href={`/category/${data.slug?.current}`}
+                  >
                     <Image
-                      src={data.cateImg}
-                      alt={data.name}
+                      src={urlFor(data.category_image).url()}
+                      alt={categoryData.title}
                       width={155}
                       height={190}
                     />
                     <div className="post-info-wrapper overlay">
-                      <div className="counter-inner">
-                        <span className="counter">{data.count}</span>+
-                      </div>
-                      <h4 className="cat-title">{data.name}</h4>
+                      <h4 className="cat-title">{data.title}</h4>
                     </div>
                   </Link>
                 </li>

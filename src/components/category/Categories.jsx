@@ -9,18 +9,10 @@ const Categories = () => {
   const { isLoading: categoriesLoading, data: categories } = useQuery({
     queryKey: ["categories"],
     queryFn: async () => {
-      const query = `*[_type == 'category'] { title, _id }`;
+      const query = `*[_type == 'category']`;
       return await client.fetch(query);
     },
   });
-
-  const fetchPostsByCategory = async (categoryId) => {
-    const query = `*[_type == 'post' && count(categories[_ref == $categoryId]) > 0] | order(publishedAt desc) {
-                      ...,
-                      category-> { title }
-                    }`;
-    return await client.fetch(query, { categoryId });
-  };
 
   if (categoriesLoading) return <div>Loading categories...</div>;
 
@@ -28,7 +20,7 @@ const Categories = () => {
     <div className="section-gap section-gap-top__with-text trending-stories ">
       <div className="container">
         {categories.map((category) => (
-          <div className="container mt-6">
+          <div className="container mt-6" key={category._id}>
             <SectionTitle
               title={category.title}
               btnText={`all ${category.title} posts`}

@@ -25,7 +25,7 @@ const PostList = ({ categoryId }) => {
   return (
     <>
       {posts?.slice(0, 4).map((post) => (
-        <Post post={post} />
+        <Post post={post} key={post._id} />
       ))}
     </>
   );

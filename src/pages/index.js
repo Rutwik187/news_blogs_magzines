@@ -12,6 +12,7 @@ import PostSectionThree from "../components/post/PostSectionThree";
 import PostSectionTwo from "../components/post/PostSectionTwo";
 import Category from '../components/category/Categories';
 import Categories from '../components/category/Categories';
+import SliderTwo from '../components/slider/SliderTwo';
 
 const HomeOne = ({allPosts}) => {
  
@@ -19,7 +20,7 @@ const HomeOne = ({allPosts}) => {
     <>
     <HeadMeta metaTitle="Home One"/>
     <HeaderOne />
-    <PostSectionOne postData={allPosts} />
+    <SliderTwo slidePost={allPosts} />
   <Categories/>
     <PostSectionTwo postData={allPosts} />
     <PostSectionThree postData={allPosts} />

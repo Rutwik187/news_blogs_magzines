@@ -6,7 +6,7 @@ import FooterOne from "../../components/footer/FooterOne";
 import HeaderOne from "../../components/header/HeaderOne";
 import PostLayoutTwo from "../../components/post/layout/PostLayoutTwo";
 import WidgetAd from "../../components/widget/WidgetAd";
-import WidgetCategory from "../../components/widget/WidgetCategory";
+import WidgetCategory from "../../components/WidgetCategory";
 import WidgetPost from "../../components/widget/WidgetPost";
 import WidgetSocialShare from "../../components/widget/WidgetSocialShare";
 import { slugify } from "../../utils";
