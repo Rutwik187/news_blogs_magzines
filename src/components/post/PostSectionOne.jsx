@@ -18,7 +18,6 @@ const PostSectionOne = () => {
     queryKey: ["categoryOnePosts"],
     queryFn: async () => {
       const response = await client.fetch(query);
-      console.log("firstCategory", response);
       return response;
     },
   });
