@@ -1,32 +1,10 @@
 [
     {
         "label": "Home",
-        "path": "#",
-        "submenu": [
-            {
-                "sublabel": "Home One",
-                "subpath": "/"
-            },
-            {
-                "sublabel": "Home Two",
-                "subpath": "/home-two"
-            },
-            {
-                "sublabel": "Home Three",
-                "subpath": "/home-three"
-            },
-            {
-                "sublabel": "Home Four",
-                "subpath": "/home-four"
-            },
-            {
-                "sublabel": "Home Five",
-                "subpath": "/home-five"
-            }
-        ]
+        "path": "/"
     },
     {
-        "label": "Posts",
+        "label": "Categories",
         "path": "#",
         "submenu": [
             {
@@ -56,21 +34,14 @@
         ]
     },
     {
-        "label": "Fashion",
-        "path": "/category/fashion"
+        "label": "About Us",
+        "path": "/about-us"
     },
     {
-        "label": "Lifestyle",
-        "path": "/category/lifestyle"
+        "label": "Contact",
+        "path": "/contact"
     },
-    {
-        "label": "Technology",
-        "path": "/category/technology"
-    },
-    {
-        "label": "Sports",
-        "path": "/category/sports"
-    },
+ 
     {
         "label": "Pages",
         "path": "#",

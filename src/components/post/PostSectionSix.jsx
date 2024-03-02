@@ -5,7 +5,7 @@ import { useQuery } from "@tanstack/react-query";
 import { client } from "../../client";
 
 const PostSectionSix = () => {
-  const query = `*[_type == "post" && categories[0]._ref == *[_type=="category"][4]._id][0..5] {
+  const query = `*[_type == "post" && categories[0]._ref == *[_type=="category"][6]._id][0..3] {
    title,
   slug,
   'featureImg': mainImage.asset->url,

@@ -96,20 +96,12 @@ const HeaderOne = () => {
               <div className="col-md">
                 <ul className="header-top-nav list-inline justify-content-center justify-content-md-start">
                   <li className="current-date">{dateFormate()}</li>
+
                   <li>
-                    <Link href="/">
-                      Advertisement
-                    </Link>
+                    <Link href="/about-us">About</Link>
                   </li>
                   <li>
-                    <Link href="/about-us">
-                      About
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/contact">
-                      Contact
-                    </Link>
+                    <Link href="/contact">Contact</Link>
                   </li>
                 </ul>
               </div>
@@ -118,22 +110,22 @@ const HeaderOne = () => {
                   <li>
                     <a href={SocialLink.fb.url}>
                       <i className={SocialLink.fb.icon} />
-                      </a>
+                    </a>
                   </li>
                   <li>
                     <a href={SocialLink.twitter.url}>
                       <i className={SocialLink.twitter.icon} />
-                      </a>
+                    </a>
                   </li>
                   <li>
                     <a href={SocialLink.instagram.url}>
                       <i className={SocialLink.instagram.icon} />
-                      </a>
+                    </a>
                   </li>
                   <li>
                     <a href={SocialLink.linked.url}>
                       <i className={SocialLink.linked.icon} />
-                      </a>
+                    </a>
                   </li>
                 </ul>
               </div>
@@ -145,14 +137,12 @@ const HeaderOne = () => {
             <div className="navbar-inner">
               <div className="brand-logo-container">
                 <Link href="/">
-                  
-                    <Image
-                      src="/images/logo-black.svg"
-                      alt="brand-logo"
-                      width={102}
-                      height={34}
-                    />
-                  
+                  <Image
+                    src="/images/logo.svg"
+                    alt="brand-logo"
+                    width={224}
+                    height={80}
+                  />
                 </Link>
               </div>
               <div className="main-nav-wrapper">
@@ -160,24 +150,18 @@ const HeaderOne = () => {
                   {MenuData.map((data, index) =>
                     data.submenu ? (
                       <li className="has-dropdown" key={index}>
-                        <Link href={data.path}>
-                          {data.label}
-                        </Link>
+                        <Link href={data.path}>{data.label}</Link>
                         <ul className="submenu">
                           {data.submenu.map((data, index) => (
                             <li key={index}>
-                              <Link href={data.subpath}>
-                                {data.sublabel}
-                              </Link>
+                              <Link href={data.subpath}>{data.sublabel}</Link>
                             </li>
                           ))}
                         </ul>
                       </li>
                     ) : (
                       <li key={index}>
-                        <Link href={data.path}>
-                          {data.label}
-                        </Link>
+                        <Link href={data.path}>{data.label}</Link>
                       </li>
                     )
                   )}
