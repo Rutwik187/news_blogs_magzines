@@ -1,6 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
 import { client, urlFor } from "../../client";
-import { useState } from "react";
 import Post from "./Post";
 
 const PostList = ({ categoryId }) => {

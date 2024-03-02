@@ -17,10 +17,11 @@ import SliderTwo from '../components/slider/SliderTwo';
 const HomeOne = ({allPosts}) => {
  
   return ( 
-    <>
-    <HeadMeta metaTitle="Home One"/>
+    <div suppressHydrationWarning>
+    <HeadMeta metaTitle="The Business Masters"/>
     <HeaderOne />
     <SliderTwo slidePost={allPosts} />
+    <PostSectionOne postData={allPosts}/>
   <Categories/>
     <PostSectionTwo postData={allPosts} />
     <PostSectionThree postData={allPosts} />
@@ -29,7 +30,7 @@ const HomeOne = ({allPosts}) => {
     <PostSectionSix postData={allPosts}/>
     <FooterOne />
     <ReactQueryDevtools initialIsOpen />
-   </>
+   </div>
    );
 }
  
