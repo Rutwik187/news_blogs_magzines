@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { slugify } from "../../../utils";
 
 const PostLayoutTwo = ({ data, postSizeMd, postBgDark }) => {
   return (
@@ -9,7 +8,7 @@ const PostLayoutTwo = ({ data, postSizeMd, postBgDark }) => {
         postSizeMd === true ? "post-block__mid" : ""
       } ${postBgDark === true ? "post-block__on-dark-bg" : ""}`}
     >
-      <Link className="align-self-center" href={`/post/${data.slug}`}>
+      <Link className="align-self-center" href={`/post/${data.slug.current}`}>
         <Image
           src={data.featureImg}
           alt={data.title}
@@ -25,14 +24,24 @@ const PostLayoutTwo = ({ data, postSizeMd, postBgDark }) => {
             className={`post-cat cat-btn ${
               data.cate_bg ?? "bg-color-blue-one"
             }`}
-            href={`/category/${slugify(data.cate)}`}
+            href={`/category/${data.cate}`}
           >
             {data.cate}
           </Link>
         </div>
         <h3 className="axil-post-title hover-line hover-line">
-          <Link href={`/post/${data.slug}`}>{data.title}</Link>
+          <Link href={`/post/${data.slug.current}`}>{data.title}</Link>
         </h3>
+        <div class="post-metas">
+          <ul class="list-inline">
+            <li>
+              <span>By</span>
+              <a class="post-author" href="/demo/react/papr/author/xu-jianhong">
+                {data.author_name}
+              </a>
+            </li>
+          </ul>
+        </div>
         {postSizeMd === true ? <p className="mid">{data.excerpt}</p> : ""}
       </div>
     </div>
