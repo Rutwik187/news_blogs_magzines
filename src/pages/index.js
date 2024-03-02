@@ -10,8 +10,7 @@ import PostSectionOne from "../components/post/PostSectionOne";
 import PostSectionSix from "../components/post/PostSectionSix";
 import PostSectionThree from "../components/post/PostSectionThree";
 import PostSectionTwo from "../components/post/PostSectionTwo";
-import Category from '../components/category/Categories';
-import Categories from '../components/category/Categories';
+
 import SliderTwo from '../components/slider/SliderTwo';
 
 const HomeOne = ({allPosts}) => {
@@ -22,7 +21,6 @@ const HomeOne = ({allPosts}) => {
     <HeaderOne />
     <SliderTwo slidePost={allPosts} />
     <PostSectionOne postData={allPosts}/>
-  <Categories/>
     <PostSectionTwo postData={allPosts} />
     <PostSectionThree postData={allPosts} />
     <PostSectionFour postData={allPosts} />
