@@ -3,8 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useRef } from "react";
 import Slider from "react-slick";
-import { slugify } from "../utils";
-import { urlFor } from "../client";
+import { client, urlFor } from "../../client";
 import { useQuery } from "@tanstack/react-query";
 
 const WidgetCategory = () => {
@@ -18,6 +17,7 @@ const WidgetCategory = () => {
     queryKey: ["categories"],
     queryFn: async () => {
       const fetchResult = await client.fetch(`*[_type == "category"]`);
+      console.log("categories", fetchResult);
       return fetchResult;
     },
   });
@@ -26,7 +26,6 @@ const WidgetCategory = () => {
     return <div>Loading...</div>;
   }
   if (isError) {
-    console.log(isError);
     return <div>An error occurred...</div>;
   }
 

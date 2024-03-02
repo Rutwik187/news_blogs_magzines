@@ -19,12 +19,12 @@ const HomeOne = ({allPosts}) => {
     <div suppressHydrationWarning>
     <HeadMeta metaTitle="The Business Masters"/>
     <HeaderOne />
-    <SliderTwo slidePost={allPosts} />
-    <PostSectionOne postData={allPosts}/>
-    <PostSectionTwo postData={allPosts} />
-    <PostSectionThree postData={allPosts} />
-    <PostSectionFour postData={allPosts} />
-    <PostSectionFive postData={allPosts} adBanner={true} />
+    <SliderTwo />
+    <PostSectionOne />
+    <PostSectionTwo />
+    <PostSectionThree />
+    <PostSectionFour />
+    <PostSectionFive postData={allPosts}  />
     <PostSectionSix postData={allPosts}/>
     <FooterOne />
     <ReactQueryDevtools initialIsOpen />
