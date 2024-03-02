@@ -1,31 +1,59 @@
 import SectionTitle from "../elements/SectionTitle";
 import PostVideoOne from "./layout/PostVideoOne";
 import PostVideoTwo from "./layout/PostVideoTwo";
+import { useQuery } from "@tanstack/react-query";
+import { client } from "../../client";
 
-const PostSectionFour = ({postData}) => {
+const PostSectionFour = () => {
+  const query = `*[_type == "post" && categories[0]._ref == *[_type=="category"][3]._id][0..5] {
+   title,
+  slug,
+  'featureImg': mainImage.asset->url,
+  'author_name': author->name,
+'author_img': author->image.asset->url,
+  'cate': categories[0]->title,
+}`;
+  const { data, isLoading, error } = useQuery({
+    queryKey: ["categoryFourPosts"],
+    queryFn: async () => {
+      const response = await client.fetch(query);
+      console.log("ForthCategory", response);
+      return response;
+    },
+  });
 
-    const videoPost = postData.filter(post => post.postFormat === 'video');
+  if (isLoading) return <div>Loading...</div>;
+  if (error) return <div>Error fetching posts</div>;
 
-    return ( 
-        <div className="axil-video-posts section-gap section-gap-top__with-text bg-grey-dark-one">
-            <div className="container">
-                <SectionTitle title="Videos" btnText="All VIDEOS" pClass="title-white m-b-xs-40"/>
-                <div className="row">
-                    <div className="col-lg-8">
-                        {videoPost.slice(0, 1).map((data) => (
-                            <PostVideoOne data={data} key={data.slug} />
-                        ))}
-                    </div>
-                    <div className="col-lg-4">
-                        {videoPost.slice(1, 5).map((data) => (
-                            <PostVideoTwo data={data} videoIcon={true} key={data.slug}/>
-                        ))}
-                    </div>
-                </div>
-            </div>
+  if (!data) return null;
+
+  return (
+    <div className="axil-video-posts section-gap section-gap-top__with-text bg-grey-dark-one">
+      <div className="container">
+        <SectionTitle
+          title={data[0]?.cate || "Trending Stories"}
+          btnText="All VIDEOS"
+          pClass="title-white m-b-xs-40"
+        />
+        <div className="row">
+          <div className="col-lg-8">
+            {data.slice(0, 1).map((post) => (
+              <PostVideoOne data={post} key={post.slug} />
+            ))}
+          </div>
+          <div className="col-lg-4">
+            {data.slice(1).map((post) => (
+              <PostVideoTwo
+                data={post}
+                videoIcon={true}
+                key={post.slug.current}
+              />
+            ))}
+          </div>
         </div>
+      </div>
+    </div>
+  );
+};
 
-     );
-}
- 
 export default PostSectionFour;
