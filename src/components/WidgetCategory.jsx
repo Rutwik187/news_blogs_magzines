@@ -62,7 +62,7 @@ const WidgetCategory = () => {
         <Slider ref={CustomNavRef} {...slideSettings}>
           <div className="cat-carousel-inner">
             <ul className="category-list-wrapper">
-              {categoryData.slice(0, 4).map((data) => (
+              {categoryData?.slice(0, 4).map((data) => (
                 <li
                   className="category-list perfect-square"
                   key={data.slug?.current}
@@ -87,7 +87,7 @@ const WidgetCategory = () => {
           </div>
           <div className="cat-carousel-inner">
             <ul className="category-list-wrapper">
-              {categoryData.slice(5, 9).map((data) => (
+              {categoryData?.slice(5, 9).map((data) => (
                 <li
                   className="category-list perfect-square"
                   key={data.slug?.current}
@@ -112,7 +112,7 @@ const WidgetCategory = () => {
           </div>
           <div className="cat-carousel-inner">
             <ul className="category-list-wrapper">
-              {categoryData.slice(10, 14).map((data) => (
+              {categoryData?.slice(10, 14).map((data) => (
                 <li
                   className="category-list perfect-square"
                   key={data.slug?.current}
