@@ -33,8 +33,8 @@ const PostSectionThree = () => {
           btnText="ALL TRENDING STORIES"
         />
         <div className="row">
-          {data.map((post) => (
-            <div className="col-lg-6" key={post.slug}>
+          {data.map((post, index) => (
+            <div className="col-lg-6" key={index}>
               <PostLayoutTwo data={post} />
             </div>
           ))}

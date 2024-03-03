@@ -36,8 +36,8 @@ const PostSectionSix = () => {
         />
         <div className="grid-wrapper">
           <div className="row">
-            {data.map((post) => (
-              <div className="col-lg-3 col-md-4" key={post.slug}>
+            {data.map((post, index) => (
+              <div className="col-lg-3 col-md-4" key={index}>
                 <PostLayoutFour data={post} />
               </div>
             ))}

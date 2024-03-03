@@ -42,8 +42,8 @@ const PostSectionOne = () => {
                 pClass="m-b-xs-30"
               />
               <div className="axil-content">
-                {data.slice(1).map((post) => (
-                  <PostLayoutTwo data={post} key={post.slug.current} />
+                {data.slice(1).map((post, index) => (
+                  <PostLayoutTwo data={post} key={index} />
                 ))}
               </div>
             </div>

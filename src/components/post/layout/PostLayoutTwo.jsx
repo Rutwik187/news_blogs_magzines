@@ -32,11 +32,11 @@ const PostLayoutTwo = ({ data, postSizeMd, postBgDark }) => {
         <h3 className="axil-post-title hover-line hover-line">
           <Link href={`/post/${data.slug.current}`}>{data.title}</Link>
         </h3>
-        <div class="post-metas">
-          <ul class="list-inline">
+        <div className="post-metas">
+          <ul className="list-inline">
             <li>
               <span>By</span>
-              <a class="post-author" href="/demo/react/papr/author/xu-jianhong">
+              <a className="post-author" href="/demo/react/author/xu-jianhong">
                 {data.author_name}
               </a>
             </li>

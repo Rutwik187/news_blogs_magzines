@@ -8,7 +8,7 @@ const PostVideoTwo = ({ data, pClass }) => {
         pClass ?? "post-block__on-dark-bg m-b-xs-30"
       }`}
     >
-      <Link className="align-self-center" href={`/post/${data.slug}`}>
+      <Link className="align-self-center" href={`/post/${data.slug.current}`}>
         <Image
           src={data.featureImg}
           alt={data.title}
@@ -27,7 +27,7 @@ const PostVideoTwo = ({ data, pClass }) => {
           </Link>
         </div>
         <h3 className="axil-post-title hover-line hover-line">
-          <Link href={`/post/${data.slug}`}>{data.title}</Link>
+          <Link href={`/post/${data.slug.current}`}>{data.title}</Link>
         </h3>
         <div className="post-metas">
           <ul className="list-inline">

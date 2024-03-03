@@ -19,18 +19,18 @@ const WidgetPost = ({ dataPost }) => {
 
         <Tab.Content>
           <Tab.Pane eventKey="recent">
-            {dataPost?.slice(0, 4).map((data) => (
-              <PostVideoTwo data={data} pClass="" key={data.slug} />
+            {dataPost?.slice(0, 4).map((data, index) => (
+              <PostVideoTwo data={data} pClass="" key={index} />
             ))}
           </Tab.Pane>
           <Tab.Pane eventKey="popular">
-            {dataPost?.slice(0, 4).map((data) => (
-              <PostVideoTwo data={data} pClass="" key={data.slug} />
+            {dataPost?.slice(0, 4).map((data, index) => (
+              <PostVideoTwo data={data} pClass="" key={index} />
             ))}
           </Tab.Pane>
           <Tab.Pane eventKey="comments">
-            {dataPost?.slice(0, 4).map((data) => (
-              <PostVideoTwo data={data} pClass="" key={data.slug} />
+            {dataPost?.slice(0, 4).map((data, index) => (
+              <PostVideoTwo data={data} pClass="" key={index} />
             ))}
           </Tab.Pane>
         </Tab.Content>

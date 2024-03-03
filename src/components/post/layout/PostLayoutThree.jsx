@@ -6,7 +6,7 @@ const PostLayoutThree = ({ data, postSizeLg, pClass, videoPost }) => {
     <div className={`axil-img-container ${pClass ?? "m-b-xs-30"}`}>
       <Link
         className={`d-block ${videoPost === true ? "h-100" : ""}`}
-        href={`/post/${data.slug}`}
+        href={`/post/${data.slug.current}`}
       >
         <Image
           src={data.featureImg}
@@ -39,7 +39,7 @@ const PostLayoutThree = ({ data, postSizeLg, pClass, videoPost }) => {
           </div>
           <div className="axil-media-bottom">
             <h3 className="axil-post-title hover-line hover-line">
-              <Link href={`/post/${data.slug}`}>{data.title}</Link>
+              <Link href={`/post/${data.slug.current}`}>{data.title}</Link>
             </h3>
             <div className="post-metas">
               <ul className="list-inline">

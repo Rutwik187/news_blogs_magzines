@@ -4,7 +4,7 @@ import Link from "next/link";
 const PostVideoOne = ({ data }) => {
   return (
     <div className="axil-img-container flex-height-container">
-      <Link className="d-block h-100" href={`/post/${data.slug}`}>
+      <Link className="d-block h-100" href={`/post/${data.slug.current}`}>
         <Image
           src={data.featureImg}
           alt={data.title}
@@ -18,7 +18,7 @@ const PostVideoOne = ({ data }) => {
         <div className="media-body media-body__big">
           <div className="axil-media-bottom mt-auto">
             <h3 className="axil-post-title hover-line hover-line">
-              <Link href={`/post/${data.slug}`}>{data.title}</Link>
+              <Link href={`/post/${data.slug.current}`}>{data.title}</Link>
             </h3>
             <div className="post-metas">
               <ul className="list-inline">
@@ -26,7 +26,7 @@ const PostVideoOne = ({ data }) => {
                   <span>By</span>
                   <Link
                     className="post-author"
-                    href={`/author/${data.slug.current}`}
+                    href={`/author/${data.author_name}`}
                   >
                     {data.author_name}
                   </Link>

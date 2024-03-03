@@ -35,13 +35,13 @@ const PostSectionTwo = () => {
         />
         <div className="row">
           <div className="col-lg-8">
-            {data.slice(0, 1).map((post) => (
-              <PostLayoutThree data={post} postSizeLg={true} key={post.slug} />
+            {data.slice(0, 1).map((post, index) => (
+              <PostLayoutThree data={post} postSizeLg={true} key={index} />
             ))}
           </div>
           <div className="col-lg-4">
-            {data.slice(1).map((post) => (
-              <PostLayoutThree data={post} key={post.slug} />
+            {data.slice(1).map((post, index) => (
+              <PostLayoutThree data={post} key={index} />
             ))}
           </div>
         </div>

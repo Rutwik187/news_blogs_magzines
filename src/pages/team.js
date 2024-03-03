@@ -20,7 +20,7 @@ const TeamPage = ({ allPosts }) => {
             <BreadcrumbBanner pageTitle="Our Team" />
             <div className="axil-our-team section-gap">
                 <div className="container">
-                    <p className="m-b-xs-30 big">Meet the amazing people who make papr possible through their energy,
+                    <p className="m-b-xs-30 big">Meet the amazing people who make TBM possible through their energy,
                         experience, <br />and dedication to pursuing our goals.</p>
                     <div className="axil-team-grid-wrapper p-t-xs-10">
                         <div className="row">
@@ -36,7 +36,7 @@ const TeamPage = ({ allPosts }) => {
             <div className="join-us section-gap-bottom">
                 <div className="container">
                     <SectionTitleTwo title="We Are Hiring" paragraph="We are always looking for the right people to join our passionate team of dedicated people. To
-                    support papr growth,<br /> we welcome highly motivated people." tSpace="m-b-xs-30" />
+                    support TBM growth,<br /> we welcome highly motivated people." tSpace="m-b-xs-30" />
                     <div className="row">
                         <div className="col-lg-10 offset-lg-1">
                             <div className="axil-avaiable-positions p-t-xs-10"> 

@@ -82,7 +82,7 @@ const FooterTwo = () => {
               <Link href="/">Advertise with us</Link>
             </li>
             <li>
-              <Link href="/">Papr Store</Link>
+              <Link href="/"> Store</Link>
             </li>
             <li>
               <Link href="/">Newsletters</Link>

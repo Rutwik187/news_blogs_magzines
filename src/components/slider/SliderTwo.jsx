@@ -31,7 +31,7 @@ const SliderTwo = () => {
 
   // Fetch featured posts from Sanity
   const { data, isLoading, error } = useQuery({
-    queryKey: "featuredPosts",
+    queryKey: ["featuredPosts"],
     queryFn: async () => {
       const query = `*[_type == 'post' && featured == true]{
       title,
@@ -43,6 +43,7 @@ const SliderTwo = () => {
     }[0...3]`; // Get up to 3 featured posts
 
       const response = await client.fetch(query);
+      console.log(response);
       return response;
     },
   });

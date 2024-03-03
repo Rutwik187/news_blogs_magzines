@@ -36,17 +36,13 @@ const PostSectionFour = () => {
         />
         <div className="row">
           <div className="col-lg-8">
-            {data.slice(0, 1).map((post) => (
-              <PostVideoOne data={post} key={post.slug} />
+            {data.slice(0, 1).map((post, index) => (
+              <PostVideoOne data={post} key={index} />
             ))}
           </div>
           <div className="col-lg-4">
-            {data.slice(1).map((post) => (
-              <PostVideoTwo
-                data={post}
-                videoIcon={true}
-                key={post.slug.current}
-              />
+            {data.slice(1).map((post, index) => (
+              <PostVideoTwo data={post} videoIcon={true} key={index} />
             ))}
           </div>
         </div>

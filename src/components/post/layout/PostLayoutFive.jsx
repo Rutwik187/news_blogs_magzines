@@ -5,7 +5,7 @@ import { slugify } from "../../../utils";
 const PostLayoutFive = ({ data, index }) => {
   return (
     <div className="media post-block post-block__fluid post-block__mid flex-column m-b-xs-30 m-b-md-40 m-b-lg-40">
-      <Link href={`/post/${data.slug}`}>
+      <Link href={`/post/${data.slug.current}`}>
         <a className="align-self-center w-100">
           <Image
             className="w-100 m-b-xs-30"
@@ -28,7 +28,7 @@ const PostLayoutFive = ({ data, index }) => {
           </Link>
         </div>
         <h3 className="axil-post-title hover-line">
-          <Link href={`/post/${data.slug}`}>{data.title}</Link>
+          <Link href={`/post/${data.slug.current}`}>{data.title}</Link>
         </h3>
         <p className="mid">{data.excerpt}</p>
       </div>

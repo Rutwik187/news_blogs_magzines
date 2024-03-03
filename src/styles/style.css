@@ -1,14 +1,13 @@
 /*-- ===============================================
 
-Product: 'Papr || HTML Template for News & Magazine'
+Product: 'TBM'
 Version: 1.0.1
-Author: axilweb
 Date Created: Oct 14, 2022
 
 ==================================================== --*/
 /*-- == Table of contents =====================
 
-( Example: Type 'ctrl+f' and then 'variables' to jump to the
+(Example: Type 'ctrl+f' and then 'variables' to jump to the
  "example" section. Click 'find' if needed.)
 
 //Defaults
@@ -53,10 +52,10 @@ Date Created: Oct 14, 2022
 * add-widget';
 * tag-widget';
 * media_queries';
-
-
 ================================================== --*/
 /*--imported fonts--*/
+
+
 @font-face {
   font-family: 'Poppins';
   font-style: italic;

@@ -37,8 +37,8 @@ const PostSectionFive = ({ postData, adBanner, pClass }) => {
         <div className="col-lg-8">
           {adBanner === true ? <AdBanner /> : ""}
           <div className="axil-content">
-            {data.slice(0, 8).map((post) => (
-              <PostLayoutTwo data={post} postSizeMd={true} key={post.slug} />
+            {data.slice(0, 8).map((post, index) => (
+              <PostLayoutTwo data={post} postSizeMd={true} key={index} />
             ))}
           </div>
         </div>
