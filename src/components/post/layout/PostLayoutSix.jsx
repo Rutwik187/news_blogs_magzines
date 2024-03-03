@@ -5,10 +5,10 @@ import { slugify } from "../../../utils";
 const PostLayoutSix = ({ data }) => {
   return (
     <div className="axil-img-container m-b-xs-15 m-b-sm-30">
-      <Link className="d-block" href={`/post/${data.slug.current}`}`}>
+      <Link className="d-block" href={`/post/${data?.slug.current}`}>
         <Image
-          src={data.featureImg}
-          alt={data.title}
+          src={data?.featureImg}
+          alt={data?.title}
           width={390}
           height={390}
         />
