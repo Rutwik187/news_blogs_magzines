@@ -1,14 +1,17 @@
 import Link from "next/link";
 import { urlFor } from "../../client";
 import React from "react";
+import Image from "next/image";
 
 export const RichTextComponent = {
   types: {
     image: ({ value }) => {
       return (
         <div className=" m-4 mx-auto h-60  w-auto flex flex-row">
-          <img
+          <Image
             className="object-contain mx-auto my-3"
+            width={1000}
+            height={1000}
             src={urlFor(value).url()}
             alt="Blog post Image"
             fill

@@ -17,7 +17,6 @@ const WidgetCategory = () => {
     queryKey: ["categories"],
     queryFn: async () => {
       const fetchResult = await client.fetch(`*[_type == "category"]`);
-      console.log("categories", fetchResult);
       return fetchResult;
     },
   });

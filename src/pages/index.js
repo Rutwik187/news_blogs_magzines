@@ -3,6 +3,7 @@ import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { getAllPosts } from "../../lib/api";
 import HeadMeta from "../components/elements/HeadMeta";
 import FooterOne from "../components/footer/FooterOne";
+import FooterTwo from "../components/footer/FooterTwo";
 import HeaderOne from "../components/header/HeaderOne";
 import PostSectionFive from "../components/post/PostSectionFive";
 import PostSectionFour from "../components/post/PostSectionFour";
@@ -24,9 +25,10 @@ const HomeOne = ({allPosts}) => {
     <PostSectionTwo />
     <PostSectionThree />
     <PostSectionFour />
-    <PostSectionFive postData={allPosts}  />
-    <PostSectionSix postData={allPosts}/>
-    <FooterOne />
+    <PostSectionFive  />
+    <PostSectionSix/>
+    {/* <FooterOne /> */}
+    <FooterTwo/>
     <ReactQueryDevtools initialIsOpen />
    </div>
    );

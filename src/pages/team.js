@@ -42,11 +42,11 @@ const TeamPage = ({ allPosts }) => {
                             <div className="axil-avaiable-positions p-t-xs-10"> 
                                 <div className="axil-position-block">
                                     <h3 className="axil-position-title">Senior Reporter</h3>
-                                    <a href="#" className="btn btn-primary btn-nofill btn-small">APPLY HERE
+                                    <a href="#" className="btn btn-primary btn-nofill btn-small">APPLY HERE</a>
                                 </div>
                                 <div className="axil-position-block">
                                     <h3 className="axil-position-title">Senior Enterprise Editor</h3>
-                                    <a href="#" className="btn btn-primary btn-nofill btn-small">APPLY HERE
+                                    <a href="#" className="btn btn-primary btn-nofill btn-small">APPLY HERE</a>
                                 </div>
                             </div>
                         </div>

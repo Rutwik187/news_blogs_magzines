@@ -6,7 +6,7 @@ import FooterOne from "../../components/footer/FooterOne";
 import HeaderOne from "../../components/header/HeaderOne";
 import PostLayoutTwo from "../../components/post/layout/PostLayoutTwo";
 import WidgetAd from "../../components/widget/WidgetAd";
-import WidgetCategory from "../../components/WidgetCategory";
+import WidgetCategory from "../../components/widget/WidgetCategory";
 import WidgetPost from "../../components/widget/WidgetPost";
 import WidgetSocialShare from "../../components/widget/WidgetSocialShare";
 import { slugify } from "../../utils";
@@ -34,21 +34,21 @@ const PostAuthor = ({postData, allPosts}) => {
                                     className="m-r-xs-30"
                                     />
                                     <div className="grad-overlay__transparent overlay-over" />
-                                
+                                </a>
                                 <div className="media-body">
                                     <h2 className="h4 m-b-xs-15">{authorContent.author_name}</h2>
-                                    <p className="hover-line"><a href="https://example.com">https//www.example.com</p>
+                                    <p className="hover-line"><a href="https://example.com">https//www.example.com</a></p>
                                     <p className="mid">{authorContent.author_bio}</p>
                                     <div className="post-metas">
                                         <ul className="list-inline">
-                                            <li><a href="#"><i className="fal fa-user-edit" />Total Post ({postData.length})</li>
-                                            <li><a href="#"><i className="fal fa-comment" />Comments (12)</li>
+                                            <li><a href="#"><i className="fal fa-user-edit" />Total Post ({postData.length})</a></li>
+                                            <li><a href="#"><i className="fal fa-comment" />Comments (12)</a></li>
                                         </ul>
                                     </div>
                                     <div className="author-social-share">
                                         <ul className="social-share social-share__with-bg">
                                             {authorContent.author_social.map((data, index)=> (
-                                                <li key={index}><a href={data.url}><i className={data.icon} /></li>
+                                                <li key={index}><a href={data.url}><i className={data.icon} /></a></li>
                                             ))}
                                         </ul>
                                     </div>

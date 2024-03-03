@@ -23,7 +23,6 @@ const PostSectionFive = ({ postData, adBanner, pClass }) => {
     queryKey: ["categoryFivePosts"],
     queryFn: async () => {
       const response = await client.fetch(query);
-      console.log("fifthCategory", response);
       return response;
     },
   });

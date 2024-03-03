@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 
 const PostLayoutOne = ({ data }) => {
-  console.log("postLayoutOneData", data);
   return (
     <div className="axil-latest-post">
       <div className="media post-block m-b-xs-20">

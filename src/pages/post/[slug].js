@@ -37,7 +37,6 @@ export async function getStaticProps({ params }) {
 
 const PostDetails = ({postContent, allPosts}) => {
 
-  console.log("postContent", postContent); 
 
   return ( 
     <>

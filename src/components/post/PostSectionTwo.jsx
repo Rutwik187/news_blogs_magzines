@@ -16,7 +16,6 @@ const PostSectionTwo = () => {
     queryKey: ["categoryTwoPosts"],
     queryFn: async () => {
       const response = await client.fetch(query);
-      console.log("SecondCategory", response);
       return response;
     },
   });

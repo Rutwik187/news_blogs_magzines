@@ -17,7 +17,6 @@ const PostSectionFour = () => {
     queryKey: ["categoryFourPosts"],
     queryFn: async () => {
       const response = await client.fetch(query);
-      console.log("ForthCategory", response);
       return response;
     },
   });

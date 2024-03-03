@@ -43,7 +43,6 @@ const SliderTwo = () => {
     }[0...3]`; // Get up to 3 featured posts
 
       const response = await client.fetch(query);
-      // console.log("featuredPosts", response);
       return response;
     },
   });
@@ -51,7 +50,6 @@ const SliderTwo = () => {
   // Social Share Toggle
   const ShareToggler = (e) => {
     const targeElm = e.target.nextElementSibling;
-    console.log("Target:", e.target, "Sibling:", targeElm); // Check in your console
 
     if (targeElm) {
       targeElm.classList.toggle("show-shares");

@@ -42,8 +42,11 @@ const SliderThree = ({ postData }) => {
                   <ul className="list-inline">
                     <li>
                       <span>By</span>
-                      <Link href={`/author/${slugify(firstPost.author_name)}`}>
-                        <a className="post-author">{firstPost.author_name}
+                      <Link
+                        className="post-author"
+                        href={`/author/${slugify(firstPost.author_name)}`}
+                      >
+                        {firstPost.author_name}
                       </Link>
                     </li>
                   </ul>
@@ -58,8 +61,11 @@ const SliderThree = ({ postData }) => {
                   {firstPost.excerpt}
                 </p>
                 <div className="load-anim">
-                  <Link href={`/post/${firstPost.slug}`}>
-                    <a className="btn btn-primary">READ MORE
+                  <Link
+                    className="btn btn-primary"
+                    href={`/post/${firstPost.slug}`}
+                  >
+                    READ MORE
                   </Link>
                 </div>
               </div>
@@ -80,9 +86,7 @@ const SliderThree = ({ postData }) => {
                   >
                     <div className="media-body">
                       <h3 className="axil-post-title hover-line">
-                        <Link href={`/post/${data.slug}`}>
-                          {data.title}
-                        </Link>
+                        <Link href={`/post/${data.slug}`}>{data.title}</Link>
                       </h3>
                       <p className="mid">{data.excerpt}</p>
                     </div>
@@ -107,22 +111,22 @@ const SliderThree = ({ postData }) => {
                   <li>
                     <a href="https://facebook.com/">
                       <i className="fab fa-facebook-f" />
-                    
+                    </a>
                   </li>
                   <li>
                     <a href="https://twitter.com/">
                       <i className="fa-brands fa-x-twitter" />
-                    
+                    </a>
                   </li>
                   <li>
                     <a href="https://www.behance.net/">
                       <i className="fab fa-behance" />
-                    
+                    </a>
                   </li>
                   <li>
                     <a href="https://www.linkedin.com/">
                       <i className="fab fa-linkedin-in" />
-                    
+                    </a>
                   </li>
                 </ul>
               </div>

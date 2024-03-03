@@ -54,22 +54,22 @@ const ComimgSoon = () => {
                                             <li>
                                                 <a href={SocialLink.fb.url}>
                                                 <i className={SocialLink.fb.icon} />
-                                                
+                                                </a>
                                             </li>
                                             <li>
                                                 <a href={SocialLink.twitter.url}>
                                                 <i className={SocialLink.twitter.icon} />
-                                                
+                                                </a>
                                             </li>
                                             <li>
                                                 <a href={SocialLink.yt.url}>
                                                 <i className={SocialLink.yt.icon} />
-                                                
+                                                </a>
                                             </li>
                                             <li>
                                                 <a href={SocialLink.linked.url}>
                                                 <i className={SocialLink.linked.icon} />
-                                                
+                                                </a>
                                             </li>
                                         </ul>
                                     </div>
