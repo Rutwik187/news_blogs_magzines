@@ -8,8 +8,8 @@ const PostLayoutOne = ({ data }) => {
         <figure className="fig-container">
           <Link href={`/post/${data?.slug.current}`}>
             <Image
-              src={data.featureImg}
-              alt={data.title}
+              src={data?.featureImg}
+              alt={data?.title}
               width={540}
               height={540}
               placeholder="blur"
@@ -19,17 +19,17 @@ const PostLayoutOne = ({ data }) => {
           <div className="post-cat-group m-b-xs-10">
             <Link
               className={`post-cat cat-btn ${
-                data.cate_bg ?? "bg-color-blue-one"
+                data?.cate_bg ?? "bg-color-blue-one"
               }`}
-              href={`/category/${data.cate}`}
+              href={`/category/${data?.cate}`}
             >
-              {data.cate}
+              {data?.cate}
             </Link>
           </div>
         </figure>
         <div className="media-body">
           <h3 className="axil-post-title hover-line hover-line">
-            <Link href={`/post/${data.slug.current}`}>{data.title}</Link>
+            <Link href={`/post/${data?.slug.current}`}>{data?.title}</Link>
           </h3>
           <div className="post-metas">
             <ul className="list-inline">
@@ -39,7 +39,7 @@ const PostLayoutOne = ({ data }) => {
                 className="post-author"
                 href={`/author/${data?.author_name}`}
               >
-                {data.author_name}
+                {data?.author_name}
               </Link>
             </ul>
           </div>

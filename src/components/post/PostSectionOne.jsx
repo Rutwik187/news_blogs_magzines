@@ -5,19 +5,43 @@ import { useQuery } from "@tanstack/react-query";
 import { client } from "../../client";
 
 const PostSectionOne = () => {
-  const query = `*[_type == "post" && categories[0]._ref == *[_type=="category"][0]._id][0..3] {
+  const query = `
+*[_type == "magpost"] {
   title,
   slug,
-  'featureImg': mainImage.asset->url,
-  'author_name': author->name,
-'author_img': author->image.asset->url,
-  'cate': categories[0]->title,
-}`;
+  mainImage {
+    asset -> {
+      url
+    }
+  },
+  author -> {
+    name,
+    image {
+      asset -> {
+        url
+      }
+    }
+  },
+  categories[0] -> {
+    title
+  }
+}
+`;
+
+  //   const query = `*[_type == "magpost" && magcategory[0]._ref == *[_type=="magcategory"][0]._id] {
+  //   title,
+  //   slug,
+  //   'featureImg': mainImage.asset->url,
+  //   'author_name': author->name,
+  //   'author_img': author->image.asset->url,
+  //   'cate': magcategory[0]->title,
+  // }`;
 
   const { data, isLoading, error } = useQuery({
-    queryKey: ["categoryOnePosts"],
+    queryKey: ["magzineOnePosts"],
     queryFn: async () => {
       const response = await client.fetch(query);
+      console.log(response);
       return response;
     },
   });
