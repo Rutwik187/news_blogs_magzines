@@ -6,27 +6,19 @@ import { client } from "../../client";
 
 const PostSectionOne = () => {
   const query = `
-*[_type == "magpost"] {
+*[_type == "magpost" && references(categories[0]._ref)] {
   title,
   slug,
-  mainImage {
-    asset -> {
-      url
-    }
-  },
-  author -> {
-    name,
-    image {
-      asset -> {
-        url
-      }
-    }
-  },
-  categories[0] -> {
-    title
-  }
+  'featureImg': mainImage.asset->url,
+  'author_name': author->name,
+  'author_img': author->image.asset->url,
+  'cate': categories[0]->title
 }
 `;
+
+  // Execute this query using your Sanity client (client.fetch(query))
+
+  // Execute this query using your Sanity client (client.fetch(query))
 
   //   const query = `*[_type == "magpost" && magcategory[0]._ref == *[_type=="magcategory"][0]._id] {
   //   title,
