@@ -22,12 +22,12 @@ const PostFormatText = ({ postData, allData }) => {
                   <div className="single-blog-wrapper">
                     <SocialShareSide />
                     <h2 className="axil-post-title hover-line">
-                      {postData.title}
+                      {postData?.title}
                     </h2>
                   </div>
 
                   <PortableText
-                    value={postData.body}
+                    value={postData?.body}
                     components={RichTextComponent}
                   />
                 </article>

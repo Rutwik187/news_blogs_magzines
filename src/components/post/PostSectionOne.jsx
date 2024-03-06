@@ -6,9 +6,10 @@ import { client } from "../../client";
 
 const PostSectionOne = () => {
   const query = `
-*[_type == "magpost" && references(categories[0]._ref)] {
+*[_type == "magpost" && references(categories[0]._ref )] {
   title,
   slug,
+  'htmlContent': htmlContent[0].children[0].text,
   'featureImg': mainImage.asset->url,
   'author_name': author->name,
   'author_img': author->image.asset->url,

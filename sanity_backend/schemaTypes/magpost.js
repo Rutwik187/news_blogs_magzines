@@ -54,6 +54,11 @@ export default defineType({
       title: 'Featured',
       type: 'boolean',
     }),
+    defineField({
+      name: 'htmlContent',
+      title: 'HTML Content',
+      type: 'blockContent',
+    }),
   ],
 
   preview: {

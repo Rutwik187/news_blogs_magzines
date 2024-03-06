@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import React from "react";
 
 const PostLayoutTwo = ({ data, postSizeMd, postBgDark }) => {
   return (
@@ -8,7 +9,10 @@ const PostLayoutTwo = ({ data, postSizeMd, postBgDark }) => {
         postSizeMd === true ? "post-block__mid" : ""
       } ${postBgDark === true ? "post-block__on-dark-bg" : ""}`}
     >
-      <Link className="align-self-center" href={`/post/${data.slug.current}`}>
+      <Link
+        className="align-self-center"
+        href={`/magzine/${data.slug.current}`}
+      >
         <Image
           src={data.featureImg}
           alt={data.title}
@@ -18,6 +22,7 @@ const PostLayoutTwo = ({ data, postSizeMd, postBgDark }) => {
           blurDataURL="/images/placeholder.png"
         />
       </Link>
+
       <div className="media-body">
         <div className="post-cat-group m-b-xs-10">
           <Link
@@ -30,7 +35,7 @@ const PostLayoutTwo = ({ data, postSizeMd, postBgDark }) => {
           </Link>
         </div>
         <h3 className="axil-post-title hover-line hover-line">
-          <Link href={`/post/${data.slug.current}`}>{data.title}</Link>
+          <Link href={`/magzine/${data.slug.current}`}>{data.title}</Link>
         </h3>
         <div className="post-metas">
           <ul className="list-inline">
@@ -42,6 +47,7 @@ const PostLayoutTwo = ({ data, postSizeMd, postBgDark }) => {
             </li>
           </ul>
         </div>
+
         {postSizeMd === true ? <p className="mid">{data.excerpt}</p> : ""}
       </div>
     </div>

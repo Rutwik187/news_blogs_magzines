@@ -3,10 +3,19 @@ import Link from "next/link";
 
 const PostLayoutOne = ({ data }) => {
   return (
-    <div className="axil-latest-post">
+    <div
+      className="axil-latest-post"
+      style={
+        {
+          // background: "#ec597c",
+        }
+      }
+    >
+      {/* {console.log(data.htmlContent[0].children[0].text)} */}
       <div className="media post-block m-b-xs-20">
         <figure className="fig-container">
-          <Link href={`/post/${data?.slug.current}`}>
+          <Link href={`/magzine/${data?.slug.current}`}>
+            {console.log(data.mainImage)}
             <Image
               src={data?.featureImg}
               alt={data?.title}
@@ -29,7 +38,7 @@ const PostLayoutOne = ({ data }) => {
         </figure>
         <div className="media-body">
           <h3 className="axil-post-title hover-line hover-line">
-            <Link href={`/post/${data?.slug.current}`}>{data?.title}</Link>
+            <Link href={`/magzine/${data?.slug.current}`}>{data?.title}</Link>
           </h3>
           <div className="post-metas">
             <ul className="list-inline">

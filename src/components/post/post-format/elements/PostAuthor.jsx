@@ -7,8 +7,8 @@ const PostAuthor = ({ authorData }) => {
       <div className="media">
         <Link href={`/author/${authorData?.author_name}`}>
           <Image
-            src={authorData.author_img}
-            alt={authorData.author_name}
+            src={authorData?.author_img}
+            alt={authorData?.author_name}
             height={105}
             width={105}
             className="author-img"
@@ -18,13 +18,13 @@ const PostAuthor = ({ authorData }) => {
           <div className="media-body-title">
             <h3>
               <Link href={`/author/${authorData?.author_name}`}>
-                {authorData.author_name}
+                {authorData?.author_name}
               </Link>
             </h3>
           </div>
           {/* End of .media-body-title */}
           <div className="media-body-content">
-            <p>{authorData.author_bio}</p>
+            <p>{authorData?.author_bio}</p>
           </div>
           {/* End of .media-body-content */}
         </div>
