@@ -10,27 +10,24 @@ import PostSectionThree from "../components/post/PostSectionThree";
 import PostSectionTwo from "../components/post/PostSectionTwo";
 import PostSectionOne from "../components/post/PostSectionOne";
 
-import SliderTwo from '../components/slider/SliderTwo';
+import SliderTwo from "../components/slider/SliderTwo";
 
 const Home = () => {
- 
-  return ( 
+  return (
     <div suppressHydrationWarning>
-    <HeadMeta metaTitle="The Business Masters"/>
-    <HeaderOne />
-    <SliderTwo />
-    <PostSectionOne />
-    <PostSectionTwo />
-    <PostSectionThree />
-    <PostSectionFour />
-    <PostSectionFive  />
-    <PostSectionSix/>
-    <FooterOne />
-    {/* <ReactQueryDevtools/> */}
-   </div>
-   );
-}
- 
+      <HeadMeta metaTitle="The Business Masters" />
+      <HeaderOne />
+      <SliderTwo />
+      <PostSectionFour />
+      <PostSectionOne />
+      <PostSectionTwo />
+      <PostSectionThree />
+      <PostSectionFive />
+      <PostSectionSix />
+      <FooterOne />
+      {/* <ReactQueryDevtools/> */}
+    </div>
+  );
+};
+
 export default Home;
-
-

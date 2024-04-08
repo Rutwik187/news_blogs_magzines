@@ -1,76 +1,23 @@
 [
-    {
-        "label": "Home",
-        "path": "/"
-    },
-    {
-        "label": "Categories",
-        "path": "#",
-        "submenu": [
-            {
-                "sublabel": "Post Standard",
-                "subpath": "/post/vr-is-the-use-of-computer-technology-to-create-a-simulated-environment."
-            },
-            {
-                "sublabel": "Post Gallery",
-                "subpath": "/post/trip-to-iqaluit-in-nunavut-a-canadian-arctic-city"
-            },
-            {
-                "sublabel": "Post Video",
-                "subpath": "/post/want-to-win-a-travelPro-bag"
-            },
-            {
-                "sublabel": "Post Audio",
-                "subpath": "/post/teslas-cooking-up-a-new-way-to-wire-its-cars-report-says"
-            },
-            {
-                "sublabel": "Post Quote",
-                "subpath": "/post/barbecue-party-tips-for-a-truly-amazing-event"
-            },
-            {
-                "sublabel": "Post Text Only",
-                "subpath": "/post/deep-fryer-pieces-of-wisdom"
-            }
-        ]
-    },
-    {
-        "label": "About Us",
-        "path": "/about-us"
-    },
-    {
-        "label": "Contact",
-        "path": "/contact"
-    },
- 
-    {
-        "label": "Pages",
-        "path": "#",
-        "submenu": [
-            {
-                "sublabel": "Author",
-                "subpath": "/author/amachea-jajah"
-            },
-            {
-                "sublabel": "404 Error",
-                "subpath": "/404"
-            },
-            {
-                "sublabel": "Coming Soon",
-                "subpath": "/coming-soon"
-            },
-            {
-                "sublabel": "About Us",
-                "subpath": "/about-us"
-            },
-            {
-                "sublabel": "Team",
-                "subpath": "/team"
-            },
-            {
-                "sublabel": "Contact Us",
-                "subpath": "/contact"
-            }
-        ]
-    }
-   
+  {
+    "label": "Home",
+    "path": "/"
+  },
+
+  {
+    "label": "Magazines",
+    "path": "/magazines"
+  },
+  {
+    "label": "Blogs",
+    "path": "/blogs"
+  },
+  {
+    "label": "About Us",
+    "path": "/about-us"
+  },
+  {
+    "label": "Contact",
+    "path": "/contact"
+  }
 ]

@@ -111,26 +111,6 @@ const SliderTwo = () => {
                 >
                   {data.map((postData) => (
                     <div className="item" key={postData.slug}>
-                      <div className="post-metas home-banner-post-metas m-b-xs-20">
-                        <ul className="list-inline">
-                          <li className="m-r-xs-20">
-                            <Link
-                              className="d-flex align-items-center"
-                              href={`/author/${data?.slug?.current}`}
-                            >
-                              <Image
-                                src={postData.author_img}
-                                alt={postData.author_name}
-                                width={50}
-                                height={50}
-                              />
-                              <span className="m-l-xs-20">
-                                {postData.author_name}
-                              </span>
-                            </Link>
-                          </li>
-                        </ul>
-                      </div>
                       <h1 className="page-title m-b-xs-40 hover-line">
                         <Link href={`/post/${postData.slug}`}>
                           {postData.title}

@@ -44,37 +44,7 @@ const FooterOne = () => {
               </div>
               {/* End of .footer-widget */}
             </div>
-            {/* End of .col-lg-2 */}
-            <div className="col-lg-2 col-md-4 col-6">
-              <div className="footer-widget">
-                <h2 className="footer-widget-title">Politics</h2>
-                <ul className="footer-nav">
-                  <li>
-                    <Link href="/">Executive</Link>
-                  </li>
-                  <li>
-                    <Link href="/">Senate</Link>
-                  </li>
-                  <li>
-                    <Link href="/">House</Link>
-                  </li>
-                  <li>
-                    <Link href="/">Judiciary</Link>
-                  </li>
-                  <li>
-                    <Link href="/">Foreign policy</Link>
-                  </li>
-                  <li>
-                    <Link href="/">Polls</Link>
-                  </li>
-                  <li>
-                    <Link href="/">Elections</Link>
-                  </li>
-                </ul>
-                {/* End of .footer-nav */}
-              </div>
-              {/* End of .footer-widget */}
-            </div>
+
             {/* End of .col-lg-2 */}
             <div className="col-lg-2 col-md-4 col-6">
               <div className="footer-widget">
@@ -103,31 +73,7 @@ const FooterOne = () => {
               </div>
               {/* End of .footer-widget */}
             </div>
-            {/* End of .col-lg-2 */}
-            <div className="col-lg-2 col-md-4 col-6">
-              <div className="footer-widget">
-                <h2 className="footer-widget-title">Business</h2>
-                <ul className="footer-nav">
-                  <li>
-                    <Link href="/">Markets</Link>
-                  </li>
-                  <li>
-                    <Link href="/">Politics</Link>
-                  </li>
-                  <li>
-                    <Link href="/">Technology</Link>
-                  </li>
-                  <li>
-                    <Link href="/">Features</Link>
-                  </li>
-                  <li>
-                    <Link href="/">Business Leaders</Link>
-                  </li>
-                </ul>
-                {/* End of .footer-nav */}
-              </div>
-              {/* End of .footer-widget */}
-            </div>
+
             {/* End of .col-lg-2 */}
             <div className="col-lg-2 col-md-4 col-6">
               <div className="footer-widget">
@@ -195,14 +141,15 @@ const FooterOne = () => {
         <div className="footer-mid">
           <div className="row align-items-center">
             <div className="col-md">
-              <div className="footer-logo-container">
+              <div className="footer-logo-container ">
                 <Link href="/">
                   <Image
-                    src="/images/logo.svg"
+                    src="/images/icon_trimmed_transparent_white.png"
                     alt="footer logo"
                     className="footer-logo"
                     width={86}
-                    height={28}
+                    height={100}
+                    style={{ objectFit: "contain" }}
                   />
                 </Link>
               </div>

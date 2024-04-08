@@ -138,10 +138,11 @@ const HeaderOne = () => {
               <div className="brand-logo-container">
                 <Link href="/">
                   <Image
-                    src="/images/logo.svg"
+                    src="/images/full_trimmed_transparent_base.png"
                     alt="brand-logo"
-                    width={224}
-                    height={80}
+                    width={300}
+                    height={100}
+                    style={{ objectFit: "contain" }}
                   />
                 </Link>
               </div>
