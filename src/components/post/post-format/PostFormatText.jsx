@@ -4,7 +4,6 @@ import WidgetNewsletter from "../../widget/WidgetNewsletter";
 import WidgetPost from "../../widget/WidgetPost";
 import WidgetSocialShare from "../../widget/WidgetSocialShare";
 import { RichTextComponent } from "../RichTextComponent";
-import PostAuthor from "./elements/PostAuthor";
 import PostComment from "./elements/PostComment";
 import SocialShareBottom from "./elements/SocialShareBottom";
 import SocialShareSide from "./elements/SocialShareSide";
@@ -33,7 +32,7 @@ const PostFormatText = ({ postData, allData }) => {
                 </article>
                 <SocialShareBottom />
                 <hr className="m-t-xs-50 m-b-xs-60" />
-                <PostAuthor authorData={postData} />
+
                 <PostComment />
               </main>
             </div>

@@ -29,19 +29,6 @@ const PostVideoTwo = ({ data, pClass }) => {
         <h3 className="axil-post-title hover-line hover-line">
           <Link href={`/post/${data.slug.current}`}>{data.title}</Link>
         </h3>
-        <div className="post-metas">
-          <ul className="list-inline">
-            <li>
-              <span>By</span>
-              <Link
-                className="post-author"
-                href={`/author/${data.author_name?.current}`}
-              >
-                {data.author_name}
-              </Link>
-            </li>
-          </ul>
-        </div>
       </div>
     </div>
   );

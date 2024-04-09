@@ -20,31 +20,6 @@ const PostVideoOne = ({ data }) => {
             <h3 className="axil-post-title hover-line hover-line">
               <Link href={`/post/${data.slug.current}`}>{data.title}</Link>
             </h3>
-            <div className="post-metas">
-              <ul className="list-inline">
-                <li>
-                  <span>By</span>
-                  <Link
-                    className="post-author"
-                    href={`/author/${data.author_name}`}
-                  >
-                    {data.author_name}
-                  </Link>
-                </li>
-                <li>
-                  <i className="dot">.</i>
-                  {data.date}
-                </li>
-                <li>
-                  <i className="feather icon-activity" />
-                  {data.post_views}
-                </li>
-                <li>
-                  <i className="feather icon-share-2" />
-                  {data.post_share}
-                </li>
-              </ul>
-            </div>
           </div>
         </div>
         {/* End of .media-body */}

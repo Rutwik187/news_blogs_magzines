@@ -76,26 +76,6 @@ const SliderOne = ({ slidePost }) => {
               >
                 {slidePost.slice(0, 3).map((data) => (
                   <div className="item" key={data.slug}>
-                    <div className="post-metas home-banner-post-metas m-b-xs-20">
-                      <ul className="list-inline">
-                        <li className="m-r-xs-20">
-                          <Link
-                            className="d-flex align-items-center"
-                            href={`/author/${slugify(data.author_name)}`}
-                          >
-                            <Image
-                              src={data.author_img}
-                              alt={data.author_name}
-                              width={50}
-                              height={50}
-                            />
-                            <span className="m-l-xs-20">
-                              {data.author_name}
-                            </span>
-                          </Link>
-                        </li>
-                      </ul>
-                    </div>
                     {/* End of .post-metas */}
                     <h1 className="page-title m-b-xs-40 hover-line">
                       <Link href={`/post/${data.slug}`}>{data.title}</Link>

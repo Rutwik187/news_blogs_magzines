@@ -20,31 +20,6 @@ const MetaDataFour = ({ metaData }) => {
         <h2 className="m-b-xs-0 axil-post-title hover-line">
           {metaData.title}
         </h2>
-        <div className="post-metas banner-post-metas m-t-xs-20">
-          <ul className="list-inline">
-            <li>
-              <span>By</span>
-              <Link
-                className="post-author"
-                href={`/author/${slugify(metaData.author_name)}`}
-              >
-                {metaData.author_name}
-              </Link>
-            </li>
-            <li>
-              <i className="dot">.</i>
-              {metaData.date}
-            </li>
-            <li>
-              <i className="feather icon-activity" />
-              {metaData.post_views}
-            </li>
-            <li>
-              <i className="feather icon-share-2" />
-              {metaData.post_share}
-            </li>
-          </ul>
-        </div>
       </div>
     </>
   );

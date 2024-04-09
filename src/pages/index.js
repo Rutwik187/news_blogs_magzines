@@ -1,7 +1,8 @@
 // import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 
 import HeadMeta from "../components/elements/HeadMeta";
-import FooterOne from "../components/footer/FooterOne";
+// import FooterOne from "../components/footer/FooterOne";
+import FooterTwo from "../components/footer/FooterTwo";
 import HeaderOne from "../components/header/HeaderOne";
 import PostSectionFive from "../components/post/PostSectionFive";
 import PostSectionFour from "../components/post/PostSectionFour";
@@ -24,7 +25,8 @@ const Home = () => {
       <PostSectionThree />
       <PostSectionFive />
       <PostSectionSix />
-      <FooterOne />
+      {/* <FooterOne /> */}
+      <FooterTwo />
       {/* <ReactQueryDevtools/> */}
     </div>
   );

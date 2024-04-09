@@ -40,18 +40,6 @@ const PostLayoutOne = ({ data }) => {
           <h3 className="axil-post-title hover-line hover-line">
             <Link href={`/magzine/${data?.slug.current}`}>{data?.title}</Link>
           </h3>
-          <div className="post-metas">
-            <ul className="list-inline">
-              <span>By </span>
-
-              <Link
-                className="post-author"
-                href={`/author/${data?.author_name}`}
-              >
-                {data?.author_name}
-              </Link>
-            </ul>
-          </div>
         </div>
       </div>
       {/* End of .post-block */}

@@ -12,11 +12,12 @@ const FooterTwo = () => {
               <div className="footer-logo-container">
                 <Link href="/">
                   <Image
-                    src="/images/logo-symbol.svg"
+                    src="/images/icon_trimmed_transparent_white.png"
                     alt="footer logo"
                     className="footer-logo"
                     width={86}
-                    height={28}
+                    height={100}
+                    style={{ objectFit: "contain" }}
                   />
                 </Link>
               </div>

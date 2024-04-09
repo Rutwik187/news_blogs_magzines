@@ -19,15 +19,6 @@ const PostLayoutFour = ({ data }) => {
           <h3 className="axil-post-title hover-line hover-line">
             <Link href={`/post/${data.slug.current}`}>{data.title}</Link>
           </h3>
-          <div className="caption-meta">
-            <span>By</span>
-            <Link
-              className="post-author"
-              href={`/author/${data.author_name?.slug}}`}
-            >
-              {data.author_name}
-            </Link>
-          </div>
         </div>
         {/* End of .content-inner */}
       </div>

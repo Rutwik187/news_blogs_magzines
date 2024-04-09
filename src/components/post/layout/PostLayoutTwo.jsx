@@ -37,16 +37,6 @@ const PostLayoutTwo = ({ data, postSizeMd, postBgDark }) => {
         <h3 className="axil-post-title hover-line hover-line">
           <Link href={`/magzine/${data.slug.current}`}>{data.title}</Link>
         </h3>
-        <div className="post-metas">
-          <ul className="list-inline">
-            <li>
-              <span>By</span>
-              <a className="post-author" href="/demo/react/author/xu-jianhong">
-                {data.author_name}
-              </a>
-            </li>
-          </ul>
-        </div>
 
         {postSizeMd === true ? <p className="mid">{data.excerpt}</p> : ""}
       </div>

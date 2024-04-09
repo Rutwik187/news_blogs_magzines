@@ -9,8 +9,6 @@ const PostSectionFour = () => {
    title,
   slug,
   'featureImg': mainImage.asset->url,
-  'author_name': author->name,
-'author_img': author->image.asset->url,
   'cate': categories[0]->title,
 }`;
   const { data, isLoading, error } = useQuery({
@@ -31,7 +29,7 @@ const PostSectionFour = () => {
       <div className="container">
         <SectionTitle
           title={data[0]?.cate || "Trending Stories"}
-          btnText="All VIDEOS"
+          btnText="Read all Magazines"
           pClass="title-white m-b-xs-40"
         />
         <div className="row">

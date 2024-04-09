@@ -8,8 +8,6 @@ const PostSectionTwo = () => {
    title,
   slug,
   'featureImg': mainImage.asset->url,
-  'author_name': author->name,
-'author_img': author->image.asset->url,
   'cate': categories[0]->title,
 }`;
   const { data, isLoading, error } = useQuery({
