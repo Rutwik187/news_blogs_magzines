@@ -1,26 +1,21 @@
 import Image from "next/image";
 import Link from "next/link";
 import SocialLink from "../../data/social/SocialLink.json";
+import styles from "../../styles/footer.module.css"; // Import the CSS module
 
 const FooterTwo = () => {
-  const mediaQueryStyles = {
-    "@media only screen and (max-width: 600px)": {
-      flexDirection: "column",
-    },
-  };
   return (
     <footer
       className="page-footer bg-grey-dark-key"
       style={{ color: "white", paddingBottom: "1px" }}
     >
       <div
-        className="footer-start"
+        className={`${styles.footer_start} footer_start`}
         style={{
           display: "flex",
           gap: "2rem",
           marginRight: "2rem",
           marginLeft: "2rem",
-          mediaQueryStyles,
         }}
       >
         <div className="logo ">
@@ -68,7 +63,10 @@ const FooterTwo = () => {
             </div>
           </div>
         </div>
-        <div style={{ width: "30vw", margin: "1rem", color: "white" }}>
+        <div
+          className={`${styles.footer_content} footer_content`}
+          style={{ margin: "1rem", color: "white" }}
+        >
           <p style={{ width: "100%", color: "white" }}>
             The Business Masters Magazine Publication stands as a premier hub
             for business and entrepreneurship wisdom, committed to showcasing
