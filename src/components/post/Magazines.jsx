@@ -4,13 +4,19 @@ import PostLayoutFour from "./layout/PostLayoutFour";
 import { useQuery } from "@tanstack/react-query";
 import { client } from "../../client";
 
-const PostSectionSix = () => {
-  const query = `*[_type == "post" && categories[0]._ref == *[_type=="category"][6]._id][0..3] {
-   title,
+const Magazines = () => {
+  const query = `
+*[_type == "post" && categories[0]._ref == *[_type == "category" && slug.current == "magazines"][0]._id] 
+{
+  title,
   slug,
   'featureImg': mainImage.asset->url,
-  'cate': categories[0]->title,
-}`;
+  'category': {
+    'title': categories[0]->title,
+    'slug': categories[0]->slug.current
+  }
+} | order(_createdAt desc)[0...4] 
+`;
 
   const { data, isLoading, error } = useQuery({
     queryKey: ["categorySixPosts"],
@@ -46,4 +52,4 @@ const PostSectionSix = () => {
   );
 };
 
-export default PostSectionSix;
+export default Magazines;

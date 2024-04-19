@@ -4,9 +4,9 @@ import HeadMeta from "../components/elements/HeadMeta";
 // import FooterOne from "../components/footer/FooterOne";
 import FooterTwo from "../components/footer/FooterTwo";
 import HeaderOne from "../components/header/HeaderOne";
-import PostSectionFive from "../components/post/PostSectionFive";
-import PostSectionSix from "../components/post/PostSectionSix";
-import PostSectionThree from "../components/post/PostSectionThree";
+import MasterTalks from "../components/post/MasterTalks";
+import Magazines from "../components/post/Magazines";
+import BusinessBulletin from "../components/post/BusinessBulletin";
 import BlogAndArticle from "../components/post/BlogAndArticle";
 import WebProfile from "../components/post/WebProfile";
 
@@ -19,12 +19,12 @@ const Home = () => {
       <HeadMeta metaTitle="The Business Masters" />
       <HeaderOne />
       <SliderOne />
-      <MarketNews />
       <WebProfile />
+      <MarketNews />
       <BlogAndArticle />
-      {/*  <PostSectionThree />
-      <PostSectionFive />
-      <PostSectionSix /> */}
+      <BusinessBulletin />
+      <MasterTalks />
+      <Magazines />
       {/* <FooterOne /> */}
       <FooterTwo />
       {/* <ReactQueryDevtools/> */}

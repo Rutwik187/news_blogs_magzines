@@ -23,11 +23,11 @@ const PostVideoTwo = ({ data, pClass }) => {
             className={`post-cat ${"bg-color-blue-one"}`}
             href={`/category/${data.category?.slug}`}
           >
-            {data.category.title}
+            {data.category?.title}
           </Link>
         </div>
         <h3 className="axil-post-title hover-line hover-line">
-          <Link href={`/post/${data.slug.current}`}>{data.title}</Link>
+          <Link href={`/post/${data?.slug.current}`}>{data?.title}</Link>
         </h3>
       </div>
     </div>

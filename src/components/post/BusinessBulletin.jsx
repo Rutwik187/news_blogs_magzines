@@ -3,13 +3,19 @@ import { useQuery } from "@tanstack/react-query";
 import { client } from "../../client";
 import PostLayoutTwo from "./layout/PostLayoutTwo";
 
-const PostSectionThree = () => {
-  const query = `*[_type == "post" && categories[0]._ref == *[_type=="category"][2]._id][0..3] {
-   title,
+const BusinessBulletin = () => {
+  const query = `
+*[_type == "post" && categories[0]._ref == *[_type == "category" && slug.current == "business-bulletin"][0]._id] 
+{
+  title,
   slug,
   'featureImg': mainImage.asset->url,
-  'cate': categories[0]->title,
-}`;
+  'category': {
+    'title': categories[0]->title,
+    'slug': categories[0]->slug.current
+  }
+} | order(_createdAt desc)[0...6] 
+`;
   const { data, isLoading, error } = useQuery({
     queryKey: ["categoryThreePosts"],
     queryFn: async () => {
@@ -27,8 +33,9 @@ const PostSectionThree = () => {
     <div className="section-gap section-gap-top__with-text trending-stories">
       <div className="container">
         <SectionTitle
-          title={data[0]?.cate || "Trending Stories"}
-          btnText="ALL TRENDING STORIES"
+          title={data[0]?.category.title || "Business Bulletin"}
+          btnText="ALL Posts"
+          btnUrl={`/category/${data[0].category?.slug}`}
         />
         <div className="row">
           {data.map((post, index) => (
@@ -42,4 +49,4 @@ const PostSectionThree = () => {
   );
 };
 
-export default PostSectionThree;
+export default BusinessBulletin;

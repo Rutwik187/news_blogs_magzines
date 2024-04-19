@@ -27,9 +27,9 @@ const PostLayoutTwo = ({ data, postSizeMd, postBgDark }) => {
         <div className="post-cat-group m-b-xs-10">
           <Link
             className={`post-cat cat-btn ${"bg-color-blue-one"}`}
-            href={`/category/${data.category.slug}`}
+            href={`/category/${data.category?.slug}`}
           >
-            {data.category.title}
+            {data.category?.title}
           </Link>
         </div>
         <h3 className="axil-post-title hover-line hover-line">

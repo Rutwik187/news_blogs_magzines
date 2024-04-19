@@ -2,11 +2,8 @@ import HeadMeta from "../../components/elements/HeadMeta";
 import FooterOne from "../../components/footer/FooterOne";
 import HeaderOne from "../../components/header/HeaderOne";
 import PostFormatText from "../../components/post/post-format/PostFormatText";
-import PostSectionSix from "../../components/post/PostSectionSix";
-import { client } from "../../client"; 
-
-
-
+import Magazines from "../../components/post/Magazines";
+import { client } from "../../client";
 
 // Static Generation with Pre-rendering (recommended for most cases)
 export async function getStaticPaths() {
@@ -17,36 +14,36 @@ export async function getStaticPaths() {
 
   return {
     paths,
-    fallback: 'blocking' // Or false, refer to Next.js docs
+    fallback: "blocking", // Or false, refer to Next.js docs
   };
 }
 
 export async function getStaticProps({ params }) {
   const { slug } = params;
-  const postContent = await client.fetch(`*[_type == "post" && slug.current == '${slug}'][0]`);
+  const postContent = await client.fetch(
+    `*[_type == "post" && slug.current == '${slug}'][0]`
+  );
   const allPosts = await client.fetch(`*[_type == "post"]`); // Fetch all posts
 
   return {
     props: {
       postContent,
-      allPosts
+      allPosts,
     },
     // Add revalidate if required
   };
 }
 
-const PostDetails = ({postContent, allPosts}) => {
-
-
-  return ( 
+const PostDetails = ({ postContent, allPosts }) => {
+  return (
     <>
-      <HeadMeta metaTitle="Post Details"/>
+      <HeadMeta metaTitle="Post Details" />
       <HeaderOne />
-      <PostFormatText postData={postContent}/>
-      <PostSectionSix postData={allPosts} />
+      <PostFormatText postData={postContent} />
+      <Magazines postData={allPosts} />
       <FooterOne />
     </>
   );
-}
+};
 
 export default PostDetails;

@@ -9,14 +9,21 @@ import PostLayoutTwo from "./layout/PostLayoutTwo";
 
 import { useQuery } from "@tanstack/react-query";
 import { client } from "../../client";
+import SectionTitle from "../elements/SectionTitle";
 
-const PostSectionFive = ({ postData, adBanner, pClass }) => {
-  const query = `*[_type == "post" && categories[0]._ref == *[_type=="category"][5]._id][0..5] {
-   title,
+const MasterTalks = ({ postData, adBanner, pClass }) => {
+  const query = `
+*[_type == "post" && categories[0]._ref == *[_type == "category" && slug.current == "master-talks"][0]._id] 
+{
+  title,
   slug,
   'featureImg': mainImage.asset->url,
-  'cate': categories[0]->title,
-}`;
+  'category': {
+    'title': categories[0]->title,
+    'slug': categories[0]->slug.current
+  }
+} | order(_createdAt desc)[0...5] 
+`;
   const { data, isLoading, error } = useQuery({
     queryKey: ["categoryFivePosts"],
     queryFn: async () => {
@@ -33,7 +40,11 @@ const PostSectionFive = ({ postData, adBanner, pClass }) => {
     <div className="container " style={{ marginTop: "30px" }}>
       <div className="row">
         <div className="col-lg-8">
-          {adBanner === true ? <AdBanner /> : ""}
+          <SectionTitle
+            title={data[0]?.category.title || "Business Bulletin"}
+            btnText="ALL Posts"
+            btnUrl={`/category/${data[0].category?.slug}`}
+          />
           <div className="axil-content">
             {data.slice(0, 8).map((post, index) => (
               <PostLayoutTwo data={post} postSizeMd={true} key={index} />
@@ -53,4 +64,4 @@ const PostSectionFive = ({ postData, adBanner, pClass }) => {
   );
 };
 
-export default PostSectionFive;
+export default MasterTalks;
