@@ -1,10 +1,14 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import Slider from "react-slick";
 import { slugify } from "../../utils";
+import { useQuery } from "@tanstack/react-query";
+import { client } from "../../client";
 
-const SliderOne = ({ slidePost }) => {
+const SliderOne = () => {
   function SlickNextArrow(props) {
     const { className, onClick } = props;
     return (
@@ -60,43 +64,79 @@ const SliderOne = ({ slidePost }) => {
     targeElm.classList.toggle("show-shares");
   };
 
+  const { data, isLoading, error } = useQuery({
+    queryKey: ["timePost"],
+    queryFn: async () => {
+      const query = `*[_type == 'post' && featured == true]{
+      title,
+      slug,
+      'featureImg': mainImage.asset->url,
+
+      'cate': categories[0]->title
+    }[0...3]`; // Get up to 3 featured posts
+
+      const response = await client.fetch(query);
+      console.log("featured posts", response);
+      return response;
+    },
+  });
+
+  // Social Share Toggle
+  // const ShareToggler = (e) => {
+  //   const targeElm = e.target.nextElementSibling;
+
+  //   if (targeElm) {
+  //     targeElm.classList.toggle("show-shares");
+  //   }
+  // };
+  // useEffect(() => {
+  //   setShape("shape-loaded");
+  // }, []);
+
   return (
     <div className="banner banner__home-with-slider banner__home-with-slider-one section-gap-bottom">
+      {console.log(data, "in hero section 1")}
       <div className="banner__home-with-slider-overlay"></div>
       {/* End of .banner__home-with-slider-overlay */}
       <div className="container">
         <div className="row">
           <div className="col-xl-5">
             <div className="banner-slider-container">
-              <Slider
-                asNavFor={nav2}
-                ref={(slider1) => setNav1(slider1)}
-                {...slideSettingsContent}
-                className="slick-slider-for slick-synced"
-              >
-                {slidePost.slice(0, 3).map((data) => (
-                  <div className="item" key={data.slug}>
-                    {/* End of .post-metas */}
-                    <h1 className="page-title m-b-xs-40 hover-line">
-                      <Link href={`/post/${data.slug}`}>{data.title}</Link>
-                    </h1>
-                    <div className="btn-group">
-                      <Link
-                        className="btn btn-primary m-r-xs-30"
-                        href={`/post/${data.slug}`}
-                      >
-                        READ MORE
-                      </Link>
-                      <Link
-                        className="btn-link"
-                        href={`/category/${slugify(data.cate)}`}
-                      >
-                        ALL CURRENT NEWS
-                      </Link>
+              {isLoading && <div>Loading...</div>}
+              {error && <div>Error fetching data</div>}
+              {data && (
+                <Slider
+                  asNavFor={nav2}
+                  ref={(slider1) => setNav1(slider1)}
+                  {...slideSettingsContent}
+                  className="slick-slider-for slick-synced"
+                >
+                  {data.slice(0, 3).map((data) => (
+                    <div className="item" key={data.slug}>
+                      {/* End of .post-metas */}
+                      <h1 className="page-title m-b-xs-40 hover-line">
+                        <Link href={`/post/${data.slug.current}`}>
+                          {data.title}
+                        </Link>
+                      </h1>
+                      <div className="btn-group">
+                        <Link
+                          className="btn btn-primary m-r-xs-30"
+                          href={`/post/${data.slug.current}`}
+                        >
+                          READ MORE
+                        </Link>
+                        <Link
+                          className="btn-link"
+                          href={`/category/${slugify(data.title)}`}
+                        >
+                          ALL CURRENT NEWS
+                        </Link>
+                      </div>
                     </div>
-                  </div>
-                ))}
-              </Slider>
+                  ))}
+                </Slider>
+              )}
             </div>
           </div>
         </div>
@@ -107,17 +147,18 @@ const SliderOne = ({ slidePost }) => {
             {...slideSettingsImage}
             className="slick-slider-nav slick-synced"
           >
-            {slidePost.slice(0, 3).map((data) => (
+            {data?.slice(0, 3).map((data) => (
               <div className="item" key={data.slug}>
                 <Image
                   src={data.featureImg}
                   alt={data.title}
-                  width={960}
-                  height={600}
+                  width={495}
+                  height={550}
                 />
               </div>
             ))}
           </Slider>
+
           <div className="banner-share-slider-container">
             <Slider
               asNavFor={nav1}
@@ -125,7 +166,7 @@ const SliderOne = ({ slidePost }) => {
               {...slideSettingsShare}
               className="banner-share-slider"
             >
-              {slidePost.slice(0, 3).map((data) => (
+              {data?.slice(0, 3).map((data) => (
                 <div className="item" key={data.slug}>
                   <div className="banner-shares slick-banner-shares">
                     <div className="toggle-shares" onClick={ShareToggler}>

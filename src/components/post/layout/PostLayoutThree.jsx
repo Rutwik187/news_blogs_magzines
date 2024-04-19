@@ -29,12 +29,10 @@ const PostLayoutThree = ({ data, postSizeLg, pClass, videoPost }) => {
         >
           <div className="post-cat-group m-b-xs-10">
             <Link
-              className={`post-cat cat-btn ${
-                data.cate_bg ?? "bg-color-blue-one"
-              }`}
-              href={`/category/${data.cate.current}`}
+              className={`post-cat cat-btn ${"bg-color-blue-one"}`}
+              href={`/category/${data.category?.slug}`}
             >
-              {data.cate}
+              {data.category?.title}
             </Link>
           </div>
           <div className="axil-media-bottom">

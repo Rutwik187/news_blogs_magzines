@@ -3,13 +3,20 @@ import PostLayoutThree from "./layout/PostLayoutThree";
 import { useQuery } from "@tanstack/react-query";
 import { client } from "../../client";
 
-const PostSectionTwo = () => {
-  const query = `*[_type == "post" && categories[0]._ref == *[_type=="category"][1]._id][0..2] {
-   title,
+const BlogAndArticle = () => {
+  const query = `
+*[_type == "post" && categories[0]._ref == *[_type == "category" && slug.current == "blogs-and-articles"][0]._id] 
+{
+  title,
   slug,
   'featureImg': mainImage.asset->url,
-  'cate': categories[0]->title,
-}`;
+  'category': {
+    'title': categories[0]->title,
+    'slug': categories[0]->slug.current
+  }
+} | order(_createdAt desc)[0...3] 
+
+`;
   const { data, isLoading, error } = useQuery({
     queryKey: ["categoryTwoPosts"],
     queryFn: async () => {
@@ -29,8 +36,8 @@ const PostSectionTwo = () => {
       <div className="container">
         {/* Use the category title from data */}
         <SectionTitle
-          title={data[0]?.cate || "Recent Posts"}
-          btnText="View All Posts"
+          title={`${data[0].category.title}`}
+          btnText="View All Blogs"
         />
         <div className="row">
           <div className="col-lg-8">
@@ -49,4 +56,4 @@ const PostSectionTwo = () => {
   );
 };
 
-export default PostSectionTwo;
+export default BlogAndArticle;

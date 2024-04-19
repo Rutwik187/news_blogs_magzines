@@ -141,18 +141,7 @@ const SliderTwo = () => {
               asNavFor={nav1}
               ref={(slider2) => setNav2(slider2)}
               className="slick-slider slick-slider-nav"
-            >
-              {data?.slice(0, 3).map((data) => (
-                <div className="item" key={data.slug}>
-                  <Image
-                    src={data.featureImg}
-                    alt={data.title}
-                    width={495}
-                    height={550}
-                  />
-                </div>
-              ))}
-            </Slider>
+            ></Slider>
           </div>
           <div className="banner-share-slider-container banner-share-slider-container__two">
             <Slider

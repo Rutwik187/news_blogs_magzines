@@ -20,10 +20,10 @@ const PostVideoTwo = ({ data, pClass }) => {
       <div className="media-body">
         <div className="post-cat-group">
           <Link
-            className={`post-cat ${data.cate_bg ?? "bg-color-blue-one"}`}
-            href={`/category/${data.cate?.current}`}
+            className={`post-cat ${"bg-color-blue-one"}`}
+            href={`/category/${data.category?.slug}`}
           >
-            {data.cate}
+            {data.category.title}
           </Link>
         </div>
         <h3 className="axil-post-title hover-line hover-line">

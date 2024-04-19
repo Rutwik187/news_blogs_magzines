@@ -4,32 +4,23 @@ import PostLayoutTwo from "./layout/PostLayoutTwo";
 import { useQuery } from "@tanstack/react-query";
 import { client } from "../../client";
 
-const PostSectionOne = () => {
+const WebProfile = () => {
   const query = `
-*[_type == "magpost" && references(categories[0]._ref )] {
-  title,
-  slug,
-  'htmlContent': htmlContent[0].children[0].text,
-  'featureImg': mainImage.asset->url,
-  'cate': categories[0]->title
-}
+*[_type == "post" && categories[0]._ref == *[_type == "category" && slug.current == "web-profiles"][0]._id] 
+ {
+    title,
+    slug,
+    'featureImg': mainImage.asset->url,
+     'category': {
+    'title': categories[0]->title,
+    'slug': categories[0]->slug.current
+  }
+
+} | order(_createdAt desc)[0...4] 
 `;
 
-  // Execute this query using your Sanity client (client.fetch(query))
-
-  // Execute this query using your Sanity client (client.fetch(query))
-
-  //   const query = `*[_type == "magpost" && magcategory[0]._ref == *[_type=="magcategory"][0]._id] {
-  //   title,
-  //   slug,
-  //   'featureImg': mainImage.asset->url,
-  //   'author_name': author->name,
-  //   'author_img': author->image.asset->url,
-  //   'cate': magcategory[0]->title,
-  // }`;
-
   const { data, isLoading, error } = useQuery({
-    queryKey: ["magzineOnePosts"],
+    queryKey: ["web-profiles"],
     queryFn: async () => {
       const response = await client.fetch(query);
       console.log(response);
@@ -52,8 +43,9 @@ const PostSectionOne = () => {
           <div className="col-lg-6">
             <div className="axil-recent-news">
               <SectionTitle
-                title={data[0]?.cate || "Recent News"} // Dynamic title
-                btnText="ALL RECENT NEWS"
+                title={`${data[0].category.title}`} // Dynamic title
+                btnUrl={`/category/${data[0].category?.slug}`}
+                btnText="all posts"
                 pClass="m-b-xs-30"
               />
               <div className="axil-content">
@@ -69,4 +61,4 @@ const PostSectionOne = () => {
   );
 };
 
-export default PostSectionOne;
+export default WebProfile;

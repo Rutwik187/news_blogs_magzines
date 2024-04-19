@@ -1,8 +1,8 @@
 import {defineField, defineType} from 'sanity'
 
 export default defineType({
-  name: 'magpost',
-  title: 'Mag Post',
+  name: 'magazine',
+  title: 'Magazine',
   type: 'document',
   fields: [
     defineField({
@@ -28,36 +28,22 @@ export default defineType({
       },
     }),
     defineField({
-      name: 'categories',
-      title: 'Categories',
+      name: 'linkedArticle',
+      title: 'Linked Article',
       type: 'array',
-      of: [{type: 'reference', to: {type: 'magcategory'}}],
+      of: [{type: 'reference', to: {type: 'post'}}],
     }),
-    {
-      name: 'author',
-      title: 'Author',
-      type: 'reference',
-      to: {type: 'author'},
-    },
+
     defineField({
       name: 'publishedAt',
       title: 'Published at',
       type: 'datetime',
     }),
-    defineField({
-      name: 'body',
-      title: 'Body',
-      type: 'blockContent',
-    }),
+
     defineField({
       name: 'featured',
       title: 'Featured',
       type: 'boolean',
-    }),
-    defineField({
-      name: 'htmlContent',
-      title: 'HTML Content',
-      type: 'blockContent',
     }),
   ],
 

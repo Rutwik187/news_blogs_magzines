@@ -41,7 +41,7 @@ export async function getStaticProps({ params }) {
   };
 }
 
-const MagzineSlug = ({ magpostContent }) => {
+const MagazineSlug = ({ magpostContent }) => {
   return (
     <>
       <HeadMeta metaTitle="Magpost Details" />
@@ -85,4 +85,4 @@ const MagzineSlug = ({ magpostContent }) => {
   );
 };
 
-export default MagzineSlug;
+export default MagazineSlug;

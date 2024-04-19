@@ -11,7 +11,7 @@ const PostLayoutTwo = ({ data, postSizeMd, postBgDark }) => {
     >
       <Link
         className="align-self-center"
-        href={`/magzine/${data.slug.current}`}
+        href={`/Magazine/${data.slug.current}`}
       >
         <Image
           src={data.featureImg}
@@ -26,16 +26,14 @@ const PostLayoutTwo = ({ data, postSizeMd, postBgDark }) => {
       <div className="media-body">
         <div className="post-cat-group m-b-xs-10">
           <Link
-            className={`post-cat cat-btn ${
-              data.cate_bg ?? "bg-color-blue-one"
-            }`}
-            href={`/category/${data.cate}`}
+            className={`post-cat cat-btn ${"bg-color-blue-one"}`}
+            href={`/category/${data.category.slug}`}
           >
-            {data.cate}
+            {data.category.title}
           </Link>
         </div>
         <h3 className="axil-post-title hover-line hover-line">
-          <Link href={`/magzine/${data.slug.current}`}>{data.title}</Link>
+          <Link href={`/post/${data.slug.current}`}>{data.title}</Link>
         </h3>
 
         {postSizeMd === true ? <p className="mid">{data.excerpt}</p> : ""}

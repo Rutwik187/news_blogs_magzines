@@ -14,7 +14,7 @@ const PostLayoutOne = ({ data }) => {
       {/* {console.log(data.htmlContent[0].children[0].text)} */}
       <div className="media post-block m-b-xs-20">
         <figure className="fig-container">
-          <Link href={`/magzine/${data?.slug.current}`}>
+          <Link href={`/Magazine/${data?.slug.current}`}>
             {console.log(data.mainImage)}
             <Image
               src={data?.featureImg}
@@ -27,18 +27,16 @@ const PostLayoutOne = ({ data }) => {
           </Link>
           <div className="post-cat-group m-b-xs-10">
             <Link
-              className={`post-cat cat-btn ${
-                data?.cate_bg ?? "bg-color-blue-one"
-              }`}
-              href={`/category/${data?.cate}`}
+              className={`post-cat cat-btn ${"bg-color-blue-one"}`}
+              href={`/category/${data?.category.slug}`}
             >
-              {data?.cate}
+              {data?.category.title}
             </Link>
           </div>
         </figure>
         <div className="media-body">
           <h3 className="axil-post-title hover-line hover-line">
-            <Link href={`/magzine/${data?.slug.current}`}>{data?.title}</Link>
+            <Link href={`/post/${data?.slug.current}`}>{data?.title}</Link>
           </h3>
         </div>
       </div>
