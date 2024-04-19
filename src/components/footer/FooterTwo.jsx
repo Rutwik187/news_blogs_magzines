@@ -1,111 +1,122 @@
 import Image from "next/image";
 import Link from "next/link";
 import SocialLink from "../../data/social/SocialLink.json";
+import styles from "../../styles/footer.module.css"; // Import the CSS module
 
 const FooterTwo = () => {
   return (
-    <footer className="page-footer bg-grey-dark-key">
-      <div className="custom-fluid-container">
-        <div className="footer-mid pt-0">
-          <div className="row align-items-center">
-            <div className="col-md">
-              <div className="footer-logo-container">
-                <Link href="/">
-                  <Image
-                    src="/images/icon_trimmed_transparent_white.png"
-                    alt="footer logo"
-                    className="footer-logo"
-                    width={86}
-                    height={100}
-                    style={{ objectFit: "contain" }}
-                  />
-                </Link>
+    <footer
+      className="page-footer bg-grey-dark-key"
+      style={{ color: "white", paddingBottom: "1px" }}
+    >
+      <div
+        className={`${styles.footer_start} footer_start`}
+        style={{
+          display: "flex",
+          gap: "2rem",
+          marginRight: "2rem",
+          marginLeft: "2rem",
+        }}
+      >
+        <div className="logo ">
+          <div className="footer-logo-container">
+            <Link href="/">
+              <Image
+                src="/images/full_trimmed_transparent_base.png"
+                alt="brand-logo"
+                width={300}
+                height={100}
+                style={{ objectFit: "contain" }}
+              />
+            </Link>
+            <div className="footer-social-share-wrapper">
+              <div className="footer-social-share">
+                <div className="axil-social-title">Find us here</div>
+                <ul className="social-share social-share__with-bg">
+                  <li>
+                    <a href={SocialLink.fb.url}>
+                      <i className={SocialLink.fb.icon} />
+                    </a>
+                  </li>
+                  <li>
+                    <a href={SocialLink.twitter.url}>
+                      <i className={SocialLink.twitter.icon} />
+                    </a>
+                  </li>
+                  <li>
+                    <a href={SocialLink.yt.url}>
+                      <i className={SocialLink.yt.icon} />
+                    </a>
+                  </li>
+                  <li>
+                    <a href={SocialLink.linked.url}>
+                      <i className={SocialLink.linked.icon} />
+                    </a>
+                  </li>
+                  <li>
+                    <a href={SocialLink.pinterest.url}>
+                      <i className={SocialLink.pinterest.icon} />
+                    </a>
+                  </li>
+                </ul>
               </div>
-              {/* End of .brand-logo-container */}
             </div>
-            {/* End of .col-md-6 */}
-            <div className="col-md-auto">
-              <div className="footer-social-share-wrapper">
-                <div className="footer-social-share">
-                  <div className="axil-social-title">Find us here</div>
-                  <ul className="social-share social-share__with-bg">
-                    <li>
-                      <a href={SocialLink.fb.url}>
-                        <i className={SocialLink.fb.icon} />
-                      </a>
-                    </li>
-                    <li>
-                      <a href={SocialLink.twitter.url}>
-                        <i className={SocialLink.twitter.icon} />
-                      </a>
-                    </li>
-                    <li>
-                      <a href={SocialLink.yt.url}>
-                        <i className={SocialLink.yt.icon} />
-                      </a>
-                    </li>
-                    <li>
-                      <a href={SocialLink.linked.url}>
-                        <i className={SocialLink.linked.icon} />
-                      </a>
-                    </li>
-                    <li>
-                      <a href={SocialLink.pinterest.url}>
-                        <i className={SocialLink.pinterest.icon} />
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              {/* End of .footer-social-share-wrapper */}
-            </div>
-            {/* End of .col-md-6 */}
           </div>
-          {/* End of .row */}
         </div>
-
-        {/* End of .footer-mid */}
-        <div className="footer-bottom">
-          <ul className="footer-bottom-links">
-            <li>
-              <Link href="/">Terms of Use</Link>
-            </li>
-            <li>
-              <Link href="/">Accessibility &amp; CC</Link>
-            </li>
-            <li>
-              <Link href="/">AdChoices</Link>
-            </li>
-            <li>
-              <Link href="/">Modern Slavery Act Statement</Link>
-            </li>
-            <li>
-              <Link href="/">Advertise with us</Link>
-            </li>
-            <li>
-              <Link href="/"> Store</Link>
-            </li>
-            <li>
-              <Link href="/">Newsletters</Link>
-            </li>
-            <li>
-              <Link href="/">Transcripts</Link>
-            </li>
-            <li>
-              <Link href="/">License Footage</Link>
-            </li>
-            <li>
-              <Link href="/">Sitemap</Link>
-            </li>
-          </ul>
-          {/* End of .footer-bottom-links */}
-          <p className="axil-copyright-txt">
-            © {new Date().getFullYear()}. All rights reserved by Your Company.
+        <div
+          className={`${styles.footer_content} footer_content`}
+          style={{ margin: "1rem", color: "white" }}
+        >
+          <p style={{ width: "100%", color: "white" }}>
+            The Business Masters Magazine Publication stands as a premier hub
+            for business and entrepreneurship wisdom, committed to showcasing
+            the triumphs of thriving businesses and visionary entrepreneurs
+            globally.
+          </p>
+          <p style={{ width: "100%", color: "white" }}>
+            We aim to be the top platform for global business leaders and
+            companies, driving progress, offering valuable learning experiences,
+            and boosting brand awareness to our readers
           </p>
         </div>
-        {/* End of .footer-bottom */}
+        <div>
+          <h4 style={{ color: "white" }}>QUICK LINKS</h4>
+          <ul className="footer-bottom-links">
+            <li>
+              <Link href="/">Home</Link>
+            </li>
+            <li>
+              <Link href="/">About Us</Link>
+            </li>
+            <li>
+              <Link href="/">Magazine</Link>
+            </li>
+            <li>
+              <Link href="/"> Blogs</Link>
+            </li>
+            <li>
+              <Link href="/">Contact</Link>
+            </li>
+          </ul>
+        </div>
+        <div style={{ width: "30%" }}>
+          <h4
+            style={{
+              color: "white",
+
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            MAGAZINES
+          </h4>
+        </div>
       </div>
-      {/* End of .container */}
+      <div style={{ borderBottom: "1px solid white" }}></div>
+      <p style={{ textAlign: "center", marginTop: "1rem" }}>
+        &copy;Copyright 2024, The Business Masters | All Rights Reserved.
+      </p>
     </footer>
   );
 };
