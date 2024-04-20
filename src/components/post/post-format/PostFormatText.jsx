@@ -1,3 +1,4 @@
+import Image from "next/image";
 import WidgetAd from "../../widget/WidgetAd";
 import WidgetInstagram from "../../widget/WidgetInstagram";
 import WidgetNewsletter from "../../widget/WidgetNewsletter";
@@ -24,6 +25,14 @@ const PostFormatText = ({ postData, allData }) => {
                       {postData?.title}
                     </h2>
                   </div>
+
+                  <Image
+                    className="mb-4 object-fit-cover"
+                    src={postData?.featureImg}
+                    alt="feature image"
+                    width={800}
+                    height={500}
+                  ></Image>
 
                   <PortableText
                     value={postData?.body}

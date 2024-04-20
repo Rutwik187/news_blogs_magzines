@@ -36,7 +36,7 @@ const PostLayoutTwo = ({ data, postSizeMd, postBgDark }) => {
           <Link href={`/post/${data.slug.current}`}>{data.title}</Link>
         </h3>
 
-        {postSizeMd === true ? <p className="mid">{data.excerpt}</p> : ""}
+        {postSizeMd === true ? <p className="mid">{data.description}</p> : ""}
       </div>
     </div>
   );

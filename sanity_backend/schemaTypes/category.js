@@ -18,8 +18,9 @@ export default defineType({
         source: 'title',
         maxLength: 96,
       },
+      readOnly: true,
     }),
-      defineField({
+    defineField({
       name: 'category_image',
       title: 'Category Image',
       type: 'image',

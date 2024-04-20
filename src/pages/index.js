@@ -1,7 +1,4 @@
-// import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
-
 import HeadMeta from "../components/elements/HeadMeta";
-// import FooterOne from "../components/footer/FooterOne";
 import FooterTwo from "../components/footer/FooterTwo";
 import HeaderOne from "../components/header/HeaderOne";
 import MasterTalks from "../components/post/MasterTalks";
@@ -16,7 +13,7 @@ import MarketNews from "../components/post/MarketNews";
 const Home = () => {
   return (
     <div suppressHydrationWarning>
-      <HeadMeta metaTitle="The Business Masters" />
+      <HeadMeta metaTitle="The Entrepreneurial Chronicles" />
       <HeaderOne />
       <SliderOne />
       <WebProfile />
@@ -27,7 +24,6 @@ const Home = () => {
       <Magazines />
       {/* <FooterOne /> */}
       <FooterTwo />
-      {/* <ReactQueryDevtools/> */}
     </div>
   );
 };

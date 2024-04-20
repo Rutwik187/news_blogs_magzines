@@ -31,7 +31,6 @@ export async function getStaticProps({ params }) {
   }
 
   // Log the received magpostContent data
-  console.log("Magpost Content:", magpostContent);
 
   return {
     props: {
@@ -79,7 +78,6 @@ const MagazineSlug = ({ magpostContent }) => {
           src={magpostContent.htmlContent[0].children[0].text}
         />
       </div>
-      {console.log(magpostContent)}
       <FooterOne />
     </>
   );

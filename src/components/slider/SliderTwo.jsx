@@ -42,7 +42,6 @@ const SliderTwo = () => {
     }[0...3]`; // Get up to 3 featured posts
 
       const response = await client.fetch(query);
-      console.log(response);
       return response;
     },
   });

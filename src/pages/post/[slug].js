@@ -21,7 +21,12 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const { slug } = params;
   const postContent = await client.fetch(
-    `*[_type == "post" && slug.current == '${slug}'][0]`
+    `*[_type == "post" && slug.current == '${slug}'][0]  {
+    title,
+    slug,
+    'featureImg': mainImage.asset->url,
+    body}
+    `
   );
   const allPosts = await client.fetch(`*[_type == "post"]`); // Fetch all posts
 

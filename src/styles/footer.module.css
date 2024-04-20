@@ -1,11 +1,14 @@
 .footer_content {
   width: 30vw;
 }
+
 @media only screen and (max-width: 600px) {
   .footer_start {
     flex-direction: column;
+    align-items: center;
   }
   .footer_content {
     width: 80vw;
+    text-align: center;
   }
 }

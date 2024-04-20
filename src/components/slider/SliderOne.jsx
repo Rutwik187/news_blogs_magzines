@@ -76,26 +76,12 @@ const SliderOne = () => {
     }[0...3]`; // Get up to 3 featured posts
 
       const response = await client.fetch(query);
-      console.log("featured posts", response);
       return response;
     },
   });
 
-  // Social Share Toggle
-  // const ShareToggler = (e) => {
-  //   const targeElm = e.target.nextElementSibling;
-
-  //   if (targeElm) {
-  //     targeElm.classList.toggle("show-shares");
-  //   }
-  // };
-  // useEffect(() => {
-  //   setShape("shape-loaded");
-  // }, []);
-
   return (
     <div className="banner banner__home-with-slider banner__home-with-slider-one section-gap-bottom">
-      {console.log(data, "in hero section 1")}
       <div className="banner__home-with-slider-overlay"></div>
       {/* End of .banner__home-with-slider-overlay */}
       <div className="container">

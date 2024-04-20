@@ -138,7 +138,7 @@ const HeaderOne = () => {
               <div className="brand-logo-container">
                 <Link href="/">
                   <Image
-                    src="/images/full_trimmed_transparent_base.png"
+                    src="/logos/logo-primary.png"
                     alt="brand-logo"
                     width={300}
                     height={100}

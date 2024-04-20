@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import SocialLink from "../../data/social/SocialLink.json";
-import styles from "../../styles/footer.module.css"; // Import the CSS module
+import styles from "../../styles/footer.module.css";
 
 const FooterTwo = () => {
   return (
@@ -16,13 +16,15 @@ const FooterTwo = () => {
           gap: "2rem",
           marginRight: "2rem",
           marginLeft: "2rem",
+          flexWrap: "wrap",
+          justifyContent: "center",
         }}
       >
-        <div className="logo ">
+        <div className="logo">
           <div className="footer-logo-container">
             <Link href="/">
               <Image
-                src="/images/full_trimmed_transparent_base.png"
+                src="/logos/logo-primary-white.png"
                 alt="brand-logo"
                 width={300}
                 height={100}
@@ -31,7 +33,9 @@ const FooterTwo = () => {
             </Link>
             <div className="footer-social-share-wrapper">
               <div className="footer-social-share">
-                <div className="axil-social-title">Find us here</div>
+                <div className="axil-social-title" style={{ fontWeight: 400 }}>
+                  Find us here
+                </div>
                 <ul className="social-share social-share__with-bg">
                   <li>
                     <a href={SocialLink.fb.url}>
@@ -67,21 +71,19 @@ const FooterTwo = () => {
           className={`${styles.footer_content} footer_content`}
           style={{ margin: "1rem", color: "white" }}
         >
-          <p style={{ width: "100%", color: "white" }}>
-            The Business Masters Magazine Publication stands as a premier hub
-            for business and entrepreneurship wisdom, committed to showcasing
-            the triumphs of thriving businesses and visionary entrepreneurs
-            globally.
-          </p>
-          <p style={{ width: "100%", color: "white" }}>
-            We aim to be the top platform for global business leaders and
-            companies, driving progress, offering valuable learning experiences,
-            and boosting brand awareness to our readers
+          <p style={{ width: "100%", color: "white", fontWeight: 200 }}>
+            Entrepreneurial Chronicles Magazine Publication stands as a premier
+            hub for business and entrepreneurship wisdom, committed to
+            showcasing the triumphs of thriving businesses and visionary
+            entrepreneurs globally.
           </p>
         </div>
         <div>
-          <h4 style={{ color: "white" }}>QUICK LINKS</h4>
-          <ul className="footer-bottom-links">
+          <h4 style={{ color: "white", fontWeight: 200 }}>QUICK LINKS</h4>
+          <ul
+            style={{ color: "white", fontWeight: 200 }}
+            className="footer-bottom-links "
+          >
             <li>
               <Link href="/">Home</Link>
             </li>
@@ -92,29 +94,18 @@ const FooterTwo = () => {
               <Link href="/">Magazine</Link>
             </li>
             <li>
-              <Link href="/"> Blogs</Link>
+              <Link href="/">Blogs</Link>
             </li>
             <li>
               <Link href="/">Contact</Link>
             </li>
           </ul>
         </div>
-        <div style={{ width: "30%" }}>
-          <h4
-            style={{
-              color: "white",
-
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            MAGAZINES
-          </h4>
+        <div style={{ width: "30%", textAlign: "center" }}>
+          <h4 style={{ color: "white", fontWeight: 200 }}>MAGAZINES</h4>
         </div>
       </div>
-      <div style={{ borderBottom: "1px solid white" }}></div>
-      <p style={{ textAlign: "center", marginTop: "1rem" }}>
+      <p style={{ textAlign: "center", marginTop: "3rem", fontWeight: 400 }}>
         &copy;Copyright 2024, The Business Masters | All Rights Reserved.
       </p>
     </footer>

@@ -23,7 +23,6 @@ const WebProfile = () => {
     queryKey: ["web-profiles"],
     queryFn: async () => {
       const response = await client.fetch(query);
-      console.log(response);
       return response;
     },
   });

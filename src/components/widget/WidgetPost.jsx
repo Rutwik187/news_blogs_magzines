@@ -19,19 +19,37 @@ const WidgetPost = ({ dataPost }) => {
 
         <Tab.Content>
           <Tab.Pane eventKey="recent">
-            {dataPost?.slice(0, 4).map((data, index) => (
-              <PostVideoTwo data={data} pClass="" key={index} />
-            ))}
+            {dataPost && dataPost.length > 0 ? (
+              dataPost
+                .slice(0, 4)
+                .map((data, index) => (
+                  <PostVideoTwo data={data} pClass="" key={index} />
+                ))
+            ) : (
+              <p>No recent posts found.</p>
+            )}
           </Tab.Pane>
           <Tab.Pane eventKey="popular">
-            {dataPost?.slice(0, 4).map((data, index) => (
-              <PostVideoTwo data={data} pClass="" key={index} />
-            ))}
+            {dataPost && dataPost.length > 0 ? (
+              dataPost
+                .slice(0, 4)
+                .map((data, index) => (
+                  <PostVideoTwo data={data} pClass="" key={index} />
+                ))
+            ) : (
+              <p>No recent posts found.</p>
+            )}
           </Tab.Pane>
           <Tab.Pane eventKey="comments">
-            {dataPost?.slice(0, 4).map((data, index) => (
-              <PostVideoTwo data={data} pClass="" key={index} />
-            ))}
+            {dataPost && dataPost.length > 0 ? (
+              dataPost
+                .slice(0, 4)
+                .map((data, index) => (
+                  <PostVideoTwo data={data} pClass="" key={index} />
+                ))
+            ) : (
+              <p>No recent posts found.</p>
+            )}
           </Tab.Pane>
         </Tab.Content>
       </Tab.Container>

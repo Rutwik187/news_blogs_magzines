@@ -11,11 +11,9 @@ const PostLayoutOne = ({ data }) => {
         }
       }
     >
-      {/* {console.log(data.htmlContent[0].children[0].text)} */}
       <div className="media post-block m-b-xs-20">
         <figure className="fig-container">
           <Link href={`/Magazine/${data?.slug.current}`}>
-            {console.log(data.mainImage)}
             <Image
               src={data?.featureImg}
               alt={data?.title}
