@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 import Slider from "react-slick";
 import { useQuery } from "@tanstack/react-query";
 import { client } from "../../client";
+import ErrorPage from "../../pages/404";
+import Loader from "../common/Loader";
 
 const SliderTwo = () => {
   function SlickNextArrow(props) {
@@ -97,8 +99,8 @@ const SliderTwo = () => {
         <div className="row">
           <div className="col-xl-5">
             <div className="banner-slider-container banner-slider-container-two">
-              {isLoading && <div>Loading...</div>}
-              {error && <div>Error fetching data</div>}
+              {isLoading && <Loader />}
+              {error && <ErrorPage />}
 
               {data && (
                 <Slider

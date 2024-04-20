@@ -10,6 +10,7 @@ import WidgetPost from "../../components/widget/WidgetPost";
 import PostLayoutTwo from "../../components/post/layout/PostLayoutTwo";
 import WidgetCategory from "../../components/widget/WidgetCategory";
 import { client } from "../../client";
+import Loader from "../../components/common/Loader";
 
 const fetchPostsByCategory = async (category) => {
   const params = { category };
@@ -40,7 +41,7 @@ const PostCategory = ({ initialPostData, initialAllPosts }) => {
   });
 
   if (!postData || !allPosts) {
-    return <div>Loading...</div>;
+    return <Loader />;
   }
 
   const cateContent = postData[0];

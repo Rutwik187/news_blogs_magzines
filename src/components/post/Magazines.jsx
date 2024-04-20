@@ -3,6 +3,7 @@ import PostLayoutFour from "./layout/PostLayoutFour";
 
 import { useQuery } from "@tanstack/react-query";
 import { client } from "../../client";
+import Loader from "../common/Loader";
 
 const Magazines = () => {
   const query = `
@@ -26,7 +27,7 @@ const Magazines = () => {
     },
   });
 
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <Loader />;
   if (error) return <div>Error fetching posts</div>;
 
   if (!data) return null;

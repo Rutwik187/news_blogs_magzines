@@ -7,14 +7,14 @@ const HeadMeta = ({ metaTitle }) => {
       <meta charSet="utf-8" />
       <meta name="robots" content="noindex, follow" />
       <meta httpEquiv="x-ua-compatible" content="ie=edge" />
-      <meta name="description" content="TBM Trendy News and Megazine" />
+      <meta name="description" content="TEC Trendy News and Magazine" />
       <meta
         name="viewport"
         content="width=device-width, initial-scale=1, shrink-to-fit=no"
       />
       <title>{`${
-        metaTitle ? metaTitle : "TBM"
-      } || TBM - Trendy News and Megazines`}</title>
+        metaTitle ? metaTitle : "TEC"
+      } || TEC - Trendy News and Magazines`}</title>
       <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     </Head>
   );

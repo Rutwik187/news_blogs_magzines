@@ -7,8 +7,26 @@ import Slider from "react-slick";
 import { slugify } from "../../utils";
 import { useQuery } from "@tanstack/react-query";
 import { client } from "../../client";
+import ErrorPage from "../../pages/404";
+import Loader from "../common/Loader";
 
 const SliderOne = () => {
+  const { data, isLoading, error } = useQuery({
+    queryKey: ["timePost"],
+    queryFn: async () => {
+      const query = `*[_type == 'post' && featured == true]{
+      title,
+      slug,
+      'featureImg': mainImage.asset->url,
+
+      'cate': categories[0]->title
+    }[0...3]`; // Get up to 3 featured posts
+
+      const response = await client.fetch(query);
+      return response;
+    },
+  });
+
   function SlickNextArrow(props) {
     const { className, onClick } = props;
     return (
@@ -64,22 +82,6 @@ const SliderOne = () => {
     targeElm.classList.toggle("show-shares");
   };
 
-  const { data, isLoading, error } = useQuery({
-    queryKey: ["timePost"],
-    queryFn: async () => {
-      const query = `*[_type == 'post' && featured == true]{
-      title,
-      slug,
-      'featureImg': mainImage.asset->url,
-
-      'cate': categories[0]->title
-    }[0...3]`; // Get up to 3 featured posts
-
-      const response = await client.fetch(query);
-      return response;
-    },
-  });
-
   return (
     <div className="banner banner__home-with-slider banner__home-with-slider-one section-gap-bottom">
       <div className="banner__home-with-slider-overlay"></div>
@@ -88,8 +90,8 @@ const SliderOne = () => {
         <div className="row">
           <div className="col-xl-5">
             <div className="banner-slider-container">
-              {isLoading && <div>Loading...</div>}
-              {error && <div>Error fetching data</div>}
+              {isLoading && <Loader />}
+              {error && <ErrorPage />}
               {data && (
                 <Slider
                   asNavFor={nav2}

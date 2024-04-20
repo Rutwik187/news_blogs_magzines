@@ -3,6 +3,7 @@ import PostLayoutOne from "./layout/PostLayoutOne";
 import PostLayoutTwo from "./layout/PostLayoutTwo";
 import { useQuery } from "@tanstack/react-query";
 import { client } from "../../client";
+import Loader from "../common/Loader";
 
 const WebProfile = () => {
   const query = `
@@ -27,7 +28,7 @@ const WebProfile = () => {
     },
   });
 
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <Loader />;
   if (error) return <div>Error fetching posts</div>;
 
   if (!data) return null;

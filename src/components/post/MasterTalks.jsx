@@ -10,6 +10,7 @@ import PostLayoutTwo from "./layout/PostLayoutTwo";
 import { useQuery } from "@tanstack/react-query";
 import { client } from "../../client";
 import SectionTitle from "../elements/SectionTitle";
+import Loader from "../common/Loader";
 
 const MasterTalks = ({ postData, adBanner, pClass }) => {
   const query = `
@@ -32,7 +33,7 @@ const MasterTalks = ({ postData, adBanner, pClass }) => {
     },
   });
 
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <Loader />;
   if (error) return <div>Error fetching posts</div>;
 
   if (!data) return null;

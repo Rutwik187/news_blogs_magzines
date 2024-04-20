@@ -5,6 +5,7 @@ import React, { useRef } from "react";
 import Slider from "react-slick";
 import { client, urlFor } from "../../client";
 import { useQuery } from "@tanstack/react-query";
+import Loader from "../common/Loader";
 
 const WidgetCategory = () => {
   const CustomNavRef = useRef(null);
@@ -22,7 +23,7 @@ const WidgetCategory = () => {
   });
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <Loader />;
   }
   if (isError) {
     return <div>An error occurred...</div>;
