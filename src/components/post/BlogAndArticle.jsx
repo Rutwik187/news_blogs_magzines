@@ -36,9 +36,9 @@ const BlogAndArticle = () => {
       <div className="container">
         {/* Use the category title from data */}
         <SectionTitle
-          title={`${data[0].category.title}`}
+          title={`${data[0]?.category.title}`}
           btnText="View All Blogs"
-          btnUrl={`/category/${data[0].category?.slug}`}
+          btnUrl={`/category/${data[0]?.category?.slug}`}
         />
         <div className="row">
           <div className="col-lg-8">

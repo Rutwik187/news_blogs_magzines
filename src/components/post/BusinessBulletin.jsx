@@ -11,6 +11,7 @@ const BusinessBulletin = () => {
   title,
   slug,
   'featureImg': mainImage.asset->url,
+  description,
   'category': {
     'title': categories[0]->title,
     'slug': categories[0]->slug.current
@@ -36,7 +37,7 @@ const BusinessBulletin = () => {
         <SectionTitle
           title={data[0]?.category.title || "Business Bulletin"}
           btnText="ALL Posts"
-          btnUrl={`/category/${data[0].category?.slug}`}
+          btnUrl={`/category/${data[0]?.category?.slug}`}
         />
         <div className="row">
           {data.map((post, index) => (

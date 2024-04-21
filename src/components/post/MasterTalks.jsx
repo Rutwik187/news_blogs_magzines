@@ -19,6 +19,7 @@ const MasterTalks = ({ postData, adBanner, pClass }) => {
   title,
   slug,
   'featureImg': mainImage.asset->url,
+  description,
   'category': {
     'title': categories[0]->title,
     'slug': categories[0]->slug.current
@@ -44,7 +45,7 @@ const MasterTalks = ({ postData, adBanner, pClass }) => {
           <SectionTitle
             title={data[0]?.category.title || "Business Bulletin"}
             btnText="ALL Posts"
-            btnUrl={`/category/${data[0].category?.slug}`}
+            btnUrl={`/category/${data[0]?.category?.slug}`}
           />
           <div className="axil-content">
             {data.slice(0, 8).map((post, index) => (

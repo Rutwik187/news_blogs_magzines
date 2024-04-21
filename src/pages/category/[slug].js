@@ -1,5 +1,5 @@
 import { dehydrate, QueryClient, useQuery } from "@tanstack/react-query";
-import FooterOne from "../../components/footer/FooterOne";
+import FooterTwo from "../../components/footer/FooterTwo";
 import HeaderOne from "../../components/header/HeaderOne";
 import Breadcrumb from "../../components/common/Breadcrumb";
 import HeadMeta from "../../components/elements/HeadMeta";
@@ -20,11 +20,13 @@ const fetchPostsByCategory = async (category) => {
   title,
   slug,
   'featureImg': mainImage.asset->url,
+    description,
   'category': {
     'title': categories[0]->title,
     'slug': categories[0]->slug.current
   }
-} | order(_createdAt desc)[0...3] `;
+
+} | order(_createdAt desc) `;
 
   const posts = await client.fetch(query, params);
   return posts;
@@ -96,7 +98,7 @@ const PostCategory = ({ initialPostData, initialAllPosts }) => {
           </div>
         </div>
       </div>
-      <FooterOne />
+      <FooterTwo />
     </>
   );
 };

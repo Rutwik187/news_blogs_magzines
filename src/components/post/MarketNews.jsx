@@ -36,8 +36,8 @@ const MarketNews = () => {
     <div className="axil-video-posts section-gap section-gap-top__with-text bg-grey-dark-one">
       <div className="container">
         <SectionTitle
-          btnUrl={`/category/${data[0].category?.slug}`}
-          title={`${data[0].category.title}`}
+          btnUrl={`/category/${data[0]?.category?.slug}`}
+          title={`${data[0]?.category.title}`}
           btnText="Read all News"
           pClass="title-white m-b-xs-40"
         />

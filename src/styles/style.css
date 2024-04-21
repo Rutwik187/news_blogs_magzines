@@ -8744,3 +8744,9 @@ address .tel i {
     width: 16px;
   }
 }
+
+@media only screen and (max-width: 600px) {
+  .hide-in-small-devices {
+    display: none;
+  }
+}

@@ -12,6 +12,7 @@ const WebProfile = () => {
     title,
     slug,
     'featureImg': mainImage.asset->url,
+    description,
      'category': {
     'title': categories[0]->title,
     'slug': categories[0]->slug.current
@@ -43,8 +44,8 @@ const WebProfile = () => {
           <div className="col-lg-6">
             <div className="axil-recent-news">
               <SectionTitle
-                title={`${data[0].category.title}`} // Dynamic title
-                btnUrl={`/category/${data[0].category?.slug}`}
+                title={`${data[0]?.category.title}`} // Dynamic title
+                btnUrl={`/category/${data[0]?.category?.slug}`}
                 btnText="all posts"
                 pClass="m-b-xs-30"
               />
