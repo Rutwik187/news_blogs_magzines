@@ -112,13 +112,13 @@ const SliderOne = () => {
                           className="btn btn-primary m-r-xs-30"
                           href={`/post/${data.slug.current}`}
                         >
-                          READ MORE
+                          Digital Magazine
                         </Link>
                         <Link
                           className="btn-link"
                           href={`/category/${slugify(data.title)}`}
                         >
-                          ALL CURRENT NEWS
+                          Read Article
                         </Link>
                       </div>
                     </div>
