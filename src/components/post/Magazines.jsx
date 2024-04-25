@@ -7,20 +7,17 @@ import Loader from "../common/Loader";
 
 const Magazines = () => {
   const query = `
-*[_type == "post" && categories[0]._ref == *[_type == "category" && slug.current == "magazines"][0]._id] 
+*[_type == "magazine"] 
 {
   title,
   slug,
   'featureImg': mainImage.asset->url,
-  'category': {
-    'title': categories[0]->title,
-    'slug': categories[0]->slug.current
-  }
+ 
 } | order(_createdAt desc)[0...4] 
 `;
 
   const { data, isLoading, error } = useQuery({
-    queryKey: ["categorySixPosts"],
+    queryKey: ["magazines"],
     queryFn: async () => {
       const response = await client.fetch(query);
       return response;
@@ -33,12 +30,9 @@ const Magazines = () => {
   if (!data) return null;
 
   return (
-    <div className="related-post p-b-xs-30">
+    <div className="related-post p-b-xs-30 mt-4">
       <div className="container">
-        <SectionTitle
-          title={data[0]?.cate || "Recent Posts"}
-          btnText="Recent Posts"
-        />
+        <SectionTitle title={"Magazines"} btnText="View All Magazines" />
         <div className="grid-wrapper">
           <div className="row">
             {data.map((post, index) => (

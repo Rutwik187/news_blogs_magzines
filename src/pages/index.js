@@ -5,9 +5,9 @@ import MasterTalks from "../components/post/MasterTalks";
 import Magazines from "../components/post/Magazines";
 import BusinessBulletin from "../components/post/BusinessBulletin";
 import BlogAndArticle from "../components/post/BlogAndArticle";
-import WebProfile from "../components/post/WebProfile";
 
 import SliderOne from "../components/slider/SliderOne";
+import WebProfiles from "../components/post/WebProfiles";
 import MarketNews from "../components/post/MarketNews";
 
 const Home = () => {
@@ -16,12 +16,12 @@ const Home = () => {
       <HeadMeta metaTitle="The Entrepreneurial Chronicles" />
       <HeaderOne />
       <SliderOne />
-      <WebProfile />
+      <Magazines />
+      <WebProfiles />
       <MarketNews />
-      <BlogAndArticle />
       <BusinessBulletin />
       <MasterTalks />
-      <Magazines />
+      <BlogAndArticle />
       {/* <FooterOne /> */}
       <FooterTwo />
     </div>

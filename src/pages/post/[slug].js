@@ -4,6 +4,7 @@ import HeaderOne from "../../components/header/HeaderOne";
 import PostFormatText from "../../components/post/post-format/PostFormatText";
 import Magazines from "../../components/post/Magazines";
 import { client } from "../../client";
+import FooterTwo from "../../components/footer/FooterTwo";
 
 // Static Generation with Pre-rendering (recommended for most cases)
 export async function getStaticPaths() {
@@ -46,7 +47,7 @@ const PostDetails = ({ postContent, allPosts }) => {
       <HeaderOne />
       <PostFormatText postData={postContent} />
       <Magazines postData={allPosts} />
-      <FooterOne />
+      <FooterTwo />
     </>
   );
 };

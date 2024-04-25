@@ -1,70 +1,60 @@
 import HeadMeta from "../../components/elements/HeadMeta";
-import FooterOne from "../../components/footer/FooterOne";
 import HeaderOne from "../../components/header/HeaderOne";
-import PostLayoutOne from "../../components/post/layout/PostLayoutOne"; // Adjust the import path
+
 import { client } from "../../client";
-import Image from "next/image";
+import FooterTwo from "../../components/footer/FooterTwo";
+import RelatedArticles from "../../components/post/RelatedArticles";
 
 export async function getStaticPaths() {
-  const allSlugsQuery = `*[_type == "magpost"]{ 'slug': slug.current }`;
+  const allSlugsQuery = `*[_type == "magazine"]{ 'slug': slug.current }`; // Removed condition here
   const slugs = await client.fetch(allSlugsQuery);
 
   const paths = slugs.map((slug) => ({ params: { slug: slug.slug } }));
 
   return {
     paths,
-    fallback: "blocking",
+    fallback: "blocking", // Or false, refer to Next.js docs
   };
 }
 
 export async function getStaticProps({ params }) {
   const { slug } = params;
-  const magpostContent = await client.fetch(
-    `*[_type == "magpost" && slug.current == '${slug}'][0]`
+  const magazineContent = await client.fetch(
+    `*[_type == "magazine" && slug.current == '${slug}'][0]  {
+    title,
+    slug,
+    'featureImg': mainImage.asset->url,
+    body}
+    `
   );
-
-  // Handle the case where magpostContent is null or undefined
-  if (!magpostContent) {
-    return {
-      notFound: true,
-    };
-  }
-
-  // Log the received magpostContent data
+  const allMagazines = await client.fetch(`*[_type == "magazine"]`); // Fetch all posts
 
   return {
     props: {
-      magpostContent,
+      magazineContent,
+      allMagazines,
     },
     // Add revalidate if required
   };
 }
 
-const MagazineSlug = ({ magpostContent }) => {
+const MagazineDetails = ({ magazineContent, allMagazines }) => {
   return (
     <>
-      <HeadMeta metaTitle="Magpost Details" />
+      <HeadMeta metaTitle="Magazines" />
       <HeaderOne />
-      {/* <PostLayoutOne data={magpostContent} /> */}
       <div
         style={{
           position: "relative",
           paddingTop: "max(60%,326px)",
           height: 0,
-          width: "80%",
-          margin: "0 auto",
+          width: "100%",
         }}
       >
-        <Image
-          src="/images/placeholder.png" // Provide a placeholder image URL
-          alt="Placeholder"
-          layout="fill"
-          objectFit="cover"
-        />
         <iframe
           allow="clipboard-write"
           sandbox="allow-top-navigation allow-top-navigation-by-user-activation allow-downloads allow-scripts allow-same-origin allow-popups allow-modals allow-popups-to-escape-sandbox allow-forms"
-          allowFullScreen={true}
+          allowfullscreen="true"
           style={{
             position: "absolute",
             border: "none",
@@ -75,12 +65,15 @@ const MagazineSlug = ({ magpostContent }) => {
             top: 0,
             bottom: 0,
           }}
-          src={magpostContent.htmlContent[0].children[0].text}
+          src="https://e.issuu.com/embed.html?d=final_file&hideIssuuLogo=true&u=thebusiness-masters.com"
         />
       </div>
-      <FooterOne />
+
+      <RelatedArticles />
+
+      <FooterTwo />
     </>
   );
 };
 
-export default MagazineSlug;
+export default MagazineDetails;

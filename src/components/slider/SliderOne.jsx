@@ -110,13 +110,13 @@ const SliderOne = () => {
                       <div className="btn-group">
                         <Link
                           className="btn btn-primary m-r-xs-30"
-                          href={`/post/${data.slug.current}`}
+                          href={`/magazine/${data.slug.current}`}
                         >
                           Digital Magazine
                         </Link>
                         <Link
                           className="btn-link"
-                          href={`/category/${slugify(data.title)}`}
+                          href={`/post/${slugify(data.slug.current)}`}
                         >
                           Read Article
                         </Link>

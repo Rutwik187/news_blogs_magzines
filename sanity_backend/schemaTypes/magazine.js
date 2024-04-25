@@ -28,6 +28,11 @@ export default defineType({
       },
     }),
     defineField({
+      name: 'issuuLink',
+      title: 'Issuu Link',
+      type: 'string',
+    }),
+    defineField({
       name: 'linkedArticle',
       title: 'Linked Article',
       type: 'array',
