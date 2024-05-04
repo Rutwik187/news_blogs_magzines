@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const PostLayoutFour = ({ data }) => {
   return (
-    <div className="content-block m-b-xs-30">
+    <div className="content-block m-b-xs-30 col-6 col-md-3">
       <Link href={`/magazine/${data.slug.current}`}>
         <Image
           src={data.featureImg}

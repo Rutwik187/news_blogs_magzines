@@ -13,11 +13,11 @@ const Magazines = () => {
   slug,
   'featureImg': mainImage.asset->url,
  
-} | order(_createdAt desc)[0...4] 
+} | order(_createdAt desc)
 `;
 
   const { data, isLoading, error } = useQuery({
-    queryKey: ["magazines"],
+    queryKey: ["allMagazines"],
     queryFn: async () => {
       const response = await client.fetch(query);
       return response;
@@ -33,14 +33,10 @@ const Magazines = () => {
     <div className="related-post p-b-xs-30 mt-4">
       <div className="container">
         <SectionTitle title={"Magazines"} btnText="View All Magazines" />
-        <div className="grid-wrapper">
-          <div className="row">
-            {data.map((post, index) => (
-              <div className="col-lg-3 col-md-4" key={index}>
-                <PostLayoutFour data={post} />
-              </div>
-            ))}
-          </div>
+        <div className="grid-wrapper row">
+          {data.map((post, index) => (
+            <PostLayoutFour data={post} key={index} />
+          ))}
         </div>
       </div>
     </div>

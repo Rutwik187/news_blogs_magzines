@@ -5679,7 +5679,7 @@ input[type="radio"] + label::after {
   transition: all 0.5s;
 }
 .content-block:hover img {
-  transform: scale(1.1) rotate(2deg);
+  transform: scale(1.1);
 }
 .content-block .caption-content {
   transition: all 0.3s;
