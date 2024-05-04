@@ -19,26 +19,52 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const { slug } = params;
+
   const magazineContent = await client.fetch(
-    `*[_type == "magazine" && slug.current == '${slug}'][0]  {
-    title,
-    slug,
-    'featureImg': mainImage.asset->url,
-    body}
+    `*[_type == "magazine" && slug.current == '${slug}']{
+        title,
+         slug,
+        'featureImg': mainImage.asset->url,
+        issuuLink
+    }
     `
   );
-  const allMagazines = await client.fetch(`*[_type == "magazine"]`); // Fetch all posts
+  const allArticles = await client.fetch(
+    `*[_type == "post" && categories[0]._ref == *[_type == "category" && slug.current == "web-profiles"][0]._id] 
+{
+  title,
+  slug,
+  'featureImg': mainImage.asset->url,
+  'category': {
+    'title': categories[0]->title,
+    'slug': categories[0]->slug.current
+  }
+} | order(_createdAt desc)[0...3] `
+  );
+
+  const currentMagArticle = await client.fetch(
+    `*[_type == "post" && _id == *[_type == "magazine" && slug.current == '${slug}'][0].linkedArticle[0]._ref]{
+      title,
+  slug,
+  'featureImg': mainImage.asset->url
+    }`
+  );
 
   return {
     props: {
       magazineContent,
-      allMagazines,
+      allArticles,
+      currentMagArticle,
     },
     // Add revalidate if required
   };
 }
 
-const MagazineDetails = ({ magazineContent, allMagazines }) => {
+const MagazineDetails = ({
+  magazineContent,
+  allArticles,
+  currentMagArticle,
+}) => {
   return (
     <>
       <HeadMeta metaTitle="Magazines" />
@@ -69,7 +95,10 @@ const MagazineDetails = ({ magazineContent, allMagazines }) => {
         />
       </div>
 
-      <RelatedArticles />
+      <RelatedArticles
+        currentMagArticle={currentMagArticle}
+        allMagazinesArticles={allArticles}
+      />
 
       <FooterTwo />
     </>

@@ -12,7 +12,7 @@ import Loader from "../common/Loader";
 
 const SliderOne = () => {
   const { data, isLoading, error } = useQuery({
-    queryKey: ["timePost"],
+    queryKey: ["slider-post"],
     queryFn: async () => {
       const query = `*[_type == 'post' && featured == true]{
       title,

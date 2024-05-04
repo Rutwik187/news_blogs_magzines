@@ -7,14 +7,19 @@ const HeadMeta = ({ metaTitle }) => {
       <meta charSet="utf-8" />
       <meta name="robots" content="noindex, follow" />
       <meta httpEquiv="x-ua-compatible" content="ie=edge" />
-      <meta name="description" content="TEC Trendy News and Magazine" />
+      <meta
+        name="description"
+        content="The Entrepreneurial Chronicles is a business magazine that brings inspiring stories of entrepreneurs who have turned their dreams into reality."
+      />
       <meta
         name="viewport"
         content="width=device-width, initial-scale=1, shrink-to-fit=no"
       />
-      <title>{`${
-        metaTitle ? metaTitle : "TEC"
-      } || TEC - Trendy News and Magazines`}</title>
+      <title>
+        {" "}
+        The Entrepreneurial Chronicles: A Business Magazine for Inspiring
+        Entrepreneur Stories
+      </title>
       <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     </Head>
   );

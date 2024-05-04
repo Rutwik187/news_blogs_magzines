@@ -9,6 +9,7 @@ import BlogAndArticle from "../components/post/BlogAndArticle";
 import SliderOne from "../components/slider/SliderOne";
 import WebProfiles from "../components/post/WebProfiles";
 import MarketNews from "../components/post/MarketNews";
+import WebProfiles2 from "../components/post/WebProfiles2";
 
 const Home = () => {
   return (
@@ -18,11 +19,13 @@ const Home = () => {
       <SliderOne />
       <Magazines />
       <WebProfiles />
+      {/* <WebProfiles2 /> */}
       <MarketNews />
       <BusinessBulletin />
       <MasterTalks />
       <BlogAndArticle />
       {/* <FooterOne /> */}
+
       <FooterTwo />
     </div>
   );

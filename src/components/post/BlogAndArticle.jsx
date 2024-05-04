@@ -19,7 +19,7 @@ const BlogAndArticle = () => {
 
 `;
   const { data, isLoading, error } = useQuery({
-    queryKey: ["categoryTwoPosts"],
+    queryKey: ["blog-articles-posts"],
     queryFn: async () => {
       const response = await client.fetch(query);
       return response;
