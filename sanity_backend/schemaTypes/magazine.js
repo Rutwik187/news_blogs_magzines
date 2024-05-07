@@ -30,7 +30,7 @@ export default defineType({
     defineField({
       name: 'issuuLink',
       title: 'Issuu Link',
-      type: 'string',
+      type: 'url',
     }),
     defineField({
       name: 'linkedArticle',
