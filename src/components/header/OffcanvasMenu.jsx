@@ -60,23 +60,17 @@ const OffcanvasMenu = ({ ofcshow, ofcHandleClose }) => {
                   <div className="axil-contact-info">
                     <address className="address">
                       <p className="m-b-xs-30  mid grey-dark-three ">
-                        Theodore Lowe, Ap #867-859
+                        6605 Longshore St, Dublin,
                         <br />
-                        Sit Rd, Azusa New York
+                        OH 43017, USA
                       </p>
                       <div className="h5 m-b-xs-5">
                         We&apos;re Available 24/ 7. Call Now.
                       </div>
                       <div>
-                        <a className="tel" href="tel:8884562790">
+                        <a className="tel" href="tel:+16143567697">
                           <i className="fas fa-phone" />
-                          (888) 456-2790{" "}
-                        </a>
-                      </div>
-                      <div>
-                        <a className="tel" href="tel:12125553333">
-                          <i className="fas fa-fax" />
-                          (121) 255-53333{" "}
+                          +1 (614) 356-7697{" "}
                         </a>
                       </div>
                     </address>

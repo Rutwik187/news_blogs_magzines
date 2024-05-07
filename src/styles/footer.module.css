@@ -2,6 +2,10 @@
   width: 30vw;
 }
 
+.footer_content p {
+  font-size: medium;
+}
+
 @media only screen and (max-width: 600px) {
   .footer_start {
     flex-direction: column;

@@ -72,32 +72,31 @@ const FooterTwo = () => {
           style={{ margin: "1rem", color: "white" }}
         >
           <p style={{ width: "100%", color: "white", fontWeight: 200 }}>
-            Entrepreneurial Chronicles Magazine Publication stands as a premier
-            hub for business and entrepreneurship wisdom, committed to
-            showcasing the triumphs of thriving businesses and visionary
-            entrepreneurs globally.
+            The Entrepreneurial Chronicles is a business magazine that brings
+            inspiring stories of entrepreneurs who have turned their
+            dreams into reality.
           </p>
         </div>
         <div>
           <h4 style={{ color: "white", fontWeight: 200 }}>QUICK LINKS</h4>
           <ul
-            style={{ color: "white", fontWeight: 200 }}
+            style={{ color: "white", fontWeight: 200, fontSize: "medium" }}
             className="footer-bottom-links "
           >
             <li>
               <Link href="/">Home</Link>
             </li>
             <li>
-              <Link href="/">About Us</Link>
+              <Link href="/about-us">About Us</Link>
             </li>
             <li>
-              <Link href="/">Magazine</Link>
+              <Link href="/magazines">Magazine</Link>
             </li>
             <li>
-              <Link href="/">Blogs</Link>
+              <Link href="/blogs">Blogs</Link>
             </li>
             <li>
-              <Link href="/">Contact</Link>
+              <Link href="/contact-us">Contact</Link>
             </li>
           </ul>
         </div>
@@ -106,7 +105,8 @@ const FooterTwo = () => {
         </div>
       </div>
       <p style={{ textAlign: "center", marginTop: "3rem", fontWeight: 400 }}>
-        &copy;Copyright 2024, The Business Masters | All Rights Reserved.
+        &copy;Copyright 2024, The Entrepreneurial Chronicles | All Rights
+        Reserved.
       </p>
     </footer>
   );
