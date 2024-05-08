@@ -23,8 +23,6 @@ const Home = () => {
       <MarketNews />
       <BusinessBulletin />
       <MasterTalks />
-      <BlogAndArticle />
-      {/* <FooterOne /> */}
 
       <FooterTwo />
     </div>

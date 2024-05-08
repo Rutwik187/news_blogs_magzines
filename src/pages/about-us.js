@@ -5,13 +5,14 @@ import Breadcrumb from "../components/common/Breadcrumb";
 import BreadcrumbBanner from "../components/common/BreadcrumbBanner";
 import HeadMeta from "../components/elements/HeadMeta";
 import SectionTitleTwo from "../components/elements/SectionTitleTwo";
-import FooterOne from "../components/footer/FooterOne";
+
 import HeaderOne from "../components/header/HeaderOne";
 import TeamOne from "../components/team/TeamOne";
 import WidgetNewsletter from "../components/widget/WidgetNewsletter";
 import WidgetPost from "../components/widget/WidgetPost";
 import WidgetSocialShare from "../components/widget/WidgetSocialShare";
 import { removeDuplicates } from "../utils";
+import FooterTwo from "../components/footer/FooterTwo";
 
 const AboutUs = ({ aboutData, allPosts }) => {
   const AuthorList = removeDuplicates(allPosts, "author_name");
@@ -69,7 +70,7 @@ const AboutUs = ({ aboutData, allPosts }) => {
           </div>
         </div>
       </div> */}
-      <FooterOne />
+      <FooterTwo />
     </>
   );
 };

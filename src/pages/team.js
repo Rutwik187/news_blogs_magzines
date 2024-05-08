@@ -3,7 +3,8 @@ import Breadcrumb from "../components/common/Breadcrumb";
 import BreadcrumbBanner from "../components/common/BreadcrumbBanner";
 import HeadMeta from "../components/elements/HeadMeta";
 import SectionTitleTwo from "../components/elements/SectionTitleTwo";
-import FooterOne from "../components/footer/FooterOne";
+import FooterTwo from "../components/footer/FooterTwo";
+
 import HeaderOne from "../components/header/HeaderOne";
 import TeamOne from "../components/team/TeamOne";
 import { removeDuplicates } from "../utils";
@@ -65,7 +66,7 @@ const TeamPage = ({ allPosts }) => {
           </div>
         </div>
       </div>
-      <FooterOne />
+      <FooterTwo />
     </>
   );
 };

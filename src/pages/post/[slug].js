@@ -1,5 +1,5 @@
 import HeadMeta from "../../components/elements/HeadMeta";
-import FooterOne from "../../components/footer/FooterOne";
+
 import HeaderOne from "../../components/header/HeaderOne";
 import PostFormatText from "../../components/post/post-format/PostFormatText";
 import Magazines from "../../components/post/Magazines";

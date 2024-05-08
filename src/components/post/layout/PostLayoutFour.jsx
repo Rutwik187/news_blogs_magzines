@@ -14,14 +14,13 @@ const PostLayoutFour = ({ data }) => {
         />
         {/* <div className="grad-overlay" /> */}
       </Link>
-      {/* <div className="media-caption">
+      <div className="media-caption">
         <div className="caption-content">
           <h3 className="axil-post-title hover-line hover-line">
-            <Link href={`/post/${data.slug.current}`}>{data.title}</Link>
+            <Link href={`/magazine/${data.slug.current}`}>{data.title}</Link>
           </h3>
         </div>
-
-      </div> */}
+      </div>
     </div>
   );
 };

@@ -46,7 +46,9 @@ export async function getStaticProps({ params }) {
     `*[_type == "post" && _id == *[_type == "magazine" && slug.current == '${slug}'][0].linkedArticle[0]._ref]{
       title,
   slug,
-  'featureImg': mainImage.asset->url
+  'featureImg': mainImage.asset->url,
+
+
     }`
   );
 
@@ -91,7 +93,7 @@ const MagazineDetails = ({
             top: 0,
             bottom: 0,
           }}
-          src="https://e.issuu.com/embed.html?d=final_file&hideIssuuLogo=true&u=thebusiness-masters.com"
+          src={`${magazineContent[0].issuuLink}`}
         />
       </div>
 

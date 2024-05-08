@@ -1,9 +1,38 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import SocialLink from "../../data/social/SocialLink.json";
 import styles from "../../styles/footer.module.css";
+import Carousel from "react-bootstrap/Carousel";
+import Loader from "../common/Loader";
+import { client } from "../../client";
+import { useQuery } from "@tanstack/react-query";
 
 const FooterTwo = () => {
+  const query = `
+*[_type == "magazine"] 
+{
+  title,
+  slug,
+  'featureImg': mainImage.asset->url,
+ 
+} | order(_createdAt desc)[0...6] 
+`;
+
+  const { data, isLoading, error } = useQuery({
+    queryKey: ["magazines"],
+    queryFn: async () => {
+      const response = await client.fetch(query);
+      return response;
+    },
+  });
+
+  if (isLoading) return <Loader />;
+  if (error) return <div>Error fetching posts</div>;
+
+  if (!data) return null;
+
   return (
     <footer
       className="page-footer bg-grey-dark-key"
@@ -102,6 +131,21 @@ const FooterTwo = () => {
         </div>
         <div style={{ width: "30%", textAlign: "center" }}>
           <h4 style={{ color: "white", fontWeight: 200 }}>MAGAZINES</h4>
+          <Carousel indicators={false}>
+            {data.map((mag, index) => {
+              return (
+                <Carousel.Item key={index}>
+                  <Image
+                    src={mag.featureImg}
+                    width={500}
+                    height={200}
+                    alt="magazines"
+                    className="object-fit-contain"
+                  />
+                </Carousel.Item>
+              );
+            })}
+          </Carousel>
         </div>
       </div>
       <p style={{ textAlign: "center", marginTop: "3rem", fontWeight: 400 }}>
