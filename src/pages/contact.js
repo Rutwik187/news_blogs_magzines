@@ -16,23 +16,7 @@ const ContactPage = () => {
       <HeaderOne />
       <Breadcrumb aPage="Contact Us" />
       <BreadcrumbBanner pageTitle="Contact Us" />
-      <div className="axil-about-us section-gap  section-gap-top__with-text">
-        <div className="container">
-          <SectionTitleTwo
-            title="Meet Our Publishing Authors"
-            paragraph="Wherever &amp; whenever you need us. We are here for you - contact us for all your support needs,
-                        <br />be it technical, general queries or information support."
-          />
-          <figure className="m-b-xs-30 p-t-xs-10">
-            <Image
-              src="/images/contact-banner.jpg"
-              height={451}
-              width={1110}
-              alt="contact banner"
-            />
-          </figure>
-        </div>
-      </div>
+
       <div className="contact-form section-gap bg-grey-light-three">
         <div className="container">
           <div className="row align-items-center">
@@ -53,7 +37,7 @@ const ContactPage = () => {
           {/* End of .section-title */}
           <div className="axil-map-wrapper m-b-xs-30">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d848618.3019582209!2d-117.3496119!3d33.8145003!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c64ed3c3ce8f%3A0x8710c5557f723e2a!2s106+W+1st+St%2C+Los+Angeles%2C+CA+90012%2C+USA!5e0!3m2!1sen!2sbd!4v1563866499894!5m2!1sen!2sbd"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d65323685.5466851!2d-90.41887654143267!3d2.137822078029002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8838935d05ab2f23%3A0x9c971993f29450fc!2s6555%2C%206605%20Longshore%20St%2C%20Dublin%2C%20OH%2043017%2C%20USA!5e0!3m2!1sen!2sin!4v1715191335841!5m2!1sen!2sin"
               width={600}
               height={450}
               allowFullScreen

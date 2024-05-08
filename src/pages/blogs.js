@@ -7,6 +7,7 @@ import WidgetSocialShare from "../components/widget/WidgetSocialShare";
 import WidgetPost from "../components/widget/WidgetPost";
 import WidgetCategory from "../components/widget/WidgetCategory";
 import HeaderOne from "../components/header/HeaderOne";
+import FooterTwo from "../components/footer/FooterTwo";
 
 const Blogs = () => {
   const query = `
@@ -57,6 +58,8 @@ const Blogs = () => {
           </div>
         </div>
       </div>
+
+      <FooterTwo />
     </>
   );
 };

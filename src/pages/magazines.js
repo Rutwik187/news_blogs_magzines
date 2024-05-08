@@ -3,6 +3,7 @@ import { client } from "../client";
 import Loader from "../components/common/Loader";
 import PostLayoutFour from "../components/post/layout/PostLayoutFour";
 import HeaderOne from "../components/header/HeaderOne";
+import FooterTwo from "../components/footer/FooterTwo";
 
 const Magazines = () => {
   const query = `
@@ -41,6 +42,7 @@ const Magazines = () => {
           </div>
         </div>
       </div>
+      <FooterTwo />
     </>
   );
 };

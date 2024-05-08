@@ -5,7 +5,7 @@ const HeadMeta = ({ metaTitle }) => {
     <Head>
       {/* Basic metas */}
       <meta charSet="utf-8" />
-      <meta name="robots" content="noindex, follow" />
+      <meta name="robots" content="index, follow" />
       <meta httpEquiv="x-ua-compatible" content="ie=edge" />
       <meta
         name="description"

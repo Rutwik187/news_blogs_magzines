@@ -125,7 +125,7 @@ const FooterTwo = () => {
               <Link href="/blogs">Blogs</Link>
             </li>
             <li>
-              <Link href="/contact-us">Contact</Link>
+              <Link href="/contact">Contact</Link>
             </li>
           </ul>
         </div>

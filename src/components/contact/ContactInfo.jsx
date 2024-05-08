@@ -37,11 +37,7 @@ const ContactInfo = () => {
                   <i className={SocialLink.twitter.icon} />
                 </a>
               </li>
-              <li>
-                <a href={SocialLink.yt.url}>
-                  <i className={SocialLink.yt.icon} />
-                </a>
-              </li>
+
               <li>
                 <a href={SocialLink.linked.url}>
                   <i className={SocialLink.linked.icon} />
