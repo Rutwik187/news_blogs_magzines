@@ -110,16 +110,16 @@ const SliderOne = () => {
                       <div className="btn-group">
                         <Link
                           className="btn btn-primary m-r-xs-30"
-                          href={`/magazine/${data.slug.current}`}
-                        >
-                          Digital Magazine
-                        </Link>
-                        <Link
-                          className="btn-link"
-                          href={`/post/${slugify(data.slug.current)}`}
+                          href={`/post/${data.slug.current}`}
                         >
                           Read Article
                         </Link>
+                        {/* <Link
+                          className="btn-link"
+                          href={`/magazine/${slugify(data.slug.current)}`}
+                        >
+                          Digital Magazine
+                        </Link> */}
                       </div>
                     </div>
                   ))}
@@ -140,8 +140,8 @@ const SliderOne = () => {
                 <Image
                   src={data.featureImg}
                   alt={data.title}
-                  width={495}
-                  height={550}
+                  width={2000}
+                  height={2000}
                 />
               </div>
             ))}

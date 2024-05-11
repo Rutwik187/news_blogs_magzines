@@ -35,7 +35,6 @@ export async function getServerSideProps({ params }) {
       postContent,
       allPosts,
     },
-    revalidate: 60,
   };
 }
 

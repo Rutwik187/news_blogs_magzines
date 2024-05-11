@@ -8,8 +8,8 @@ const PostVideoOne = ({ data }) => {
         <Image
           src={data.featureImg}
           alt={data.title}
-          width={730}
-          height={514}
+          width={1000}
+          height={1000}
           className="w-100"
         />
         <div className="grad-overlay grad-overlay__transparent" />

@@ -37,7 +37,11 @@ const PostLayoutTwo = ({ data, postSizeMd, postBgDark }) => {
         </h3>
 
         {postSizeMd === true ? (
-          <p className="mid hide-in-small-devices">{data?.description}</p>
+          <p className="mid hide-in-small-devices">
+            {data?.description && data.description.length > 50
+              ? `${data.description.slice(0, 100)}...`
+              : data.description}
+          </p>
         ) : (
           ""
         )}

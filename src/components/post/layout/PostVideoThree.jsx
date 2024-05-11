@@ -14,21 +14,20 @@ const PostVideoThree = ({ data, imgWidth, imgHeight }) => {
           className="w-100"
         />
         <div className="grad-overlay grad-overlay__transparent" />
-        <div className="video-popup video-play-btn" />
       </Link>
 
       <div className="media post-block grad-overlay__transparent position-absolute">
         <div className="media-body media-body__big">
           <div className="axil-media-bottom mt-auto">
             <div className="post-cat-group m-b-xs-10">
-              <Link
+              {/* <Link
                 className={`post-cat cat-btn btn-big ${
                   data.cate_bg ?? "bg-color-blue-one"
                 }`}
                 href={`/category/${slugify(data.cate)}`}
               >
                 {data.cate}
-              </Link>
+              </Link> */}
             </div>
             <h3 className="axil-post-title hover-line">
               <Link href={`/post/${data.slug.current}`}>{data.title}</Link>
