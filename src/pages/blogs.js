@@ -11,7 +11,7 @@ import FooterTwo from "../components/footer/FooterTwo";
 
 const Blogs = () => {
   const query = `
-*[_type == "post"]
+*[_type == "post" && categories[0]._ref == *[_type == "category" && slug.current == "blogs-and-articles"][0]._id] 
 {
   title,
   slug,

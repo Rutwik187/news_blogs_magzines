@@ -4,6 +4,7 @@ const SocialShareSide = () => {
   const [windowPath, setwindowPath] = useState(null);
 
   useEffect(() => {
+    
     setwindowPath(window.location.href);
   }, []);
 

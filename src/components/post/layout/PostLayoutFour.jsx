@@ -8,8 +8,8 @@ const PostLayoutFour = ({ data }) => {
         <Image
           src={data.featureImg}
           alt={data.title}
-          width={255}
-          height={255}
+          width={1000}
+          height={1000}
           className="img-fluid"
         />
         {/* <div className="grad-overlay" /> */}

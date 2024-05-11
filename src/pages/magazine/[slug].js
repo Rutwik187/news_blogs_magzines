@@ -5,19 +5,19 @@ import { client } from "../../client";
 import FooterTwo from "../../components/footer/FooterTwo";
 import RelatedArticles from "../../components/post/RelatedArticles";
 
-export async function getStaticPaths() {
-  const allSlugsQuery = `*[_type == "magazine"]{ 'slug': slug.current }`; // Removed condition here
-  const slugs = await client.fetch(allSlugsQuery);
+// export async function getStaticPaths() {
+//   const allSlugsQuery = `*[_type == "magazine"]{ 'slug': slug.current }`; // Removed condition here
+//   const slugs = await client.fetch(allSlugsQuery);
 
-  const paths = slugs.map((slug) => ({ params: { slug: slug.slug } }));
+//   const paths = slugs.map((slug) => ({ params: { slug: slug.slug } }));
 
-  return {
-    paths,
-    fallback: "blocking", // Or false, refer to Next.js docs
-  };
-}
+//   return {
+//     paths,
+//     fallback: "blocking", // Or false, refer to Next.js docs
+//   };
+// }
 
-export async function getStaticProps({ params }) {
+export async function getServerSideProps({ params }) {
   const { slug } = params;
 
   const magazineContent = await client.fetch(

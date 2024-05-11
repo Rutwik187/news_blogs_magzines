@@ -12,7 +12,7 @@ const PostVideoTwo = ({ data, pClass }) => {
         <Image
           src={data.featureImg}
           alt={data.title}
-          width={100}
+          width={1000}
           height={100}
         />
       </Link>
