@@ -7,19 +7,19 @@ import { client } from "../../client";
 import FooterTwo from "../../components/footer/FooterTwo";
 
 // Static Generation with Pre-rendering (recommended for most cases)
-export async function getStaticPaths() {
-  const allSlugsQuery = `*[_type == "post"]{ 'slug': slug.current }`; // Removed condition here
-  const slugs = await client.fetch(allSlugsQuery);
+// export async function getStaticPaths() {
+//   const allSlugsQuery = `*[_type == "post"]{ 'slug': slug.current }`; // Removed condition here
+//   const slugs = await client.fetch(allSlugsQuery);
 
-  const paths = slugs.map((slug) => ({ params: { slug: slug.slug } }));
+//   const paths = slugs.map((slug) => ({ params: { slug: slug.slug } }));
 
-  return {
-    paths,
-    fallback: "blocking", // Or false, refer to Next.js docs
-  };
-}
+//   return {
+//     paths,
+//     fallback: true,
+//   };
+// }
 
-export async function getStaticProps({ params }) {
+export async function getServerSideProps({ params }) {
   const { slug } = params;
   const postContent = await client.fetch(
     `*[_type == "post" && slug.current == '${slug}'][0]  {
@@ -29,14 +29,13 @@ export async function getStaticProps({ params }) {
     body}
     `
   );
-  const allPosts = await client.fetch(`*[_type == "post"]`); // Fetch all posts
-
+  const allPosts = await client.fetch(`*[_type == "post"]`);
   return {
     props: {
       postContent,
       allPosts,
     },
-    // Add revalidate if required
+    revalidate: 60,
   };
 }
 
