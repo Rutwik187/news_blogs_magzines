@@ -12,6 +12,7 @@ import WidgetNewsletter from "../components/widget/WidgetNewsletter";
 import WidgetPost from "../components/widget/WidgetPost";
 import WidgetSocialShare from "../components/widget/WidgetSocialShare";
 import { removeDuplicates } from "../utils";
+import { authorsData } from "../data/about/TeamData";
 import FooterTwo from "../components/footer/FooterTwo";
 
 const AboutUs = ({ aboutData, allPosts }) => {
@@ -25,13 +26,13 @@ const AboutUs = ({ aboutData, allPosts }) => {
       <BreadcrumbBanner pageTitle="About Us" />
       <div className="axil-about-us section-gap-top p-b-xs-20">
         <div className="container">
-          <figure className="m-b-xs-40">
+          <figure className="m-b-xs-40 text-center">
             <Image
               src={aboutData.data.featuredImg}
               height={451}
-              width={1110}
+              width={1500}
               alt="about us"
-              className="img-fluid mx-auto"
+              className=" mx-auto"
             />
           </figure>
           <div className="row">
@@ -53,23 +54,28 @@ const AboutUs = ({ aboutData, allPosts }) => {
           </div>
         </div>
       </div>
-      {/* <div className="axil-our-team section-gap section-gap-top__with-text bg-grey-light-three">
+      <div className="axil-our-team section-gap section-gap-top__with-text bg-grey-light-three">
         <div className="container">
           <div className="axil-team-grid-wrapper">
             <SectionTitleTwo
-              title="Meet Our Publishing Authors"
+              title="Meet Our Company Pillars"
               paragraph="Wherever &amp; whenever you need us. We are here for you - contact us for all your support needs, <br> be it technical, general queries or information support."
             />
             <div className="row">
-              {AuthorList.slice(0, 6).map((data) => (
+              {/* {AuthorList.slice(0, 6).map((data) => (
                 <div className="col-lg-4" key={data.slug}>
                   <TeamOne data={data} />
+                </div>
+              ))} */}
+              {authorsData.map((author, index) => (
+                <div className="col-lg-4" key={author.slug}>
+                  <TeamOne key={index} data={author} />
                 </div>
               ))}
             </div>
           </div>
         </div>
-      </div> */}
+      </div>
       <FooterTwo />
     </>
   );

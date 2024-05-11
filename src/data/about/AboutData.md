@@ -1,5 +1,5 @@
 ---
-featuredImg: "/images/about-us.jpg"
+featuredImg: "/images/bg-mag.png"
 ---
 
 ## The Professional Magzine Platform
