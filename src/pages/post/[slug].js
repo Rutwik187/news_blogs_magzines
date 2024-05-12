@@ -19,8 +19,21 @@ import FooterTwo from "../../components/footer/FooterTwo";
 //   };
 // }
 
-export async function getServerSideProps({ params }) {
+const PostDetails = ({ postContent }) => {
+  return (
+    <>
+      <HeadMeta metaTitle="Post Details" />
+      <HeaderOne />
+      <PostFormatText postData={postContent} />
+      <Magazines />
+      <FooterTwo />
+    </>
+  );
+};
+
+export const getServerSideProps = async ({ params }) => {
   const { slug } = params;
+
   const postContent = await client.fetch(
     `*[_type == "post" && slug.current == '${slug}'][0]  {
     title,
@@ -29,25 +42,12 @@ export async function getServerSideProps({ params }) {
     body}
     `
   );
-  const allPosts = await client.fetch(`*[_type == "post"]`);
+
   return {
     props: {
       postContent,
-      allPosts,
     },
   };
-}
-
-const PostDetails = ({ postContent, allPosts }) => {
-  return (
-    <>
-      <HeadMeta metaTitle="Post Details" />
-      <HeaderOne />
-      <PostFormatText postData={postContent} />
-      <Magazines postData={allPosts} />
-      <FooterTwo />
-    </>
-  );
 };
 
 export default PostDetails;
