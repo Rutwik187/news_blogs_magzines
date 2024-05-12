@@ -8,7 +8,7 @@ const ErrorPage = () => {
   return (
     <>
       <HeadMeta metaTitle="404 Error Not Found" />
-      <HeaderOne />
+      {/* <HeaderOne /> */}
       <div className="error-404-banner bg-grey-light-three">
         <div className="container">
           <div className="error-404-content text-center">
@@ -25,7 +25,7 @@ const ErrorPage = () => {
         </div>
       </div>
 
-      <FooterTwo />
+      {/* <FooterOne /> */}
     </>
   );
 };
