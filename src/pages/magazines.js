@@ -4,6 +4,7 @@ import Loader from "../components/common/Loader";
 import PostLayoutFour from "../components/post/layout/PostLayoutFour";
 import HeaderOne from "../components/header/HeaderOne";
 import FooterTwo from "../components/footer/FooterTwo";
+import PostLayoutformag from "../components/post/layout/PostLayoutformag";
 
 const Magazines = () => {
   const query = `
@@ -165,13 +166,13 @@ const Magazines = () => {
             />
           </div> */}
           {data.map((post, index) => (
-            <PostLayoutFour data={post} key={index} />
+            <PostLayoutformag data={post} key={index} />
           ))}
           {data.map((post, index) => (
-            <PostLayoutFour data={post} key={index} />
+            <PostLayoutformag data={post} key={index} />
           ))}
           {data.map((post, index) => (
-            <PostLayoutFour data={post} key={index} />
+            <PostLayoutformag data={post} key={index} />
           ))}
         </div>
       </div>

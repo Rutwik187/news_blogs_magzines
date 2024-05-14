@@ -1,9 +1,10 @@
 import SectionTitle from "../elements/SectionTitle";
-import PostLayoutFour from "./layout/PostLayoutFour";
+import PostLayoutformag from "./layout/PostLayoutFour";
 
 import { useQuery } from "@tanstack/react-query";
 import { client } from "../../client";
 import Loader from "../common/Loader";
+import PostLayoutFour from "./layout/PostLayoutFour";
 
 const Magazines = () => {
   const query = `
