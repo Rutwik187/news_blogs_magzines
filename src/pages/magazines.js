@@ -50,8 +50,8 @@ const Magazines = () => {
             width: "100%",
             // background: "white",
             backgroundImage: `url('/images/mag_bg.png')`,
-            backgroundRepeat: "repeat-x",
-            backgroundSize: "30%",
+            backgroundRepeat: "repeat",
+            // backgroundSize: "30%",
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
@@ -62,6 +62,7 @@ const Magazines = () => {
           <div
             style={{
               width: "90%",
+              height: "100%",
               maxWidth: "1200px",
               display: "flex",
               flexDirection: "column",
