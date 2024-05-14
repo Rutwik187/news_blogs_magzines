@@ -54,7 +54,7 @@ const MagazineDetails = () => {
     isLoading: isLoadingAllArticles,
     error: errorAllArticles,
   } = useQuery({
-    queryKey: ["allArticles"],
+    queryKey: ["web-profiles"],
     queryFn: async () => {
       const response = await client.fetch(allArticlesQuery);
       return response;

@@ -47,7 +47,7 @@ const Magazines = () => {
         <div
           style={{
             width: "100%",
-            background: "red",
+            background: "white",
             backgroundRepeat: "repeat-x",
             backgroundSize: "30%",
             display: "flex",
@@ -165,12 +165,6 @@ const Magazines = () => {
               alt=""
             />
           </div> */}
-          {data.map((post, index) => (
-            <PostLayoutformag data={post} key={index} />
-          ))}
-          {data.map((post, index) => (
-            <PostLayoutformag data={post} key={index} />
-          ))}
           {data.map((post, index) => (
             <PostLayoutformag data={post} key={index} />
           ))}

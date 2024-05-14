@@ -16,9 +16,9 @@ const PostLayoutformag = ({ data }) => {
       </Link>
       <div className="media-caption">
         <div className="">
-          <h3 className="  hover-line hover-line">
+          <h4 className="  hover-line hover-line">
             <Link href={`/magazine/${data.slug.current}`}>{data.title}</Link>
-          </h3>
+          </h4>
         </div>
       </div>
     </div>

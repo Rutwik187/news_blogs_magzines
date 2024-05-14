@@ -22,7 +22,7 @@ const PostDetails = () => {
     : null;
 
   const { data, isLoading, error } = useQuery({
-    queryKey: ["post", slug],
+    queryKey: ["currentPost", slug],
     queryFn: async () => {
       if (!postQuery) return null;
       const response = await client.fetch(postQuery);
