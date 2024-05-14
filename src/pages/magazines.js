@@ -5,6 +5,7 @@ import PostLayoutFour from "../components/post/layout/PostLayoutFour";
 import HeaderOne from "../components/header/HeaderOne";
 import FooterTwo from "../components/footer/FooterTwo";
 import PostLayoutformag from "../components/post/layout/PostLayoutformag";
+import mgbg from "../../public/images/mag_bg.png";
 
 const Magazines = () => {
   const query = `
@@ -47,7 +48,8 @@ const Magazines = () => {
         <div
           style={{
             width: "100%",
-            background: "white",
+            // background: "white",
+            backgroundImage: `url('/images/mag_bg.png')`,
             backgroundRepeat: "repeat-x",
             backgroundSize: "30%",
             display: "flex",
@@ -57,7 +59,6 @@ const Magazines = () => {
             padding: "2rem 0",
           }}
         >
-          {/* Your header content */}
           <div
             style={{
               width: "90%",
@@ -75,24 +76,24 @@ const Magazines = () => {
                 fontSize: "2rem",
                 fontWeight: "bolder",
                 marginBottom: "2px",
-                color: "black",
+                color: "white",
               }}
             >
-              MAGAZINES
+              LATEST MAGAZINES
             </p>
             <p
               style={{
                 fontSize: "2rem",
                 fontWeight: "lighter",
-                color: "black",
+                color: "white",
               }}
             >
-              Welcome to TEC Business world magazine, we spotlight trailblazers
-              from all sectors, transforming the business magazine landscape.
-              Our mission is to inspire and empower new leaders with
-              groundbreaking ideas worldwide. Count on us for reliable insights,
-              advice, and industry trends, supporting both established and
-              aspiring leaders
+              Welcome to The Entrepreneurial Chronicles Magazine, where we
+              spotlight trailblazers from all sectors transforming the business
+              magazine landscape. Our mission is to inspire and empower new
+              leaders with groundbreaking ideas worldwide. Count on us for
+              reliable insights, advice, and industry trends, supporting both
+              established and aspiring leaders.
             </p>
           </div>
         </div>
@@ -127,7 +128,7 @@ const Magazines = () => {
             padding: "2rem",
             display: "grid",
             gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
-            gridGap: "20px",
+            gridGap: "40px",
             maxWidth: "1200px",
             margin: "0 auto",
           }}
