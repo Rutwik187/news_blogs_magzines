@@ -16,9 +16,10 @@ const PostLayoutformag = ({ data }) => {
         </div>
       </Link>
       <div className="title-container">
+        <div className="line" />
         <h4
           className="hover-line hover-line"
-          style={{ marginTop: "2rem", fontSize: "1.3rem" }}
+          style={{ marginTop: "2rem", fontSize: "1.3rem", color: "#101820" }}
         >
           <Link href={`/magazine/${data.slug.current}`}>{data.title}</Link>
         </h4>
@@ -32,17 +33,25 @@ const PostLayoutformag = ({ data }) => {
 
         .image-container {
           transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-          box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+          box-shadow: #ae8625 2px 2px 5px 5px;
         }
 
         .image-container:hover {
           transform: scale(1.1); /* Adjust the scale factor as needed */
-          box-shadow: rgba(0, 0, 0, 0.35) 0px 8px 25px;
+          box-shadow: #ae8625 0px 0px 8px 0px;
         }
 
         .title-container {
           margin-top: 10px; /* Adjust margin as needed */
           text-align: center;
+          position: relative;
+        }
+
+        .line {
+          width: 18rem;
+          height: 4px;
+          background-color: #101820;
+          margin: 3rem auto; /* Adjust margin as needed */
         }
 
         .title {
