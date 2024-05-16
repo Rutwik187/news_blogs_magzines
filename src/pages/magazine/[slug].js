@@ -1,3 +1,5 @@
+"use client";
+
 import HeadMeta from "../../components/elements/HeadMeta";
 import HeaderOne from "../../components/header/HeaderOne";
 import FooterTwo from "../../components/footer/FooterTwo";
