@@ -98,18 +98,18 @@ const PostDetails = ({ initialData }) => {
   );
 };
 
-export async function getStaticPaths() {
-  const query = `*[_type == "post"]{ slug }`;
-  const posts = await client.fetch(query);
+// export async function getStaticPaths() {
+//   const query = `*[_type == "post"]{ slug }`;
+//   const posts = await client.fetch(query);
 
-  const paths = posts.map((post) => ({
-    params: { slug: post.slug.current },
-  }));
+//   const paths = posts.map((post) => ({
+//     params: { slug: post.slug.current },
+//   }));
 
-  return { paths, fallback: "blocking" };
-}
+//   return { paths, fallback: "blocking" };
+// }
 
-export async function getStaticProps({ params }) {
+export async function getserversideprops({ params }) {
   const query = `*[_type == "post" && slug.current == '${params.slug}'][0] {
     title,
     slug,

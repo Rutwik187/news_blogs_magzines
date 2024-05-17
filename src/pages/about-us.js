@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { getFileContentBySlug, getAllPosts } from "../../lib/api";
-import markdownToHtml from "../../lib/markdownToHtml";
+// import { getFileContentBySlug, getAllPosts } from "../../lib/api";
+// import markdownToHtml from "../../lib/markdownToHtml";
 import Breadcrumb from "../components/common/Breadcrumb";
 import BreadcrumbBanner from "../components/common/BreadcrumbBanner";
 import HeadMeta from "../components/elements/HeadMeta";
@@ -15,12 +15,10 @@ import { removeDuplicates } from "../utils";
 import { authorsData } from "../data/about/TeamData";
 import FooterTwo from "../components/footer/FooterTwo";
 
-const AboutUs = ({ aboutData, allPosts }) => {
-  const AuthorList = removeDuplicates(allPosts, "author_name");
-
+const AboutUs = ({ aboutData }) => {
   return (
     <>
-      <HeadMeta metaTitle="About Us" />
+      {/* <HeadMeta metaTitle="About Us" />
       <HeaderOne />
       <Breadcrumb aPage="About Us" />
       <BreadcrumbBanner pageTitle="About Us" />
@@ -43,12 +41,10 @@ const AboutUs = ({ aboutData, allPosts }) => {
                 ></div>
               </div>
             </div>
-            {/* End of .col-lg-8 */}
             <div className="col-lg-4">
               <aside className="post-sidebar">
                 <WidgetNewsletter />
                 <WidgetSocialShare />
-                {/* <WidgetPost dataPost={allPosts} /> */}
               </aside>
             </div>
           </div>
@@ -62,11 +58,7 @@ const AboutUs = ({ aboutData, allPosts }) => {
               paragraph="Wherever &amp; whenever you need us. We are here for you - contact us for all your support needs, <br> be it technical, general queries or information support."
             />
             <div className="row">
-              {/* {AuthorList.slice(0, 6).map((data) => (
-                <div className="col-lg-4" key={data.slug}>
-                  <TeamOne data={data} />
-                </div>
-              ))} */}
+
               {authorsData.map((author, index) => (
                 <div className="col-lg-4" key={author.slug}>
                   <TeamOne key={index} data={author} />
@@ -76,35 +68,22 @@ const AboutUs = ({ aboutData, allPosts }) => {
           </div>
         </div>
       </div>
-      <FooterTwo />
+      <FooterTwo /> */}
     </>
   );
 };
 
 export default AboutUs;
 
-export async function getStaticProps() {
-  const allPosts = getAllPosts([
-    "slug",
-    "title",
-    "featureImg",
-    "cate",
-    "cate_bg",
-    "author_name",
-    "author_img",
-    "author_desg",
-    "author_social",
-  ]);
-
-  const aboutData = getFileContentBySlug("AboutData", "src/data/about");
-  const content = await markdownToHtml(aboutData.content || "");
-  return {
-    props: {
-      aboutData: {
-        ...aboutData,
-        content,
-      },
-      allPosts,
-    },
-  };
-}
+// export async function getStaticProps() {
+//   const aboutData = getFileContentBySlug("AboutData", "src/data/about");
+//   const content = await markdownToHtml(aboutData.content || "");
+//   return {
+//     props: {
+//       aboutData: {
+//         ...aboutData,
+//         content,
+//       },
+//     },
+//   };
+// }
