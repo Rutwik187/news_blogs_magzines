@@ -13,7 +13,7 @@
     "@portabletext/react": "^3.0.11",
     "@sanity/client": "^3.2.0",
     "@sanity/image-url": "^1.0.2",
-    "@splidejs/react-splide": "^0.7.12",
+    "@splidejs/react-splide": "github:splidejs/react-splide",
     "@splidejs/splide": "^4.1.4",
     "@splidejs/splide-extension-auto-scroll": "^0.5.3",
     "@tanstack/react-query": "^5.24.1",

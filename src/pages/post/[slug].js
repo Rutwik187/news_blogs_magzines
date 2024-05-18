@@ -1,5 +1,4 @@
 import { useRouter } from "next/router";
-import { useQuery } from "@tanstack/react-query";
 import HeadMeta from "../../components/elements/HeadMeta";
 import HeaderOne from "../../components/header/HeaderOne";
 import PostFormatText from "../../components/post/post-format/PostFormatText";
@@ -8,29 +7,26 @@ import FooterTwo from "../../components/footer/FooterTwo";
 import Loader from "../../components/common/Loader";
 import { client } from "../../client";
 
-const PostDetails = ({ postData }) => {
+const PostDetails = ({ postData, error }) => {
   const router = useRouter();
-  const { slug } = router.query;
 
-  const { data, isLoading, error } = useQuery({
-    queryKey: ["currentPost", slug],
-    queryFn: async () => {
-      const response = await client.fetch(postQuery);
-      return response;
-    },
-    initialData: postData,
-    enabled: !!slug,
-  });
+  if (router.isFallback) {
+    return <Loader />;
+  }
 
-  if (isLoading) return <Loader />;
-  if (error) return <div>Error fetching posts: {error.message}</div>;
-  if (!data) return <div>No data found</div>;
+  if (error) {
+    return <div>Error fetching posts: {error.message}</div>;
+  }
+
+  if (!postData) {
+    return <div>No data found</div>;
+  }
 
   return (
     <>
       <HeadMeta metaTitle="Post Details" />
       <HeaderOne />
-      <PostFormatText postData={data} />
+      <PostFormatText postData={postData} />
       <Magazines />
       <FooterTwo />
     </>
@@ -47,17 +43,23 @@ export async function getServerSideProps({ params }) {
     body
   }`;
 
-  const postData = await client.fetch(postQuery);
+  try {
+    const postData = await client.fetch(postQuery);
 
-  if (!postData) {
+    if (!postData) {
+      return {
+        notFound: true,
+      };
+    }
+
     return {
-      notFound: true,
+      props: { postData },
+    };
+  } catch (error) {
+    return {
+      props: { error: { message: error.message } },
     };
   }
-
-  return {
-    props: { postData },
-  };
 }
 
 export default PostDetails;
