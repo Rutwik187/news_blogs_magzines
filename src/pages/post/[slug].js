@@ -44,9 +44,12 @@ export async function getServerSideProps({ params }) {
   }`;
 
   try {
+    console.log(`Fetching data for slug: ${slug}`); // Logging the slug
     const postData = await client.fetch(postQuery);
+    console.log("Fetched data:", postData); // Logging the fetched data
 
     if (!postData) {
+      console.log("No data found for slug:", slug);
       return {
         notFound: true,
       };
@@ -56,6 +59,7 @@ export async function getServerSideProps({ params }) {
       props: { postData },
     };
   } catch (error) {
+    console.error("Error fetching data:", error.message); // Logging the error
     return {
       props: { error: { message: error.message } },
     };
