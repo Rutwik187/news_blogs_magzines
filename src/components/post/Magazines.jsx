@@ -20,7 +20,7 @@ const Magazines = () => {
   slug,
   'featureImg': mainImage.asset->url,
  
-} | order(_createdAt desc)
+} | order(_createdAt desc)[0...6] 
 `;
 
   const { data, isLoading, error } = useQuery({
@@ -37,9 +37,13 @@ const Magazines = () => {
   if (!data) return null;
 
   return (
-    <div className="related-post p-b-xs-30 mt-4">
+    <div className="related-post mt-4">
       <div className="container">
-        <SectionTitle title={"Magazines"} btnText="View All Magazines" />
+        <SectionTitle
+          title={"Magazines"}
+          btnText="View All Magazines"
+          pClass="mb-0"
+        />
         <div className="grid-wrapper row">
           <Splide
             aria-label="My Favorite Images"
@@ -52,7 +56,7 @@ const Magazines = () => {
                 1200: {
                   perPage: 3, // 3 slides per page on screens up to 1200px wide
                 },
-                768: {
+                900: {
                   perPage: 2, // 2 slides per page on screens up to 768px wide
                 },
                 480: {

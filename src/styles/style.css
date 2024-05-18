@@ -8748,3 +8748,11 @@ address .tel i {
     display: none;
   }
 }
+
+.splide__arrow svg {
+  fill: var(--primary-color) !important;
+}
+
+.splide__pagination__page.is-active{
+   background: var(--primary-color) !important;
+}

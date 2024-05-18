@@ -1,11 +1,9 @@
 import { useQuery } from "@tanstack/react-query";
 import { client } from "../client";
 import Loader from "../components/common/Loader";
-import PostLayoutFour from "../components/post/layout/PostLayoutFour";
 import HeaderOne from "../components/header/HeaderOne";
 import FooterTwo from "../components/footer/FooterTwo";
 import PostLayoutformag from "../components/post/layout/PostLayoutformag";
-import mgbg from "../../public/images/mag_bg.png";
 
 const Magazines = () => {
   const query = `
@@ -35,15 +33,6 @@ const Magazines = () => {
     <>
       <HeaderOne />
 
-      {/* <div className="related-post p-b-xs-30 mt-4">
-        <div className="container">
-          <div className="grid-wrapper row">
-            {data.map((post, index) => (
-              <PostLayoutFour data={post} key={index} />
-            ))}
-          </div>
-        </div>
-      </div> */}
       <div style={{ width: "100%", height: "auto" }}>
         <div
           style={{
