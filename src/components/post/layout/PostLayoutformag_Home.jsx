@@ -1,9 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const PostLayoutFour = ({ data }) => {
+const PostLayoutformag_Home = ({ data }) => {
   return (
-    <div className="content-block m-b-xs-30 col-6 col-md-3">
+    <div className="content-block">
       <Link href={`/magazine/${data.slug.current}`}>
         <div
           style={{
@@ -12,6 +12,7 @@ const PostLayoutFour = ({ data }) => {
             borderRadius: "8px", // adjust border radius for rounded corners
             boxShadow: "0 0 5px rgba(0, 0, 0, 0.1)", // add a subtle shadow
             overflow: "hidden",
+            margin: "2rem",
           }}
         >
           <div style={{ marginBottom: "10px" }}>
@@ -51,4 +52,4 @@ const PostLayoutFour = ({ data }) => {
   );
 };
 
-export default PostLayoutFour;
+export default PostLayoutformag_Home;

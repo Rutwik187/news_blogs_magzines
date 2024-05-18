@@ -134,39 +134,6 @@ const Magazines = () => {
             margin: "0 auto",
           }}
         >
-          {/* <div
-            className="box"
-            style={{
-              transition: "box-shadow 0.3s",
-              width: "100%",
-              maxWidth: "300px",
-              height: "auto",
-              borderRadius: "10px",
-              border: "1px solid #ccc",
-              background: "#fff",
-              boxShadow: "0 0 0 rgba(33, 33, 33, 0.2)",
-              overflow: "hidden",
-            }}
-            onMouseOver={(e) => {
-              e.currentTarget.style.boxShadow = "0 0 20px rgba(33,33,33,.4)";
-              e.currentTarget.querySelector("img").style.transform =
-                "scale(1.1)";
-            }}
-            onMouseOut={(e) => {
-              e.currentTarget.style.boxShadow = "0 0 0 rgba(33,33,33,.2)";
-              e.currentTarget.querySelector("img").style.transform = "scale(1)";
-            }}
-          >
-            <img
-              style={{
-                width: "100%",
-                height: "auto",
-                transition: "transform 0.3s",
-              }}
-              src="./mag.png"
-              alt=""
-            />
-          </div> */}
           {data.map((post, index) => (
             <PostLayoutformag data={post} key={index} />
           ))}

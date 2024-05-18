@@ -5,6 +5,12 @@ import { useQuery } from "@tanstack/react-query";
 import { client } from "../../client";
 import Loader from "../common/Loader";
 import PostLayoutFour from "./layout/PostLayoutFour";
+import { Splide, SplideSlide } from "@splidejs/react-splide";
+import "@splidejs/react-splide/css/core";
+import "@splidejs/react-splide/css";
+import "@splidejs/react-splide/css/skyblue";
+import "@splidejs/react-splide/css/sea-green";
+import PostLayoutformag_Home from "./layout/PostLayoutformag_Home";
 
 const Magazines = () => {
   const query = `
@@ -35,9 +41,35 @@ const Magazines = () => {
       <div className="container">
         <SectionTitle title={"Magazines"} btnText="View All Magazines" />
         <div className="grid-wrapper row">
-          {data.map((post, index) => (
-            <PostLayoutFour data={post} key={index} />
-          ))}
+          <Splide
+            aria-label="My Favorite Images"
+            options={{
+              type: "loop",
+              breakpoints: {
+                2000: {
+                  perPage: 3,
+                },
+                1200: {
+                  perPage: 3, // 3 slides per page on screens up to 1200px wide
+                },
+                768: {
+                  perPage: 2, // 2 slides per page on screens up to 768px wide
+                },
+                480: {
+                  perPage: 1, // 1 slide per page on screens up to 480px wide
+                },
+              },
+              autoplay: true,
+              interval: 3000, // Interval in milliseconds
+            }}
+          >
+            {data.map((post, index) => (
+              <SplideSlide key={index}>
+                {/* <PostLayoutformag data={post} /> */}
+                <PostLayoutformag_Home data={post} />
+              </SplideSlide>
+            ))}
+          </Splide>
         </div>
       </div>
     </div>
