@@ -30,7 +30,7 @@ export default defineType({
     defineField({
       name: 'altText',
       title: 'Alt Text',
-      type: 'text',
+      type: 'string',
     }),
     defineField({
       name: 'categories',

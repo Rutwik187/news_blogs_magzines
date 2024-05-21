@@ -14,7 +14,7 @@ const fetchPostData = async (slug) => {
     slug,
     'featureImg': mainImage.asset->url,
     body,
-    description // Ensure this field is fetched
+    description 
   }`;
   const postData = await client.fetch(postQuery);
   return postData;
@@ -31,7 +31,7 @@ const PostDetails = ({ initialData }) => {
   } = useQuery({
     queryKey: ["currentPost", slug],
     queryFn: () => fetchPostData(slug),
-    enabled: !!slug, // Ensure the query only runs when slug is defined
+    enabled: !!slug,
     initialData,
   });
 
