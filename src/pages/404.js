@@ -1,5 +1,5 @@
 import Link from "next/link";
-import HeadMeta from "../components/elements/HeadMeta";
+import HeadMeta from "../components/elements/HeadMetaDynamic";
 
 import HeaderOne from "../components/header/HeaderOne";
 import FooterTwo from "../components/footer/FooterTwo";

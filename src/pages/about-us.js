@@ -1,6 +1,6 @@
 import Image from "next/image";
-// import { getFileContentBySlug, getAllPosts } from "../../lib/api";
-// import markdownToHtml from "../../lib/markdownToHtml";
+import { getFileContentBySlug } from "../../lib/api";
+import markdownToHtml from "../../lib/markdownToHtml";
 import Breadcrumb from "../components/common/Breadcrumb";
 import BreadcrumbBanner from "../components/common/BreadcrumbBanner";
 import HeadMeta from "../components/elements/HeadMeta";
@@ -18,7 +18,7 @@ import FooterTwo from "../components/footer/FooterTwo";
 const AboutUs = ({ aboutData }) => {
   return (
     <>
-      {/* <HeadMeta metaTitle="About Us" />
+      <HeadMeta metaTitle="About Us" />
       <HeaderOne />
       <Breadcrumb aPage="About Us" />
       <BreadcrumbBanner pageTitle="About Us" />
@@ -58,9 +58,8 @@ const AboutUs = ({ aboutData }) => {
               paragraph="Wherever &amp; whenever you need us. We are here for you - contact us for all your support needs, <br> be it technical, general queries or information support."
             />
             <div className="row">
-
               {authorsData.map((author, index) => (
-                <div className="col-lg-4" key={author.slug}>
+                <div className="col-lg-4 " key={author.slug}>
                   <TeamOne key={index} data={author} />
                 </div>
               ))}
@@ -68,22 +67,22 @@ const AboutUs = ({ aboutData }) => {
           </div>
         </div>
       </div>
-      <FooterTwo /> */}
+      <FooterTwo />
     </>
   );
 };
 
 export default AboutUs;
 
-// export async function getStaticProps() {
-//   const aboutData = getFileContentBySlug("AboutData", "src/data/about");
-//   const content = await markdownToHtml(aboutData.content || "");
-//   return {
-//     props: {
-//       aboutData: {
-//         ...aboutData,
-//         content,
-//       },
-//     },
-//   };
-// }
+export async function getStaticProps() {
+  const aboutData = getFileContentBySlug("AboutData", "src/data/about");
+  const content = await markdownToHtml(aboutData.content || "");
+  return {
+    props: {
+      aboutData: {
+        ...aboutData,
+        content,
+      },
+    },
+  };
+}

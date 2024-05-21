@@ -17,6 +17,7 @@ const Magazines = () => {
 *[_type == "magazine"] 
 {
   title,
+   altText,
   slug,
   'featureImg': mainImage.asset->url,
  

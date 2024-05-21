@@ -20,7 +20,7 @@ const SliderOne = () => {
       'featureImg': mainImage.asset->url,
 
       'cate': categories[0]->title
-    }[0...3]`; // Get up to 3 featured posts
+    }| order(_createdAt desc) [0...5]`; // Get up to 3 featured posts
 
       const response = await client.fetch(query);
       return response;
@@ -139,7 +139,7 @@ const SliderOne = () => {
               <div className="item" key={data.slug}>
                 <Image
                   src={data.featureImg}
-                  alt={data.title}
+                  alt={data?.altText || data.title}
                   width={2000}
                   height={2000}
                 />

@@ -1,12 +1,12 @@
 import { useRouter } from "next/router";
 import { useQuery } from "@tanstack/react-query";
-import HeadMeta from "../../components/elements/HeadMeta";
 import HeaderOne from "../../components/header/HeaderOne";
 import PostFormatText from "../../components/post/post-format/PostFormatText";
 import Magazines from "../../components/post/Magazines";
 import FooterTwo from "../../components/footer/FooterTwo";
 import Loader from "../../components/common/Loader";
 import { client } from "../../client";
+import HeadMetaDynamic from "../../components/elements/HeadMetaDynamic";
 
 const fetchPostData = async (slug) => {
   const postQuery = `*[_type == "post" && slug.current == '${slug}'][0] {
@@ -40,7 +40,7 @@ const PostDetails = ({ initialData }) => {
 
   return (
     <>
-      <HeadMeta metaTitle="Post Details" />
+      <HeadMetaDynamic metaData={postData} />
       <HeaderOne />
       <PostFormatText postData={postData} />
       <Magazines />

@@ -91,6 +91,13 @@ const FooterTwo = () => {
                   </li>
                 </ul>
               </div>
+              <div className="axil-social-title" style={{ fontWeight: 400 }}>
+                +1 (614) 356-7697
+              </div>
+
+              <div className="axil-social-title" style={{ fontWeight: 400 }}>
+                6605 Longshore St, Dublin, OH 43017, USA
+              </div>
             </div>
           </div>
         </div>

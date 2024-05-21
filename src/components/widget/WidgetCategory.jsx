@@ -72,7 +72,7 @@ const WidgetCategory = () => {
                   >
                     <Image
                       src={urlFor(data.category_image).url()}
-                      alt={categoryData.title}
+                      alt={data?.altText || categoryData.title}
                       width={155}
                       height={190}
                     />
@@ -97,7 +97,7 @@ const WidgetCategory = () => {
                   >
                     <Image
                       src={urlFor(data.category_image).url()}
-                      alt={categoryData.title}
+                      alt={data.altText || categoryData.title}
                       width={155}
                       height={190}
                     />
@@ -122,7 +122,7 @@ const WidgetCategory = () => {
                   >
                     <Image
                       src={urlFor(data.category_image).url()}
-                      alt={categoryData.title}
+                      alt={data.altText || categoryData.title}
                       width={155}
                       height={190}
                     />

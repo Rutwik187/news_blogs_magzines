@@ -28,6 +28,11 @@ export default defineType({
       },
     }),
     defineField({
+      name: 'altText',
+      title: 'Alt Text',
+      type: 'text',
+    }),
+    defineField({
       name: 'categories',
       title: 'Categories',
       type: 'array',

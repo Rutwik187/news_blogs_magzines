@@ -14,6 +14,7 @@ const WebProfiles = () => {
     'featureImg': mainImage.asset->url,
      'category': {
     'title': categories[0]->title,
+    altText,
     'slug': categories[0]->slug.current
   }
 

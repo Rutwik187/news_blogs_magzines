@@ -17,6 +17,7 @@ const MasterTalks = ({ postData, adBanner, pClass }) => {
 *[_type == "post" && categories[0]._ref == *[_type == "category" && slug.current == "master-talks"][0]._id] 
 {
   title,
+   altText,
   slug,
   'featureImg': mainImage.asset->url,
   description,

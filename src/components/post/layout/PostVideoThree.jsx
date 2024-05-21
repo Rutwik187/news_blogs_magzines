@@ -8,7 +8,7 @@ const PostVideoThree = ({ data, imgWidth, imgHeight }) => {
       <Link className="d-block h-100" href={`/post/${data.slug.current}`}>
         <Image
           src={data.featureImg}
-          alt={data.title}
+          alt={data?.altText || data.title}
           width={imgWidth ?? 540}
           height={imgHeight ?? 690}
           className="w-100"

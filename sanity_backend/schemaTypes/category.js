@@ -29,6 +29,11 @@ export default defineType({
       },
     }),
     defineField({
+      name: 'altText',
+      title: 'Alt Text',
+      type: 'string',
+    }),
+    defineField({
       name: 'description',
       title: 'Description',
       type: 'text',

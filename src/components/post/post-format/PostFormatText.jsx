@@ -29,7 +29,7 @@ const PostFormatText = ({ postData, allData }) => {
                   <Image
                     className="mb-4 object-fit-cover"
                     src={postData?.featureImg}
-                    alt="feature image"
+                    alt={postData?.altText || postData?.title}
                     width={800}
                     height={500}
                   ></Image>

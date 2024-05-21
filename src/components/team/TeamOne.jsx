@@ -10,6 +10,7 @@ const TeamOne = ({ data }) => {
         href={`/author/${slugify(data.author_name)}`}
       >
         <Image
+          className="object-fit-cover"
           src={data.author_img}
           alt={data.author_name}
           width={350}

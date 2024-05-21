@@ -1,6 +1,5 @@
 "use client";
 
-import HeadMeta from "../../components/elements/HeadMeta";
 import HeaderOne from "../../components/header/HeaderOne";
 import FooterTwo from "../../components/footer/FooterTwo";
 import RelatedArticles from "../../components/post/RelatedArticles";
@@ -9,6 +8,7 @@ import { useQuery } from "@tanstack/react-query";
 
 import { client } from "../../client";
 import Loader from "../../components/common/Loader";
+import HeadMetaDynamic from "../../components/elements/HeadMetaDynamic";
 
 const MagazineDetails = () => {
   const router = useRouter();
@@ -93,7 +93,7 @@ const MagazineDetails = () => {
 
   return (
     <>
-      <HeadMeta metaTitle="Magazines" />
+      <HeadMetaDynamic metaData={magazineContent[0]} />
       <HeaderOne />
       <div
         style={{
