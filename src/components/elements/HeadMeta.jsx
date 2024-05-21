@@ -3,7 +3,6 @@ import Head from "next/head";
 const HeadMeta = () => {
   return (
     <Head>
-      {/* Basic metas */}
       <meta charSet="utf-8" />
       <meta name="robots" content="index, follow" />
       <meta httpEquiv="x-ua-compatible" content="ie=edge" />

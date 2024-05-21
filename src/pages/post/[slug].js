@@ -13,7 +13,8 @@ const fetchPostData = async (slug) => {
     title,
     slug,
     'featureImg': mainImage.asset->url,
-    body
+    body,
+    description // Ensure this field is fetched
   }`;
   const postData = await client.fetch(postQuery);
   return postData;
@@ -35,7 +36,7 @@ const PostDetails = ({ initialData }) => {
   });
 
   if (isLoading) return <Loader />;
-  if (error) return <div>Error fetching posts: {error.message}</div>;
+  if (error) return <div>Error fetching post: {error.message}</div>;
   if (!postData) return <div>No data found</div>;
 
   return (
@@ -50,3 +51,15 @@ const PostDetails = ({ initialData }) => {
 };
 
 export default PostDetails;
+
+export async function getServerSideProps(context) {
+  const { slug } = context.params;
+
+  const initialData = await fetchPostData(slug);
+
+  return {
+    props: {
+      initialData,
+    },
+  };
+}
