@@ -20,7 +20,7 @@ const PostLayoutformag_Home = ({ data }) => {
             {/* adjust spacing between image and title */}
             <Image
               src={data.featureImg}
-              alt={data.title}
+              alt={data?.altText || data.title}
               width={1000}
               height={1000}
               className="img-fluid"

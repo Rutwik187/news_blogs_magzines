@@ -19,7 +19,7 @@ const HeadMetaDynamic = ({ metaData }) => {
       />
       <title>
         {metaData?.title
-          ? `TEC: ${metaData.title}`
+          ? `${metaData.title}`
           : "The Entrepreneurial Chronicles: A Business Magazine for Inspiring Entrepreneur Stories"}
       </title>
       <link rel="icon" type="image/x-icon" href="/favicon.ico" />

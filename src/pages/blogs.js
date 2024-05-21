@@ -15,6 +15,7 @@ const Blogs = () => {
 {
   title,
   slug,
+  altText,
   'featureImg': mainImage.asset->url,
   description,
   'category': {

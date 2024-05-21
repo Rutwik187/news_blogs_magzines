@@ -7,7 +7,7 @@ const PostLayoutSeven = ({ data }) => {
       <Link href={`/post/${data.slug.current}`}>
         <Image
           src={data.featureImg}
-          alt={data.title}
+          alt={data?.altText || data.title}
           width={255}
           height={255}
           className="img-fluid"

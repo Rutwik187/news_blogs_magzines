@@ -16,7 +16,7 @@ const PostLayoutOne = ({ data }) => {
           <Link href={`/Magazine/${data?.slug.current}`}>
             <Image
               src={data?.featureImg}
-              alt={data?.title}
+              alt={data?.altText || data?.title}
               width={540}
               height={540}
               placeholder="blur"

@@ -14,8 +14,11 @@ const PostLayoutTwo = ({ data, postSizeMd, postBgDark }) => {
         href={`/Magazine/${data.slug.current}`}
       >
         <Image
+          className={
+            postSizeMd == true ? "object-fit-contain" : "object-fit-cover"
+          }
           src={data.featureImg}
-          alt={data.title}
+          alt={data.altText || data.title}
           width={postSizeMd === true ? 285 : 150}
           height={postSizeMd === true ? 285 : 150}
           placeholder="blur"

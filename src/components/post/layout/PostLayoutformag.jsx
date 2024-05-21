@@ -9,7 +9,7 @@ const PostLayoutformag = ({ data }) => {
           <div className="image-container">
             <Image
               src={data.featureImg}
-              alt={data.title}
+              alt={data?.altText || data.title}
               width={1000}
               height={1000}
               className="img-fluid"

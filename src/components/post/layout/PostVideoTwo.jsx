@@ -11,7 +11,7 @@ const PostVideoTwo = ({ data, pClass }) => {
       <Link className="align-self-center" href={`/post/${data.slug.current}`}>
         <Image
           src={data.featureImg}
-          alt={data.altText || data.title}
+          alt={data?.altText || data.title}
           width={1000}
           height={100}
         />

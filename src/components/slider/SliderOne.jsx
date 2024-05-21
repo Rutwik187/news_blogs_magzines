@@ -17,6 +17,7 @@ const SliderOne = () => {
       const query = `*[_type == 'post' && featured == true]{
       title,
       slug,
+      altText,
       'featureImg': mainImage.asset->url,
 
       'cate': categories[0]->title

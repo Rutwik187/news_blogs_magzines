@@ -10,7 +10,7 @@ const PostLayoutThree = ({ data, postSizeLg, pClass, videoPost }) => {
       >
         <Image
           src={data.featureImg}
-          alt={data.title}
+          alt={data?.altText || data.title}
           width={postSizeLg === true ? 730 : 350}
           height={postSizeLg === true ? 550 : 260}
           className="w-100"

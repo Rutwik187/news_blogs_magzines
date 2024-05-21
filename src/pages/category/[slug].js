@@ -19,6 +19,7 @@ const fetchPostsByCategory = async (category) => {
   const query = `*[_type == "post" && categories[0]._ref == *[_type == "category" && slug.current == "${params.category}"][0]._id] {
   title,
   slug,
+  altText,
   'featureImg': mainImage.asset->url,
     description,
   'category': {

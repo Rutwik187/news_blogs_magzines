@@ -11,6 +11,7 @@ const WebProfiles2 = () => {
 *[_type == "post" && categories[0]._ref == *[_type == "category" && slug.current == "web-profiles"][0]._id] 
  {
     title,
+    altText,
     slug,
     'featureImg': mainImage.asset->url,
      'category': {

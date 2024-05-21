@@ -10,7 +10,7 @@ const PostLayoutFive = ({ data, index }) => {
           <Image
             className="w-100 m-b-xs-30"
             src={data.featureImg}
-            alt={data.title}
+            alt={data?.altText || data.title}
             width={528}
             height={index % 2 == 1 ? 782 : 586}
           />

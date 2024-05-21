@@ -7,7 +7,7 @@ const PostVideoOne = ({ data }) => {
       <Link className="d-block h-100" href={`/post/${data.slug.current}`}>
         <Image
           src={data.featureImg}
-          alt={data.title}
+          alt={data?.altText || data.title}
           width={1000}
           height={1000}
           className="w-100"

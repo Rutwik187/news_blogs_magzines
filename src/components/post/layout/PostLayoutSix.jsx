@@ -8,7 +8,7 @@ const PostLayoutSix = ({ data }) => {
       <Link className="d-block" href={`/post/${data?.slug.current}`}>
         <Image
           src={data?.featureImg}
-          alt={data?.title}
+          alt={data?.altText || data?.title}
           width={390}
           height={390}
         />
