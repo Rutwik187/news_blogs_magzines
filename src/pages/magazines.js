@@ -7,13 +7,13 @@ import PostLayoutformag from "../components/post/layout/PostLayoutformag";
 
 const Magazines = () => {
   const query = `
-*[_type == "magazine"] 
+*[_type == "allMagazine"] 
 {
   title,
   slug,
   'featureImg': mainImage.asset->url,
  
-} | order(_createdAt desc)[0...4] 
+} | order(_createdAt desc)
 `;
 
   const { data, isLoading, error } = useQuery({

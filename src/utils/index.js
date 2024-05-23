@@ -10,7 +10,7 @@ export async function fetchAllPostSlugs() {
 }
 
 export function generateSitemap(slugs) {
-  const baseUrl = "https://www.https://theentrepreneurialchronicles.com";
+  const baseUrl = "https://www.theentrepreneurialchronicles.com";
 
   const staticUrls = [
     { url: `${baseUrl}/`, changefreq: "daily", priority: 1.0 },
