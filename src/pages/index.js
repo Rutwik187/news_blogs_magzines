@@ -12,7 +12,10 @@ import MarketNews from "../components/post/MarketNews";
 const Home = () => {
   return (
     <div suppressHydrationWarning>
-      <HeadMeta metaTitle="The Entrepreneurial Chronicles" />
+      <HeadMeta
+        metaTitle="The Entrepreneurial Chronicles: A Business Magazine for Inspiring Entrepreneur Stories"
+        metaDesc="The Entrepreneurial Chronicles is a business magazine that brings inspiring stories of entrepreneurs who have turned their dreams into reality."
+      />
       <HeaderOne />
       <SliderOne />
       <Magazines />

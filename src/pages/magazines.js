@@ -4,10 +4,11 @@ import Loader from "../components/common/Loader";
 import HeaderOne from "../components/header/HeaderOne";
 import FooterTwo from "../components/footer/FooterTwo";
 import PostLayoutformag from "../components/post/layout/PostLayoutformag";
+import HeadMeta from "../components/elements/HeadMeta";
 
 const Magazines = () => {
   const query = `
-*[_type == "allMagazine"] 
+*[_type == "magazine"] 
 {
   title,
   slug,
@@ -17,20 +18,29 @@ const Magazines = () => {
 `;
 
   const { data, isLoading, error } = useQuery({
-    queryKey: ["magazines"],
+    queryKey: ["allMagazines"],
     queryFn: async () => {
       const response = await client.fetch(query);
       return response;
     },
   });
 
-  if (isLoading) return <Loader />;
-  if (error) return <div>Error fetching posts</div>;
+  // if (isLoading) return <Loader />;
+  // if (error) return <div>Error fetching posts</div>;
 
-  if (!data) return null;
+  // if (!data) return null;
 
   return (
     <>
+      <HeadMeta
+        metaTitle={
+          "Exclusive Interviews with Entrepreneurs Featured in The Entrepreneurial Chronicles Magazine"
+        }
+        metaDesc={
+          " Exclusive interviews with top entrepreneurs featured in The Entrepreneurial Chronicles Magazine. Discover their inspiring journey, business strategies, and tips for success in the entrepreneurial world "
+        }
+      />
+
       <HeaderOne />
 
       <div style={{ width: "100%", height: "auto" }}>
@@ -123,7 +133,7 @@ const Magazines = () => {
             margin: "0 auto",
           }}
         >
-          {data.map((post, index) => (
+          {data?.map((post, index) => (
             <PostLayoutformag data={post} key={index} />
           ))}
         </div>

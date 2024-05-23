@@ -8,6 +8,7 @@ import WidgetPost from "../components/widget/WidgetPost";
 import WidgetCategory from "../components/widget/WidgetCategory";
 import HeaderOne from "../components/header/HeaderOne";
 import FooterTwo from "../components/footer/FooterTwo";
+import HeadMeta from "../components/elements/HeadMeta";
 
 const Blogs = () => {
   const query = `
@@ -32,19 +33,27 @@ const Blogs = () => {
     },
   });
 
-  if (isLoading) return <Loader />;
-  if (error) return <div>Error fetching posts</div>;
+  // if (isLoading) return <Loader />;
+  // if (error) return <div>Error fetching posts</div>;
 
-  if (!data) return null;
+  // if (!data) return null;
+
   return (
     <>
+      <HeadMeta
+        metaTitle="Best Business Blog for the Latest News, Proven Strategies, and Insightful Analysis | The Entrepreneurial Chronicles 
+"
+        metaDesc="Meta Description: Stay ahead of the curve with our top-ranked business blog. Get access to the latest industry news, proven strategies from experts, and insightful analysis to help your business thrive.
+"
+      />
+
       <HeaderOne />
 
       <div className="container " style={{ marginTop: "30px" }}>
         <div className="row">
           <div className="col-lg-8">
             <div className="axil-content">
-              {data.slice(0, 8).map((post, index) => (
+              {data?.slice(0, 8).map((post, index) => (
                 <PostLayoutTwo data={post} postSizeMd={true} key={index} />
               ))}
             </div>

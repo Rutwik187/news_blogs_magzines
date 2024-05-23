@@ -18,7 +18,14 @@ import FooterTwo from "../components/footer/FooterTwo";
 const AboutUs = ({ aboutData }) => {
   return (
     <>
-      <HeadMeta metaTitle="About Us" />
+      <HeadMeta
+        metaTitle={
+          "Learn About The Entrepreneurial Chronicles | A Leading Global Business Magazine"
+        }
+        metaDesc={
+          "The Entrepreneurial Chronicles is a global business magazine featuring Visionary business leaders, Industry tycoons, and Entrepreneurial Minds from around the world "
+        }
+      />
       <HeaderOne />
       <Breadcrumb aPage="About Us" />
       <BreadcrumbBanner pageTitle="About Us" />
