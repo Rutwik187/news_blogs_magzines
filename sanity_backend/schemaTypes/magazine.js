@@ -25,6 +25,11 @@ export default defineType({
       },
     }),
     defineField({
+      name: 'keywords',
+      title: 'Key Words',
+      type: 'string',
+    }),
+    defineField({
       name: 'mainImage',
       title: 'Main image',
       type: 'image',

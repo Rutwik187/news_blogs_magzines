@@ -1,5 +1,3 @@
-"use client";
-
 import HeaderOne from "../../components/header/HeaderOne";
 import FooterTwo from "../../components/footer/FooterTwo";
 import RelatedArticles from "../../components/post/RelatedArticles";
@@ -9,18 +7,21 @@ import { useQuery } from "@tanstack/react-query";
 import { client } from "../../client";
 import Loader from "../../components/common/Loader";
 import HeadMetaDynamic from "../../components/elements/HeadMetaDynamic";
+import Head from "next/head";
 
-const MagazineDetails = () => {
-  const router = useRouter();
-  const { slug } = router.query;
-
+const fetchMagazineContent = async (slug) => {
   const magazineContentQuery = `*[_type == "magazine" && slug.current == '${slug}']{
     title,
     slug,
+    keywords,
+    description,
     'featureImg': mainImage.asset->url,
     issuuLink
   }`;
+  return await client.fetch(magazineContentQuery);
+};
 
+const fetchAllArticles = async () => {
   const allArticlesQuery = `*[_type == "post" && categories[0]._ref == *[_type == "category" && slug.current == "web-profiles"][0]._id] {
     title,
     slug,
@@ -30,12 +31,25 @@ const MagazineDetails = () => {
       'slug': categories[0]->slug.current
     }
   } | order(_createdAt desc)[0...3]`;
+  return await client.fetch(allArticlesQuery);
+};
 
+const fetchCurrentMagArticle = async (slug) => {
   const currentMagArticleQuery = `*[_type == "post" && _id == *[_type == "magazine" && slug.current == '${slug}'][0].linkedArticle[0]._ref]{
     title,
     slug,
     'featureImg': mainImage.asset->url
   }`;
+  return await client.fetch(currentMagArticleQuery);
+};
+
+const MagazineDetails = ({
+  initialMagazineContent,
+  initialAllArticles,
+  initialCurrentMagArticle,
+}) => {
+  const router = useRouter();
+  const { slug } = router.query;
 
   const {
     data: magazineContent,
@@ -43,12 +57,9 @@ const MagazineDetails = () => {
     error: errorMagazine,
   } = useQuery({
     queryKey: ["magazineContent", slug],
-    queryFn: async () => {
-      if (!slug) return null;
-      const response = await client.fetch(magazineContentQuery);
-      return response;
-    },
-    enabled: !!slug, // Ensure the query only runs when slug is defined
+    queryFn: () => fetchMagazineContent(slug),
+    enabled: !!slug,
+    initialData: initialMagazineContent,
   });
 
   const {
@@ -57,10 +68,8 @@ const MagazineDetails = () => {
     error: errorAllArticles,
   } = useQuery({
     queryKey: ["web-profiles"],
-    queryFn: async () => {
-      const response = await client.fetch(allArticlesQuery);
-      return response;
-    },
+    queryFn: fetchAllArticles,
+    initialData: initialAllArticles,
   });
 
   const {
@@ -69,12 +78,9 @@ const MagazineDetails = () => {
     error: errorCurrentArticle,
   } = useQuery({
     queryKey: ["currentMagArticle", slug],
-    queryFn: async () => {
-      if (!slug) return null;
-      const response = await client.fetch(currentMagArticleQuery);
-      return response;
-    },
-    enabled: !!slug, // Ensure the query only runs when slug is defined
+    queryFn: () => fetchCurrentMagArticle(slug),
+    enabled: !!slug,
+    initialData: initialCurrentMagArticle,
   });
 
   if (isLoadingMagazine || isLoadingAllArticles || isLoadingCurrentArticle)
@@ -89,11 +95,15 @@ const MagazineDetails = () => {
         Error fetching current magazine article: {errorCurrentArticle.message}
       </div>
     );
-  if (!magazineContent) return <div>No magazine content found</div>;
+  if (!magazineContent || magazineContent.length === 0)
+    return <div>No magazine content found</div>;
+
+  const { issuuLink } = magazineContent[0];
 
   return (
     <>
       <HeadMetaDynamic metaData={magazineContent[0]} />
+
       <HeaderOne />
       <div
         style={{
@@ -106,7 +116,7 @@ const MagazineDetails = () => {
         <iframe
           allow="clipboard-write"
           sandbox="allow-top-navigation allow-top-navigation-by-user-activation allow-downloads allow-scripts allow-same-origin allow-popups allow-modals allow-popups-to-escape-sandbox allow-forms"
-          allowfullscreen="true"
+          allowFullScreen={true}
           style={{
             position: "absolute",
             border: "none",
@@ -117,7 +127,7 @@ const MagazineDetails = () => {
             top: 0,
             bottom: 0,
           }}
-          src={`${magazineContent[0].issuuLink}`}
+          src={issuuLink}
         />
       </div>
       <RelatedArticles
@@ -130,3 +140,33 @@ const MagazineDetails = () => {
 };
 
 export default MagazineDetails;
+
+export async function getStaticProps({ params }) {
+  const { slug } = params;
+
+  const initialMagazineContent = await fetchMagazineContent(slug);
+  const initialAllArticles = await fetchAllArticles();
+  const initialCurrentMagArticle = await fetchCurrentMagArticle(slug);
+
+  return {
+    props: {
+      initialMagazineContent,
+      initialAllArticles,
+      initialCurrentMagArticle,
+    },
+  };
+}
+
+export async function getStaticPaths() {
+  const slugsQuery = `*[_type == "magazine"].slug.current`;
+  const slugs = await client.fetch(slugsQuery);
+
+  const paths = slugs.map((slug) => ({
+    params: { slug },
+  }));
+
+  return {
+    paths,
+    fallback: "blocking",
+  };
+}

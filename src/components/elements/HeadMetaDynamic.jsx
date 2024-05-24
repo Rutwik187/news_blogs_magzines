@@ -10,7 +10,14 @@ const HeadMetaDynamic = ({ metaData }) => {
         name="description"
         content={
           metaData?.description ||
-          "The Entrepreneurial Chronicles is a business magazine that brings inspiring stories of entrepreneurs who have turned their dreams into reality."
+          "The Entrepreneurial Chronicles is a business magazine that brings inspiring stories of entrepreneurs who have turned their dreams into reality."
+        }
+      />
+      <meta
+        name="keywords"
+        content={
+          metaData?.keywords ||
+          "business, magazines, entrepreneurs, popular-personalities"
         }
       />
       <meta
@@ -20,7 +27,7 @@ const HeadMetaDynamic = ({ metaData }) => {
       <title>
         {metaData?.title
           ? `${metaData.title}`
-          : "TThe Entrepreneurial Chronicles: A Business Magazine for Inspiring Entrepreneur Stories"}
+          : "The Entrepreneurial Chronicles: A Business Magazine for Inspiring Entrepreneur Stories"}
       </title>
       <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     </Head>

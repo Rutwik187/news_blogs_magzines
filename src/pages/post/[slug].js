@@ -12,6 +12,7 @@ const fetchPostData = async (slug) => {
   const postQuery = `*[_type == "post" && slug.current == '${slug}'][0] {
     title,
     altText,
+    keywords,
     slug,
     'featureImg': mainImage.asset->url,
     body,
