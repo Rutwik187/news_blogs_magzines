@@ -23,7 +23,7 @@ export function generateSitemap(slugs) {
     .map((slug) => {
       return `
       <url>
-        <loc>${baseUrl}/posts/${slug}</loc>
+        <loc>${baseUrl}/post/${slug}</loc>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
       </url>
