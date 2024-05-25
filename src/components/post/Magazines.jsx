@@ -41,7 +41,8 @@ const Magazines = () => {
     <div className="related-post mt-4">
       <div className="container">
         <SectionTitle
-          title={"Magazines"}
+          btnUrl={`/magazines`}
+          title={"Latest Magazines"}
           btnText="View All Magazines"
           pClass="mb-0"
         />
