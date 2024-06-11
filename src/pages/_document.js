@@ -21,7 +21,7 @@ const Document = () => {
         {/* Google Tag Manager Script */}
         <script
           async
-          src="https://www.googletagmanager.com/gtag/js?id=G-MG0D5V7DTQ"
+          src="https://www.googletagmanager.com/gtag/js?id=G-CFTSB5X8JY"
         ></script>
         <script
           dangerouslySetInnerHTML={{
@@ -29,7 +29,7 @@ const Document = () => {
                             window.dataLayer = window.dataLayer || [];
                             function gtag(){dataLayer.push(arguments);}
                             gtag('js', new Date());
-                            gtag('config', 'G-MG0D5V7DTQ');
+                            gtag('config', 'G-CFTSB5X8JY');
                         `,
           }}
         />
