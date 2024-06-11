@@ -61,7 +61,7 @@ const FooterTwo = () => {
             <div className="footer-social-share-wrapper">
               <div className="footer-social-share">
                 <div className="axil-social-title" style={{ fontWeight: 400 }}>
-                  Find us here
+                  Reach Us
                 </div>
                 <ul className="social-share social-share__with-bg">
                   <li>
@@ -154,7 +154,7 @@ const FooterTwo = () => {
         </div>
       </div>
       <p style={{ textAlign: "center", marginTop: "3rem", fontWeight: 400 }}>
-        &copy;Copyright 2024, The Entrepreneurial Chronicles | All Rights
+        &copy;Copyright 2024 | The Entrepreneurial Chronicles | All Rights
         Reserved.
       </p>
     </footer>

@@ -3,6 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import { client } from "../../client";
 import PostLayoutTwo from "./layout/PostLayoutTwo";
 import Loader from "../common/Loader";
+import PostLayoutTwo1 from "./layout/PostLayoutTwo1";
 
 const BusinessBulletin = () => {
   const query = `
@@ -33,17 +34,18 @@ const BusinessBulletin = () => {
   if (!data) return null;
 
   return (
-    <div className="section-gap section-gap-top__with-text trending-stories">
+    <div className="section-gap section-gap-top__with-text trending-stories bg-grey-dark-one">
       <div className="container">
         <SectionTitle
           title={data[0]?.category.title || "Business Bulletin"}
           btnText="ALL Posts"
           btnUrl={`/category/${data[0]?.category?.slug}`}
+          pClass="title-white m-b-xs-40"
         />
         <div className="row">
           {data.map((post, index) => (
             <div className="col-lg-6" key={index}>
-              <PostLayoutTwo data={post} />
+              <PostLayoutTwo1 data={post} />
             </div>
           ))}
         </div>

@@ -89,7 +89,7 @@ const HeaderOne = () => {
   return (
     <>
       <OffcanvasMenu ofcshow={show} ofcHandleClose={handleClose} />
-      <header className="page-header">
+      <header className="page-header sticky-top">
         <div className="header-top bg-grey-dark-one">
           <div className="container">
             <div className="row align-items-center">
