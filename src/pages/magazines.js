@@ -34,10 +34,10 @@ const Magazines = () => {
     <>
       <HeadMeta
         metaTitle={
-          "Exclusive Interviews with Entrepreneurs Featured in The Entrepreneurial Chronicles Magazine"
+          "Exclusive Interviews with Entrepreneurs Featured in The Entrepreneurial Chronicle Magazine"
         }
         metaDesc={
-          " Exclusive interviews with top entrepreneurs featured in The Entrepreneurial Chronicles Magazine. Discover their inspiring journey, business strategies, and tips for success in the entrepreneurial world "
+          " Exclusive interviews with top entrepreneurs featured in The Entrepreneurial Chronicle Magazine. Discover their inspiring journey, business strategies, and tips for success in the entrepreneurial world "
         }
       />
 

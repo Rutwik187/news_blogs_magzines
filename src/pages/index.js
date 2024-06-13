@@ -26,7 +26,7 @@ const Home = () => {
       <FooterTwo />
 
       <Script
-        id="schema-script"
+        id="json-ld"
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
@@ -35,9 +35,9 @@ const Home = () => {
               {
                 "@type": "Organization",
                 "@id":
-                  "https://www.theentrepreneurialchronicles.com/#organization",
-                name: "The Entrepreneurial Chronicles | Best Business Magazine",
-                url: "https://www.theentrepreneurialchronicles.com/",
+                  "https://www.theentrepreneurialchronicle.com/#organization",
+                name: "The Entrepreneurial Chronicle | Best Business Magazine",
+                url: "https://www.theentrepreneurialchronicle.com/",
                 sameAs: [
                   "https://www.facebook.com/Theentrepreneurialchronicles",
                   "https://www.instagram.com/the.entrepreneurialchronicles/",
@@ -45,33 +45,33 @@ const Home = () => {
                 ],
                 logo: {
                   "@type": "ImageObject",
-                  "@id": "https://www.theentrepreneurialchronicles.com/#logo",
+                  "@id": "https://www.theentrepreneurialchronicle.com/#logo",
                   inLanguage: "en-US",
-                  url: "https://www.theentrepreneurialchronicles.com/_next/image?url=%2Flogos%2Flogo-primary.png&w=384&q=75",
+                  url: "https://www.theentrepreneurialchronicle.com/_next/image?url=%2Flogos%2Flogo-primary.png&w=384&q=75",
                   width: 300,
                   height: 150,
-                  caption: "The Entrepreneurial Chronicles",
+                  caption: "The Entrepreneurial Chronicle",
                 },
                 image: {
-                  "@id": "https://www.theentrepreneurialchronicles.com/#logo",
+                  "@id": "https://www.theentrepreneurialchronicle.com/#logo",
                 },
               },
               {
                 "@type": "WebSite",
-                "@id": "https://www.theentrepreneurialchronicles.com/#website",
-                url: "https://www.theentrepreneurialchronicles.com/",
-                name: "The Entrepreneurial Chronicles",
+                "@id": "https://www.theentrepreneurialchronicle.com/#website",
+                url: "https://www.theentrepreneurialchronicle.com/",
+                name: "The Entrepreneurial Chronicle",
                 description:
-                  "The Entrepreneurial Chronicles is a business magazine that brings inspiring stories of entrepreneurs who have turned their dreams into reality.",
+                  "The Entrepreneurial Chronicle is a business magazine that brings inspiring stories of entrepreneurs who have turned their dreams into reality.",
                 publisher: {
                   "@id":
-                    "https://www.theentrepreneurialchronicles.com/#organization",
+                    "https://www.theentrepreneurialchronicle.com/#organization",
                 },
                 potentialAction: [
                   {
                     "@type": "SearchAction",
                     target:
-                      "https://www.theentrepreneurialchronicles.com/?s={search_term_string}",
+                      "https://www.theentrepreneurialchronicle.com/?s={search_term_string}",
                     "query-input": "required name=search_term_string",
                   },
                 ],
@@ -79,26 +79,25 @@ const Home = () => {
               },
               {
                 "@type": "WebPage",
-                "@id": "https://www.theentrepreneurialchronicles.com/#webpage",
-                url: "https://www.theentrepreneurialchronicles.com/",
-                name: "The Entrepreneurial Chronicles | Best Business Magazine",
+                "@id": "https://www.theentrepreneurialchronicle.com/#webpage",
+                url: "https://www.theentrepreneurialchronicle.com/",
+                name: "The Entrepreneurial Chronicle | Best Business Magazine",
                 isPartOf: {
-                  "@id":
-                    "https://www.theentrepreneurialchronicles.com/#website",
+                  "@id": "https://www.theentrepreneurialchronicle.com/#website",
                 },
                 about: {
                   "@id":
-                    "https://www.theentrepreneurialchronicles.com/#organization",
+                    "https://www.theentrepreneurialchronicle.com/#organization",
                 },
                 datePublished: "2018-03-24T20:16:53+00:00",
                 dateModified: "2020-02-04T20:33:08+00:00",
                 description:
-                  "The Entrepreneurial Chronicles is a business magazine that brings inspiring stories of entrepreneurs who have turned their dreams into reality.",
+                  "The Entrepreneurial Chronicle is a business magazine that brings inspiring stories of entrepreneurs who have turned their dreams into reality.",
                 inLanguage: "en-US",
                 potentialAction: [
                   {
                     "@type": "ReadAction",
-                    target: ["https://www.theentrepreneurialchronicles.com/"],
+                    target: ["https://www.theentrepreneurialchronicle.com/"],
                   },
                 ],
               },
