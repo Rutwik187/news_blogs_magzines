@@ -19,7 +19,7 @@ const MarketNews = () => {
     'slug': categories[0]->slug.current
   }
 
-} | order(_createdAt desc)[0...4] 
+} | order(publishedAt desc)[0...4] 
 `;
 
   const { data, isLoading, error } = useQuery({

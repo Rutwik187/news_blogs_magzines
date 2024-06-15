@@ -20,8 +20,9 @@ const Magazines = () => {
    altText,
   slug,
   'featureImg': mainImage.asset->url,
+  publishedAt,
  
-} | order(_createdAt desc)[0...6] 
+} | order(publishedAt desc)[0...8] 
 `;
 
   const { data, isLoading, error } = useQuery({

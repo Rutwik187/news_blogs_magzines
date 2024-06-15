@@ -15,10 +15,11 @@ const WebProfiles = () => {
      'category': {
     'title': categories[0]->title,
     altText,
-    'slug': categories[0]->slug.current
-  }
+    'slug': categories[0]->slug.current,
+    },
+    publishedAt
 
-} | order(_createdAt desc)[0...5] 
+} | order(publishedAt desc)[0...5] 
 `;
   const { data, isLoading, error } = useQuery({
     queryKey: ["web-profiles"],

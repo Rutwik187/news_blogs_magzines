@@ -21,7 +21,7 @@ const SliderOne = () => {
       'featureImg': mainImage.asset->url,
 
       'cate': categories[0]->title
-    }| order(_createdAt desc) [0...5]`; // Get up to 3 featured posts
+    }| order(publishedAt desc) [0...5]`; // Get up to 3 featured posts
 
       const response = await client.fetch(query);
       return response;

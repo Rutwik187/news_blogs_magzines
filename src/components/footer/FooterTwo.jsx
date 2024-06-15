@@ -15,7 +15,7 @@ const FooterTwo = () => {
   slug,
   'featureImg': mainImage.asset->url,
  
-} | order(_createdAt desc)[0...6] 
+} | order(publishedAt desc)[0...6] 
 `;
 
   const { data, isLoading, error } = useQuery({

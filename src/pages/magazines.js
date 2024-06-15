@@ -14,7 +14,7 @@ const Magazines = () => {
   slug,
   'featureImg': mainImage.asset->url,
  
-} | order(_createdAt desc)
+} | order(publishedAt desc)
 `;
 
   const { data, isLoading, error } = useQuery({

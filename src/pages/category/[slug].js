@@ -27,7 +27,7 @@ const fetchPostsByCategory = async (category) => {
     'slug': categories[0]->slug.current
   }
 
-} | order(_createdAt desc) `;
+} | order(publishedAt desc) `;
 
   const posts = await client.fetch(query, params);
   return posts;

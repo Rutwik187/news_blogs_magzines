@@ -18,7 +18,7 @@ const BusinessBulletin = () => {
     'title': categories[0]->title,
     'slug': categories[0]->slug.current
   }
-} | order(_createdAt desc)[0...6] 
+} | order(publishedAt desc)[0...6] 
 `;
   const { data, isLoading, error } = useQuery({
     queryKey: ["categoryThreePosts"],

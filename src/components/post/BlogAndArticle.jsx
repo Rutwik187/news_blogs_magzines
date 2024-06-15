@@ -16,7 +16,7 @@ const BlogAndArticle = () => {
     'title': categories[0]->title,
     'slug': categories[0]->slug.current
   }
-} | order(_createdAt desc)[0...3] 
+} | order(publishedAt desc)[0...3] 
 
 `;
   const { data, isLoading, error } = useQuery({

@@ -31,7 +31,7 @@ const fetchAllArticles = async () => {
       'title': categories[0]->title,
       'slug': categories[0]->slug.current
     }
-  } | order(_createdAt desc)[0...3]`;
+  } | order(publishedAt desc)[0...3]`;
   return await client.fetch(allArticlesQuery);
 };
 
