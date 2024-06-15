@@ -9,10 +9,7 @@ const PostLayoutTwo = ({ data, postSizeMd, postBgDark }) => {
         postSizeMd === true ? "post-block__mid" : ""
       } ${postBgDark === true ? "post-block__on-dark-bg" : ""}`}
     >
-      <Link
-        className="align-self-center"
-        href={`/Magazine/${data.slug.current}`}
-      >
+      <Link className="align-self-center" href={`/post/${data.slug.current}`}>
         <Image
           className={
             postSizeMd == true ? "object-fit-contain" : "object-fit-cover"
