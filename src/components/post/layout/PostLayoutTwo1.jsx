@@ -11,15 +11,16 @@ const PostLayoutTwo1 = ({ data, postSizeMd, postBgDark }) => {
     >
       <Link className="align-self-center" href={`/post/${data.slug.current}`}>
         <Image
-          className={
-            postSizeMd == true ? "object-fit-contain" : "object-fit-cover"
-          }
+          // className={
+          //   postSizeMd == true ? "object-fit-contain" : "object-fit-cover"
+          // }
           src={data.featureImg}
           alt={data.altText || data.title}
           width={postSizeMd === true ? 285 : 150}
           height={postSizeMd === true ? 285 : 150}
           placeholder="blur"
           blurDataURL="/images/placeholder.png"
+          style={{ objectFit: "contain" }}
         />
       </Link>
 

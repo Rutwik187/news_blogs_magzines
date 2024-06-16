@@ -14,6 +14,7 @@ const PostVideoTwo = ({ data, pClass }) => {
           alt={data?.altText || data.title}
           width={1000}
           height={100}
+          style={{ objectFit: "contain" }}
         />
       </Link>
 
