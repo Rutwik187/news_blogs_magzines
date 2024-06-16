@@ -59,9 +59,12 @@ const FooterTwo = () => {
               />
             </Link>
             <div className="footer-social-share-wrapper">
-              <div className="footer-social-share">
+              <div
+                className="footer-social-share"
+                style={{ marginBottom: "1rem" }}
+              >
                 <div className="axil-social-title" style={{ fontWeight: 400 }}>
-                  Reach Us
+                  Reach Us :
                 </div>
                 <ul className="social-share social-share__with-bg">
                   <li>
@@ -91,8 +94,21 @@ const FooterTwo = () => {
                   </li>
                 </ul>
               </div>
-              <div className="axil-social-title" style={{ fontWeight: 400 }}>
-                +1 (614) 356-7697
+              <div
+                className="mail"
+                style={{ fontWeight: 400, marginBottom: "1rem" }}
+              >
+                Write Us :
+                <a href="mailto:info@theentrepreneurialchronicle.com">
+                  info@theentrepreneurialchronicle
+                </a>
+              </div>
+
+              <div
+                className="number"
+                style={{ fontWeight: 400, marginBottom: "1rem" }}
+              >
+                Call Us :<a href="tel:+16143567697"> +1 (614) 356-7697</a>
               </div>
 
               <div className="axil-social-title" style={{ fontWeight: 400 }}>

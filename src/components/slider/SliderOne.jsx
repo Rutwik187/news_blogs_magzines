@@ -85,7 +85,10 @@ const SliderOne = () => {
 
   return (
     <div className="banner banner__home-with-slider banner__home-with-slider-one section-gap-bottom">
-      <div className="banner__home-with-slider-overlay"></div>
+      <div
+        className="banner__home-with-slider-overlay"
+        style={{ background: "#e8dfdf" }}
+      ></div>
       {/* End of .banner__home-with-slider-overlay */}
       <div className="container">
         <div className="row">
@@ -143,6 +146,7 @@ const SliderOne = () => {
                   alt={data?.altText || data.title}
                   width={2000}
                   height={2000}
+                  style={{ objectFit: "contain" }}
                 />
               </div>
             ))}
