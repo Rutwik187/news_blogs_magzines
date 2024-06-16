@@ -1,4 +1,3 @@
-import Script from "next/script";
 import HeadMeta from "../components/elements/HeadMeta";
 import FooterTwo from "../components/footer/FooterTwo";
 import HeaderOne from "../components/header/HeaderOne";
@@ -25,7 +24,7 @@ const Home = () => {
       <MasterTalks />
       <FooterTwo />
 
-      <Script
+      <script
         id="json-ld"
         type="application/ld+json"
         dangerouslySetInnerHTML={{
