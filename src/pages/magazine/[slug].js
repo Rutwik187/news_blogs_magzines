@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import HeaderOne from "../../components/header/HeaderOne";
 import FooterTwo from "../../components/footer/FooterTwo";
 import RelatedArticles from "../../components/post/RelatedArticles";
@@ -84,25 +83,6 @@ const MagazineDetails = ({
     initialData: initialCurrentMagArticle,
   });
 
-  const [relatedArticlesTop, setRelatedArticlesTop] = useState("88rem");
-
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth <= 576) {
-        setRelatedArticlesTop("40rem");
-      } else {
-        setRelatedArticlesTop("73rem");
-      }
-    };
-
-    window.addEventListener("resize", handleResize);
-    handleResize(); // Call once to set initial value
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
   if (isLoadingMagazine || isLoadingAllArticles || isLoadingCurrentArticle)
     return <Loader />;
   if (errorMagazine)
@@ -128,10 +108,10 @@ const MagazineDetails = ({
       <div
         style={{
           position: "relative",
-          paddingTop: "max(60%,326px)",
-          height: "100%",
+          height: "80vh",
           width: "100%",
           paddingBottom: "0px",
+          border: "2px solid black",
         }}
       >
         <iframe
@@ -142,7 +122,7 @@ const MagazineDetails = ({
             position: "absolute",
             border: "none",
             width: "100%",
-            height: "65%",
+            height: "100%",
             left: 0,
             right: 0,
             top: 0,
@@ -151,16 +131,7 @@ const MagazineDetails = ({
           src={issuuLink}
         />
       </div>
-      <div
-        style={{
-          position: "absolute",
-          border: "none",
-          left: 0,
-          right: 0,
-          top: relatedArticlesTop,
-          bottom: 0,
-        }}
-      >
+      <div style={{ marginTop: 0 }}>
         <RelatedArticles
           currentMagArticle={currentMagArticle}
           allMagazinesArticles={allArticles}
