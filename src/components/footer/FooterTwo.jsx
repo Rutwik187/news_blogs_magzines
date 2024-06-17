@@ -122,7 +122,7 @@ const FooterTwo = () => {
           style={{ margin: "1rem", color: "white" }}
         >
           <p style={{ width: "100%", color: "white", fontWeight: 200 }}>
-            The Entrepreneurial Chronicleis a business magazine that brings
+            The Entrepreneurial Chronicle is a business magazine that brings
             inspiring stories of entrepreneurs who have turned their
             dreams into reality.
           </p>

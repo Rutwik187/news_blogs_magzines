@@ -13,7 +13,7 @@ const Home = () => {
     <div suppressHydrationWarning>
       <HeadMeta
         metaTitle="The Entrepreneurial Chronicle: A Business Magazine for Inspiring Entrepreneur Stories"
-        metaDesc="The Entrepreneurial Chronicleis a business magazine that brings inspiring stories of entrepreneurs who have turned their dreams into reality."
+        metaDesc="The Entrepreneurial Chronicle is a business magazine that brings inspiring stories of entrepreneurs who have turned their dreams into reality."
       />
       <HeaderOne />
       <SliderOne />
