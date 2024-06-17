@@ -88,7 +88,7 @@ const Magazines = () => {
                 color: "white",
               }}
             >
-              Welcome to The Entrepreneurial Chronicles Magazine, where we
+              Welcome to The Entrepreneurial ChronicleMagazine, where we
               spotlight trailblazers from all sectors transforming the business
               magazine landscape. Our mission is to inspire and empower new
               leaders with groundbreaking ideas worldwide. Count on us for

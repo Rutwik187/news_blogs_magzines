@@ -12,8 +12,8 @@ const Home = () => {
   return (
     <div suppressHydrationWarning>
       <HeadMeta
-        metaTitle="The Entrepreneurial Chronicles: A Business Magazine for Inspiring Entrepreneur Stories"
-        metaDesc="The Entrepreneurial Chronicles is a business magazine that brings inspiring stories of entrepreneurs who have turned their dreams into reality."
+        metaTitle="The Entrepreneurial Chronicle: A Business Magazine for Inspiring Entrepreneur Stories"
+        metaDesc="The Entrepreneurial Chronicleis a business magazine that brings inspiring stories of entrepreneurs who have turned their dreams into reality."
       />
       <HeaderOne />
       <SliderOne />
@@ -38,7 +38,7 @@ const Home = () => {
                 name: "The Entrepreneurial Chronicle | Best Business Magazine",
                 url: "https://www.theentrepreneurialchronicle.com/",
                 sameAs: [
-                  "https://www.facebook.com/Theentrepreneurialchronicles",
+                  "https://www.facebook.com/Theentrepreneurialchronicle",
                   "https://www.instagram.com/the.entrepreneurialchronicles/",
                   "https://www.linkedin.com/company/theentrepreneurialchronicles/",
                 ],

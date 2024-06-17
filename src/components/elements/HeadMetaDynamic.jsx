@@ -10,7 +10,7 @@ const HeadMetaDynamic = ({ metaData }) => {
         name="description"
         content={
           metaData?.description ||
-          "The Entrepreneurial Chronicles is a business magazine that brings inspiring stories of entrepreneurs who have turned their dreams into reality."
+          "The Entrepreneurial Chronicleis a business magazine that brings inspiring stories of entrepreneurs who have turned their dreams into reality."
         }
       />
       <meta
@@ -27,7 +27,7 @@ const HeadMetaDynamic = ({ metaData }) => {
       <title>
         {metaData?.title
           ? `${metaData.title}`
-          : "The Entrepreneurial Chronicles: A Business Magazine for Inspiring Entrepreneur Stories"}
+          : "The Entrepreneurial Chronicle: A Business Magazine for Inspiring Entrepreneur Stories"}
       </title>
       <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     </Head>

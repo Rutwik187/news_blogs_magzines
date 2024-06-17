@@ -19,7 +19,7 @@ const HeadMeta = ({ metaTitle, metaDesc }) => {
       />
       <title>
         {metaTitle ||
-          "The Entrepreneurial Chronicles: A Business Magazine for Inspiring Entrepreneur Stories"}
+          "The Entrepreneurial Chronicle: A Business Magazine for Inspiring Entrepreneur Stories"}
       </title>
       <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     </Head>
