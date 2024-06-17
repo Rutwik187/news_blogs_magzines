@@ -91,7 +91,7 @@ const MagazineDetails = ({
       if (window.innerWidth <= 576) {
         setRelatedArticlesTop("40rem");
       } else {
-        setRelatedArticlesTop("86rem");
+        setRelatedArticlesTop("73rem");
       }
     };
 
@@ -142,7 +142,7 @@ const MagazineDetails = ({
             position: "absolute",
             border: "none",
             width: "100%",
-            height: "78%",
+            height: "65%",
             left: 0,
             right: 0,
             top: 0,

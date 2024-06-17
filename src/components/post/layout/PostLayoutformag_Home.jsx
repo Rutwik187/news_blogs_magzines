@@ -16,8 +16,6 @@ const PostLayoutformag_Home = ({ data }) => {
           }}
         >
           <div style={{ marginBottom: "10px" }}>
-            {" "}
-            {/* adjust spacing between image and title */}
             <Image
               src={data.featureImg}
               alt={data?.altText || data.title}

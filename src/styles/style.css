@@ -8457,7 +8457,7 @@ address .tel i {
   color: #fff;
 }
 /*--Media queries--*/
-@media screen and (min-width: 0 \0) {
+@media screen and (min-width: 0) {
   .axil-latest-post .post-block {
     display: block;
   }
@@ -8753,6 +8753,6 @@ address .tel i {
   fill: var(--primary-color) !important;
 }
 
-.splide__pagination__page.is-active{
-   background: var(--primary-color) !important;
+.splide__pagination__page.is-active {
+  background: var(--primary-color) !important;
 }
