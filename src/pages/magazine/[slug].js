@@ -7,7 +7,6 @@ import { useQuery } from "@tanstack/react-query";
 import { client } from "../../client";
 import Loader from "../../components/common/Loader";
 import HeadMetaDynamic from "../../components/elements/HeadMetaDynamic";
-import Head from "next/head";
 
 const fetchMagazineContent = async (slug) => {
   const magazineContentQuery = `*[_type == "magazine" && slug.current == '${slug}']{

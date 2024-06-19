@@ -98,8 +98,12 @@ const FooterTwo = () => {
                 className="mail"
                 style={{ fontWeight: 400, marginBottom: "1rem" }}
               >
-                Write Us :
-                <a href="mailto:info@theentrepreneurialchronicle.com">
+                Write Us:
+                <a
+                  href="mailto:info@theentrepreneurialchronicle.com"
+                  className="bold"
+                >
+                  {" "}
                   info@theentrepreneurialchronicle
                 </a>
               </div>

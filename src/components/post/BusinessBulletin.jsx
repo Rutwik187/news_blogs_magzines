@@ -21,7 +21,7 @@ const BusinessBulletin = () => {
 } | order(publishedAt desc)[0...6] 
 `;
   const { data, isLoading, error } = useQuery({
-    queryKey: ["categoryThreePosts"],
+    queryKey: ["business-bulletin"],
     queryFn: async () => {
       const response = await client.fetch(query);
       return response;
