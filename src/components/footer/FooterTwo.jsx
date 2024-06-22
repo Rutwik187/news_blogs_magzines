@@ -64,7 +64,7 @@ const FooterTwo = () => {
                 style={{ marginBottom: "1rem" }}
               >
                 <div className="axil-social-title" style={{ fontWeight: 400 }}>
-                  Reach Us :
+                  Social Media :
                 </div>
                 <ul className="social-share social-share__with-bg">
                   <li>
@@ -98,7 +98,7 @@ const FooterTwo = () => {
                 className="mail"
                 style={{ fontWeight: 400, marginBottom: "1rem" }}
               >
-                Write Us:
+                Reach Us:
                 <a
                   href="mailto:info@theentrepreneurialchronicle.com"
                   className="bold"
@@ -132,7 +132,29 @@ const FooterTwo = () => {
           </p>
         </div>
         <div>
-          <h4 style={{ color: "white", fontWeight: 200 }}>QUICK LINKS</h4>
+          <h4
+            style={{
+              color: "white",
+              fontWeight: "bold",
+              position:
+                "relative" /* Ensure position relative for absolute positioning */,
+              fontStyle: "initial",
+            }}
+          >
+            QUICK LINKS
+            <div
+              style={{
+                position: "absolute",
+                bottom: "-5px" /* Adjust as needed to position the line */,
+                left: "50%" /* Center the line horizontally */,
+                transform:
+                  "translateX(-50%)" /* Center the line horizontally */,
+                width: "50%",
+                height: "1px",
+                backgroundColor: "white",
+              }}
+            />
+          </h4>
           <ul
             style={{ color: "white", fontWeight: 200, fontSize: "medium" }}
             className="footer-bottom-links "
@@ -154,8 +176,30 @@ const FooterTwo = () => {
             </li>
           </ul>
         </div>
-        <div style={{ width: "30%", textAlign: "center" }}>
-          <h4 style={{ color: "white", fontWeight: 200 }}>MAGAZINES</h4>
+        <div style={{ width: "20%", textAlign: "center" }}>
+          <h4
+            style={{
+              color: "white",
+              fontWeight: "bold",
+              fontStyle: "initial",
+              position:
+                "relative" /* Ensure position relative for absolute positioning */,
+            }}
+          >
+            MAGAZINES
+            <div
+              style={{
+                position: "absolute",
+                bottom: "-5px" /* Adjust as needed to position the line */,
+                left: "50%" /* Center the line horizontally */,
+                transform:
+                  "translateX(-50%)" /* Center the line horizontally */,
+                width: "30%",
+                height: "1px",
+                backgroundColor: "white",
+              }}
+            />
+          </h4>
           <Carousel indicators={false}>
             {data.map((mag, index) => {
               return (
