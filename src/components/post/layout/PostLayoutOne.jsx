@@ -21,6 +21,7 @@ const PostLayoutOne = ({ data }) => {
               height={540}
               placeholder="blur"
               blurDataURL="/images/placeholder.png"
+              style={{ objectFit: "contain" }}
             />
           </Link>
           <div className="post-cat-group m-b-xs-10">
