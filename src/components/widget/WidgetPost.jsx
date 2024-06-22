@@ -2,7 +2,7 @@ import { Tab, Nav } from "react-bootstrap";
 import PostVideoTwo from "../post/layout/PostVideoTwo";
 import { useQuery } from "@tanstack/react-query";
 
-const WidgetPost = ({ dataPost }) => {
+const WidgetPost = () => {
   const webProfileData = useQuery({ queryKey: ["web-profiles"] });
 
   const marketNewsData = useQuery({ queryKey: ["market-news"] });

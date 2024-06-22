@@ -49,7 +49,7 @@ const Home = () => {
                   url: "https://www.theentrepreneurialchronicle.com/_next/image?url=%2Flogos%2Flogo-primary.png&w=384&q=75",
                   width: 300,
                   height: 150,
-                  caption: "The Entrepreneurial Chronicle",
+                  caption: "The Entrepreneurial Chronicles",
                 },
                 image: {
                   "@id": "https://www.theentrepreneurialchronicle.com/#logo",
@@ -59,7 +59,7 @@ const Home = () => {
                 "@type": "WebSite",
                 "@id": "https://www.theentrepreneurialchronicle.com/#website",
                 url: "https://www.theentrepreneurialchronicle.com/",
-                name: "The Entrepreneurial Chronicle",
+                name: "The Entrepreneurial Chronicles",
                 description:
                   "The Entrepreneurial Chronicle is a business magazine that brings inspiring stories of entrepreneurs who have turned their dreams into reality.",
                 publisher: {
