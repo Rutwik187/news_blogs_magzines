@@ -8704,6 +8704,44 @@ address .tel i {
   animation: move 3s linear infinite alternate;
 }
 
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.pagination button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 0 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.pagination button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.pagination button:not(:disabled):hover {
+  background-color: var(--primary-color);
+}
+
+.pagination button:not(:disabled):active {
+  transform: scale(0.95);
+}
+
+.pagination span {
+  margin: 0 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
 @keyframes move {
   0%,
   5% {

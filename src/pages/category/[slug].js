@@ -11,39 +11,63 @@ import PostLayoutTwo from "../../components/post/layout/PostLayoutTwo";
 import WidgetCategory from "../../components/widget/WidgetCategory";
 import { client } from "../../client";
 import Loader from "../../components/common/Loader";
+import { useState, useEffect } from "react";
 
-const fetchPostsByCategory = async (category) => {
-  const params = { category };
+const POSTS_PER_PAGE = 6;
 
-  console.log(params.category);
-  const query = `*[_type == "post" && categories[0]._ref == *[_type == "category" && slug.current == "${params.category}"][0]._id] {
-  title,
-  slug,
-  altText,
-  'featureImg': mainImage.asset->url,
+const fetchPostsByCategory = async (category, page) => {
+  const query = `*[_type == "post" && categories[0]._ref == *[_type == "category" && slug.current == "${category}"][0]._id] {
+    title,
+    slug,
+    altText,
+    'featureImg': mainImage.asset->url,
     description,
-  'category': {
-    'title': categories[0]->title,
-    'slug': categories[0]->slug.current
-  }
+    'category': {
+      'title': categories[0]->title,
+      'slug': categories[0]->slug.current
+    }
+  } | order(publishedAt desc)[${page * POSTS_PER_PAGE}...${
+    (page + 1) * POSTS_PER_PAGE
+  }]`;
 
-} | order(publishedAt desc) `;
-
-  const posts = await client.fetch(query, params);
+  const posts = await client.fetch(query);
   return posts;
 };
 
-const PostCategory = ({ initialPostData, initialAllPosts }) => {
-  const { data: postData } = useQuery({
-    queryKey: ["postData", initialPostData],
-    queryFn: () => fetchPostsByCategory(initialPostData.category),
-  });
-  const { data: allPosts = initialAllPosts } = useQuery({
-    queryKey: ["allPosts"],
-    queryFn: fetchPostsByCategory,
+const PostCategory = ({ initialCategory, initialAllPosts }) => {
+  const [page, setPage] = useState(0);
+
+  const {
+    data: postData,
+    isLoading,
+    isPreviousData,
+  } = useQuery({
+    queryKey: ["postData", initialCategory, page],
+    queryFn: () => fetchPostsByCategory(initialCategory, page),
+    keepPreviousData: true,
   });
 
-  if (!postData || !allPosts) {
+  const { data: allPosts } = useQuery({
+    queryKey: ["allPosts"],
+    queryFn: () => fetchPostsByCategory(initialCategory, 0),
+    initialData: initialAllPosts,
+  });
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [page]);
+
+  const handleNextPage = () => {
+    if (!isPreviousData && postData?.length === POSTS_PER_PAGE) {
+      setPage((old) => old + 1);
+    }
+  };
+
+  const handlePreviousPage = () => {
+    setPage((old) => Math.max(old - 1, 0));
+  };
+
+  if (isLoading || !postData) {
     return <Loader />;
   }
 
@@ -54,7 +78,7 @@ const PostCategory = ({ initialPostData, initialAllPosts }) => {
       <HeadMeta metaTitle={cateContent.category.title} />
       <HeaderOne />
       <Breadcrumb aPage={cateContent.category.title} />
-      {/* Banner Start here */}
+
       <div className="banner banner__default bg-grey-light-three">
         <div className="container">
           <div className="row align-items-center">
@@ -81,6 +105,23 @@ const PostCategory = ({ initialPostData, initialAllPosts }) => {
                     key={data.slug.current}
                   />
                 ))}
+              </div>
+              <div className="pagination">
+                <button
+                  className="btn btn-primary btn-small"
+                  onClick={handlePreviousPage}
+                  disabled={page === 0}
+                >
+                  Previous Page
+                </button>
+                <span>Page {page + 1}</span>
+                <button
+                  className="btn btn-primary btn-small"
+                  onClick={handleNextPage}
+                  disabled={isPreviousData || postData?.length < POSTS_PER_PAGE}
+                >
+                  Next Page
+                </button>
               </div>
             </div>
             <div className="col-lg-4">
@@ -110,14 +151,16 @@ export const getStaticProps = async ({ params }) => {
   const queryClient = new QueryClient();
   const category = params.slug;
 
-  await queryClient.prefetchQuery(["postData", { category }], () =>
-    fetchPostsByCategory(category)
+  await queryClient.prefetchQuery(["postData", category, 0], () =>
+    fetchPostsByCategory(category, 0)
   );
-  await queryClient.prefetchQuery(["allPosts"], fetchPostsByCategory);
+  await queryClient.prefetchQuery(["allPosts"], () =>
+    fetchPostsByCategory(category, 0)
+  );
 
   return {
     props: {
-      initialPostData: { category },
+      initialCategory: category,
       initialAllPosts: dehydrate(queryClient),
     },
   };
