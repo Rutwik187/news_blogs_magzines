@@ -75,9 +75,9 @@ const PostCategory = ({ initialCategory, initialAllPosts }) => {
 
   return (
     <>
-      <HeadMeta metaTitle={cateContent.category.title} />
+      <HeadMeta metaTitle={cateContent?.category?.title || "Web Profiles"} />
       <HeaderOne />
-      <Breadcrumb aPage={cateContent.category.title} />
+      <Breadcrumb aPage={cateContent?.category?.title || "Web Profile"} />
 
       <div className="banner banner__default bg-grey-light-three">
         <div className="container">
@@ -85,7 +85,7 @@ const PostCategory = ({ initialCategory, initialAllPosts }) => {
             <div className="col-lg-12">
               <div className="post-title-wrapper">
                 <h2 className="m-b-xs-0 axil-post-title hover-line">
-                  {cateContent.category.title}
+                  {cateContent?.category.title || "Web Profiles"}
                 </h2>
               </div>
             </div>
