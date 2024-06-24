@@ -34,10 +34,10 @@ const Magazines = () => {
     <>
       <HeadMeta
         metaTitle={
-          "Exclusive Interviews with Entrepreneurs Featured in The Entrepreneurial Chronicle Magazine"
+          "Exclusive Interviews with Entrepreneurs Featured in The Entrepreneurial Chronicles Magazine"
         }
         metaDesc={
-          " Exclusive interviews with top entrepreneurs featured in The Entrepreneurial Chronicle Magazine. Discover their inspiring journey, business strategies, and tips for success in the entrepreneurial world "
+          " Exclusive interviews with top entrepreneurs featured in The Entrepreneurial Chronicles Magazine. Discover their inspiring journey, business strategies, and tips for success in the entrepreneurial world "
         }
       />
 
@@ -88,7 +88,7 @@ const Magazines = () => {
                 color: "white",
               }}
             >
-              Welcome to The Entrepreneurial ChronicleMagazine, where we
+              Welcome to The Entrepreneurial ChroniclesMagazine, where we
               spotlight trailblazers from all sectors transforming the business
               magazine landscape. Our mission is to inspire and empower new
               leaders with groundbreaking ideas worldwide. Count on us for

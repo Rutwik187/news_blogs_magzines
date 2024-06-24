@@ -20,10 +20,10 @@ const AboutUs = ({ aboutData }) => {
     <>
       <HeadMeta
         metaTitle={
-          "Learn About The Entrepreneurial Chronicle | A Leading Global Business Magazine"
+          "Learn About The Entrepreneurial Chronicles | A Leading Global Business Magazine"
         }
         metaDesc={
-          "The Entrepreneurial Chronicle is a global business magazine featuring Visionary business leaders, Industry tycoons, and Entrepreneurial Minds from around the world "
+          "The Entrepreneurial Chronicles is a global business magazine featuring Visionary business leaders, Industry tycoons, and Entrepreneurial Minds from around the world "
         }
       />
       <HeaderOne />

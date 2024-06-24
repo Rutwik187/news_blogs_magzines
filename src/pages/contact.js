@@ -15,9 +15,9 @@ const ContactPage = () => {
   return (
     <>
       <HeadMeta
-        metaTitle="Connect and Share Your Story with The Entrepreneurial Chronicle Magazine
+        metaTitle="Connect and Share Your Story with The Entrepreneurial Chronicles Magazine
 "
-        metaDesc="Share your entrepreneurial journey and inspire others with The Entrepreneurial Chronicle Magazine. Connect with a global community of business leaders, innovators, and changemakers by contributing your unique story and insights."
+        metaDesc="Share your entrepreneurial journey and inspire others with The Entrepreneurial Chronicles Magazine. Connect with a global community of business leaders, innovators, and changemakers by contributing your unique story and insights."
       />
 
       <HeaderOne />
