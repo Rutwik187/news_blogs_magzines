@@ -126,9 +126,11 @@ const FooterTwo = () => {
           style={{ margin: "1rem", color: "white" }}
         >
           <p style={{ width: "100%", color: "white", fontWeight: 200 }}>
-            The Entrepreneurial Chronicles is a business magazine that brings
-            inspiring stories of entrepreneurs who have turned their
-            dreams into reality.
+            The Entrepreneurial Chronicles is a business magazine that shares
+            inspiring success stories of entrepreneurs, transforming intriguing
+            tales into captivating narratives. With a skilled storytelling team
+            and extensive industry expertise, we amplify untold stories from the
+            business world, making our magazine both compelling and insightful.
           </p>
         </div>
         <div>
