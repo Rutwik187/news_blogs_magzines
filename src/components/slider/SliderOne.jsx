@@ -18,6 +18,7 @@ const SliderOne = () => {
       title,
       slug,
       altText,
+      publishedAt,
       'featureImg': mainImage.asset->url,
 
       'cate': categories[0]->title

@@ -12,6 +12,7 @@ const BlogAndArticle = () => {
    altText,
   slug,
   'featureImg': mainImage.asset->url,
+  publishedAt,
   'category': {
     'title': categories[0]->title,
     'slug': categories[0]->slug.current

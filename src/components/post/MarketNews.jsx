@@ -13,6 +13,7 @@ const MarketNews = () => {
     slug,
      altText,
     'featureImg': mainImage.asset->url,
+    publishedAt,
     description,
      'category': {
     'title': categories[0]->title,

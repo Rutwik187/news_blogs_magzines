@@ -22,6 +22,7 @@ const Blogs = () => {
       title,
       slug,
       altText,
+      publishedAt,
       'featureImg': mainImage.asset->url,
       description,
       'category': {

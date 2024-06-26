@@ -13,6 +13,7 @@ const Magazines = () => {
   title,
   slug,
   'featureImg': mainImage.asset->url,
+  publishedAt
  
 } | order(publishedAt desc)
 `;
@@ -21,6 +22,7 @@ const Magazines = () => {
     queryKey: ["allMagazines"],
     queryFn: async () => {
       const response = await client.fetch(query);
+
       return response;
     },
   });

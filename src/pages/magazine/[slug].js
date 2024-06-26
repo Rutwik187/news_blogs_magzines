@@ -24,6 +24,7 @@ const fetchAllArticles = async () => {
   const allArticlesQuery = `*[_type == "post" && categories[0]._ref == *[_type == "category" && slug.current == "web-profiles"][0]._id] {
     title,
     slug,
+    publishedAt,
     'featureImg': mainImage.asset->url,
     'category': {
       'title': categories[0]->title,

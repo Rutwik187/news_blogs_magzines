@@ -21,6 +21,7 @@ const fetchPostsByCategory = async (category, page) => {
     slug,
     altText,
     'featureImg': mainImage.asset->url,
+    publishedAt,
     description,
     'category': {
       'title': categories[0]->title,

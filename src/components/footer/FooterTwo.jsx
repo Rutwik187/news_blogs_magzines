@@ -14,6 +14,7 @@ const FooterTwo = () => {
   title,
   slug,
   'featureImg': mainImage.asset->url,
+  publishedAt
  
 } | order(publishedAt desc)[0...6] 
 `;
