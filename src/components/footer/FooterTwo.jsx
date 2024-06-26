@@ -105,7 +105,7 @@ const FooterTwo = () => {
                   className="bold"
                 >
                   {" "}
-                  info@theentrepreneurialchronicle
+                  Info@theentrepreneurialchronicle.com
                 </a>
               </div>
 
