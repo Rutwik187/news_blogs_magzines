@@ -70,7 +70,7 @@ const OffcanvasMenu = ({ ofcshow, ofcHandleClose }) => {
                       <div>
                         <a className="tel" href="tel:+16143567697">
                           <i className="fas fa-phone" />
-                          +1 (614) 356-7697{" "}
+                          +1 (614) 602-2959{" "}
                         </a>
                       </div>
                     </address>

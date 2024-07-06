@@ -113,7 +113,7 @@ const FooterTwo = () => {
                 className="number"
                 style={{ fontWeight: 400, marginBottom: "1rem" }}
               >
-                Call Us :<a href="tel:+16143567697"> +1 (614) 356-7697</a>
+                Call Us :<a href="tel:+16143567697"> +1 (614) 602-2959</a>
               </div>
 
               <div className="axil-social-title" style={{ fontWeight: 400 }}>
