@@ -27,12 +27,13 @@ const PostFormatText = ({ postData, allData }) => {
                   </div>
 
                   <Image
-                    className="mb-4 object-fit-cover"
+                    className="mb-4 w-full h-auto object-cover"
                     src={postData?.featureImg}
                     alt={postData?.altText || postData?.title}
-                    width={800}
-                    height={500}
-                  ></Image>
+                    layout="responsive"
+                    width={500}
+                    height={300}
+                  />
 
                   <PortableText
                     value={postData?.body}
