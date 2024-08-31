@@ -7,6 +7,7 @@ import BusinessBulletin from "../components/post/BusinessBulletin";
 import SliderOne from "../components/slider/SliderOne";
 import WebProfiles from "../components/post/WebProfiles";
 import MarketNews from "../components/post/MarketNews";
+import VideoSection from "../components/post/VideoSection";
 
 const Home = () => {
   return (
@@ -22,6 +23,7 @@ const Home = () => {
       <MarketNews />
       <BusinessBulletin />
       <MasterTalks />
+      <VideoSection />
       <FooterTwo />
 
       <script
