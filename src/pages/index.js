@@ -21,9 +21,9 @@ const Home = () => {
       <Magazines />
       <WebProfiles />
       <MarketNews />
+      <VideoSection />
       <BusinessBulletin />
       <MasterTalks />
-      <VideoSection />
       <FooterTwo />
 
       <script

@@ -177,6 +177,9 @@ const FooterTwo = () => {
             <li>
               <Link href="/contact">Contact</Link>
             </li>
+            <li>
+              <Link href="/guest-post">Guest Post</Link>
+            </li>
           </ul>
         </div>
         <div style={{ width: "20%", textAlign: "center" }}>
