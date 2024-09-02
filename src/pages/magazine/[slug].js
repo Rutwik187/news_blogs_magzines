@@ -108,7 +108,7 @@ const MagazineDetails = ({
       <div
         style={{
           position: "relative",
-          height: "80vh",
+          height: "90vh",
           width: "100%",
           paddingBottom: "0px",
           border: "2px solid black",
