@@ -1,5 +1,5 @@
 import Image from "next/image";
-import WidgetAd from "../../widget/WidgetAd";
+// import WidgetAd from "../../widget/WidgetAd";
 import WidgetInstagram from "../../widget/WidgetInstagram";
 import WidgetNewsletter from "../../widget/WidgetNewsletter";
 import WidgetPost from "../../widget/WidgetPost";
