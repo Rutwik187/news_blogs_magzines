@@ -1,8 +1,6 @@
-// pages/all-videos.js
-
 import { useQuery } from "@tanstack/react-query";
 import { client } from "../client";
-import Loader from "../components/common/Loader"; // Update the path as necessary
+import Loader from "../components/common/Loader";
 import Link from "next/link";
 import Image from "next/image";
 

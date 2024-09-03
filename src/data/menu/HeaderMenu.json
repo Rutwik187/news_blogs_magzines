@@ -19,5 +19,9 @@
   {
     "label": "Contact",
     "path": "/contact"
+  },
+  {
+    "label": "Advertise With Us",
+    "path": "/advertise-with-us"
   }
 ]

@@ -50,6 +50,9 @@ const OffcanvasMenu = ({ ofcshow, ofcHandleClose }) => {
                   <li>
                     <Link href="/contact">Contact Us</Link>
                   </li>
+                  <li>
+                    <Link href="/advertise-with-us">Advertise With Us</Link>
+                  </li>
                 </ul>
                 {/* End of .main-navigation */}
               </div>

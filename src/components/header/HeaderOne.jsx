@@ -103,6 +103,9 @@ const HeaderOne = () => {
                   <li>
                     <Link href="/contact">Contact</Link>
                   </li>
+                  <li>
+                    <Link href="/advertise-with-us">Advertise With Us</Link>
+                  </li>
                 </ul>
               </div>
               <div className="col-md-auto">
