@@ -100,10 +100,10 @@ const Magazines = () => {
         <div className="container mt-5">
           <h3 className="mb-4">Website Placement Advertise :</h3>
           <p className="mb-3">
-            A wise businessman once said, "The toothpaste you use to the shiny
-            shoes you wear to the car you drive to the bed you sleep in is
-            advertised," and adding to that we say, "and you, my friend are
-            afraid to advertise with us!"
+            A wise businessman once said, &quot;The toothpaste you use to the
+            shiny shoes you wear to the car you drive to the bed you sleep in is
+            advertised,&quot; and adding to that we say, &quot;and you, my
+            friend are afraid to advertise with us!&quot;
           </p>
           <p className="mb-3">
             Being a magazine that strives to bring new age businesses to light,
