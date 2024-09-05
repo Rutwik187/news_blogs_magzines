@@ -10,21 +10,19 @@ import Link from "next/link";
 
 const Magazines = () => {
   const query = `
-*[_type == "magazine"] 
-{
-  title,
-  slug,
-  'featureImg': mainImage.asset->url,
-  publishedAt
- 
-} | order(publishedAt desc)
-`;
+    *[_type == "magazine"] 
+    {
+      title,
+      slug,
+      'featureImg': mainImage.asset->url,
+      publishedAt
+    } | order(publishedAt desc)
+  `;
 
   const { data, isLoading, error } = useQuery({
     queryKey: ["allMagazines"],
     queryFn: async () => {
       const response = await client.fetch(query);
-
       return response;
     },
   });
@@ -45,11 +43,9 @@ const Magazines = () => {
       <div style={{ width: "100%", height: "auto" }}>
         <div
           style={{
+            position: "relative",
             width: "100%",
-            // background: "white",
-            backgroundImage: `url('/images/mag_bg.png')`,
-            backgroundRepeat: "repeat",
-            // backgroundSize: "30%",
+            height: "auto",
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
@@ -57,6 +53,22 @@ const Magazines = () => {
             padding: "2rem 0",
           }}
         >
+          {/* Background Image with Overlay */}
+          <div
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              backgroundImage: `url('/images/mag_bg.png')`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              zIndex: -1,
+              filter: "brightness(0.8)", // Darken the image
+            }}
+          ></div>
+
           <div
             style={{
               width: "90%",
@@ -68,6 +80,7 @@ const Magazines = () => {
               alignItems: "center",
               textAlign: "center",
               padding: "0 1rem",
+              color: "white",
             }}
           >
             <p
@@ -92,7 +105,7 @@ const Magazines = () => {
               magazine landscape. Our mission is to inspire and empower new
               leaders with groundbreaking ideas worldwide. Count on us for
               reliable insights, advice, and industry trends, supporting both
-              established and aspiring leaders.
+              established and aspiring leaders.
             </p>
           </div>
         </div>
@@ -121,7 +134,7 @@ const Magazines = () => {
                 width={600}
                 height={800}
                 layout="responsive"
-                className="shadow-black img-fluid"
+                className="shadow-black img-fluid object-fit-cover"
               />
             </div>
           </div>
@@ -139,7 +152,7 @@ const Magazines = () => {
                   width={600}
                   height={800}
                   layout="responsive"
-                  className="shadow-black img-fluid"
+                  className="shadow-black img-fluid object-fit-cover"
                 />
               </div>
             </div>
@@ -151,7 +164,7 @@ const Magazines = () => {
                   width={600}
                   height={800}
                   layout="responsive"
-                  className="shadow-black img-fluid"
+                  className="shadow-black img-fluid object-fit-cover"
                 />
               </div>
             </div>
@@ -163,25 +176,10 @@ const Magazines = () => {
                 justifyContent: "center",
               }}
             >
-              <button
-                style={{
-                  width: "30%",
-                  maxWidth: "40rem",
-                  height: "6rem",
-                  margin: "2rem",
-                  borderRadius: "10rem",
-                  boxShadow:
-                    "rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px",
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
-              >
-                <h2 style={{ fontSize: "2.2rem", margin: "0" }}>
-                  GET IN TOUCH
-                </h2>
+              <button className="btn btn-primary mt-20 mb-4">
+                GET IN TOUCH
               </button>
-            </div>{" "}
+            </div>
           </Link>
         </div>
       </div>

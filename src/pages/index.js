@@ -27,6 +27,12 @@ const Home = () => {
       <FooterTwo />
 
       <script
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4800543608007428"
+        crossorigin="anonymous"
+      ></script>
+
+      <script
         id="json-ld"
         type="application/ld+json"
         dangerouslySetInnerHTML={{

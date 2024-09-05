@@ -3,15 +3,25 @@ import Link from "next/link";
 import React from "react";
 
 const PostLayoutTwo = ({ data, postSizeMd, postBgDark }) => {
+  let thumbnailUrl = "";
+
+  if (!data.featureImg) {
+    const videoId = data.videoUrl.includes("watch?v=")
+      ? data.videoUrl.split("v=")[1]
+      : data.videoUrl.split("/").pop();
+
+    // Construct the thumbnail URL using the extracted video ID
+    thumbnailUrl = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+  }
   return (
     <div
-      className={`media post-block m-b-xs-30 ${
+      className={`media post-block  ${
         postSizeMd === true ? "post-block__mid" : ""
       } ${postBgDark === true ? "post-block__on-dark-bg" : ""}`}
     >
       <Link className="align-self-center" href={`/post/${data.slug.current}`}>
         <Image
-          src={data.featureImg}
+          src={data.featureImg || thumbnailUrl}
           alt={data.altText || data.title}
           width={postSizeMd === true ? 285 : 150}
           height={postSizeMd === true ? 285 : 150}
@@ -21,13 +31,13 @@ const PostLayoutTwo = ({ data, postSizeMd, postBgDark }) => {
         />
       </Link>
 
-      <div className="media-body">
+      <div className="media-body my-auto">
         <div className="post-cat-group m-b-xs-10">
           <Link
             className={`post-cat cat-btn ${"bg-color-blue-one"}`}
             href={`/category/${data.category?.slug}`}
           >
-            {data.category?.title}
+            {data.category?.title || "Video Interviews"}
           </Link>
         </div>
         <h3 className="axil-post-title hover-line hover-line">

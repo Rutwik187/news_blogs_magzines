@@ -24,7 +24,7 @@ const PostLayoutTwo1 = ({ data, postSizeMd, postBgDark }) => {
         />
       </Link>
 
-      <div className="media-body">
+      <div className="media-body my-auto">
         <div className="post-cat-group m-b-xs-10">
           <Link
             className={`post-cat cat-btn ${"bg-color-blue-one"}`}

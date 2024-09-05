@@ -10,6 +10,20 @@ export default {
       type: 'string',
     },
     {
+      name: 'slug',
+      title: 'Slug',
+      type: 'slug',
+      options: {
+        source: 'title',
+        maxLength: 96,
+      },
+    },
+    {
+      name: 'videoUrl',
+      title: 'Video URL',
+      type: 'url',
+    },
+    {
       name: 'description',
       title: 'Description',
       type: 'text',
@@ -18,20 +32,6 @@ export default {
       name: 'body',
       title: 'Body',
       type: 'blockContent',
-    },
-    {
-      name: 'videoUrl',
-      title: 'Video URL',
-      type: 'url',
-    },
-    {
-      name: 'slug',
-      title: 'Slug',
-      type: 'slug',
-      options: {
-        source: 'title',
-        maxLength: 96,
-      },
     },
   ],
 }

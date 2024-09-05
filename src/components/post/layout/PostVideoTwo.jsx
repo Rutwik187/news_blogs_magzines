@@ -18,7 +18,7 @@ const PostVideoTwo = ({ data, pClass }) => {
         />
       </Link>
 
-      <div className="media-body">
+      <div className="media-body my-auto">
         <div className="post-cat-group">
           <Link
             className={`post-cat ${"bg-color-blue-one"}`}

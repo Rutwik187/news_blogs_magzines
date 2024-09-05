@@ -3132,8 +3132,8 @@ figure {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: start;
-  -ms-flex-align: start;
-  align-items: flex-start;
+  /* -ms-flex-align: start;
+  align-items: flex-start; */
 }
 .media .media-body {
   -webkit-box-flex: 1;
@@ -5278,14 +5278,14 @@ input[type="radio"] + label::after {
 .post-block figure > a {
   display: block;
   margin-right: 3rem;
-  align-self: flex-start !important;
+  /* align-self: flex-start !important; */
   overflow: hidden;
 }
 @media (max-width: 767px) {
   .post-block > a,
   .post-block figure > a {
     margin-right: 2rem;
-    align-self: flex-start !important;
+    /* align-self: flex-start !important; */
   }
 }
 .post-block > a:hover img,
@@ -5294,7 +5294,7 @@ input[type="radio"] + label::after {
 }
 .post-block img {
   width: 100%;
-  max-width: 15rem;
+  /* max-width: 15rem; */
   margin: 0 !important;
   transition: transform 0.5s;
 }
