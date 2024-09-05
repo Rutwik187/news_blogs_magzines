@@ -19,7 +19,7 @@ const PostLayoutTwo = ({ data, postSizeMd, postBgDark }) => {
         postSizeMd === true ? "post-block__mid" : ""
       } ${postBgDark === true ? "post-block__on-dark-bg" : ""}`}
     >
-      <Link className="align-self-center" href={`/post/${data.slug.current}`}>
+      <Link className="align-self-center" href={`/video/${data.slug}`}>
         <Image
           src={data.featureImg || thumbnailUrl}
           alt={data.altText || data.title}
@@ -41,7 +41,7 @@ const PostLayoutTwo = ({ data, postSizeMd, postBgDark }) => {
           </Link>
         </div>
         <h3 className="axil-post-title hover-line hover-line">
-          <Link href={`/post/${data.slug.current}`}>{data.title}</Link>
+          <Link href={`/video/${data.slug}`}>{data.title}</Link>
         </h3>
 
         {postSizeMd === true ? (

@@ -10,8 +10,6 @@ const YoutubeVideo = ({ data, postSizeMd, postBgDark }) => {
   // Construct the thumbnail URL using the extracted video ID
   const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
 
-  console.log(thumbnailUrl);
-
   return (
     <div
       className={`media post-block m-b-xs-30 flex flex-column justify-center `}
