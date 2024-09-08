@@ -5294,13 +5294,13 @@ input[type="radio"] + label::after {
 }
 .post-block img {
   width: 100%;
-  /* max-width: 15rem; */
+  max-width: 18rem;
   margin: 0 !important;
   transition: transform 0.5s;
 }
 @media (max-width: 767px) {
   .post-block img {
-    max-width: 10rem;
+    /* max-width: 10rem; */
     width: 100%;
     margin: 0 !important;
   }
