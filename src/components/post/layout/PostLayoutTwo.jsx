@@ -3,25 +3,15 @@ import Link from "next/link";
 import React from "react";
 
 const PostLayoutTwo = ({ data, postSizeMd, postBgDark }) => {
-  let thumbnailUrl = "";
-
-  if (!data.featureImg) {
-    const videoId = data.videoUrl.includes("watch?v=")
-      ? data.videoUrl.split("v=")[1]
-      : data.videoUrl.split("/").pop();
-
-    // Construct the thumbnail URL using the extracted video ID
-    thumbnailUrl = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
-  }
   return (
     <div
       className={`media post-block  ${
         postSizeMd === true ? "post-block__mid" : ""
       } ${postBgDark === true ? "post-block__on-dark-bg" : ""}`}
     >
-      <Link className="align-self-center" href={`/video/${data.slug}`}>
+      <Link className="align-self-center" href={`/post/${data.slug.current}`}>
         <Image
-          src={data.featureImg || thumbnailUrl}
+          src={data.featureImg}
           alt={data.altText || data.title}
           width={postSizeMd === true ? 285 : 150}
           height={postSizeMd === true ? 285 : 150}
@@ -37,11 +27,11 @@ const PostLayoutTwo = ({ data, postSizeMd, postBgDark }) => {
             className={`post-cat cat-btn ${"bg-color-blue-one"}`}
             href={`/category/${data.category?.slug}`}
           >
-            {data.category?.title || "Video Interviews"}
+            {data.category?.title}
           </Link>
         </div>
         <h3 className="axil-post-title hover-line hover-line">
-          <Link href={`/video/${data.slug}`}>{data.title}</Link>
+          <Link href={`/post/${data.slug.current}`}>{data.title}</Link>
         </h3>
 
         {postSizeMd === true ? (
