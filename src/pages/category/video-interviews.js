@@ -7,11 +7,11 @@ import AdBanner from "../../components/common/AdBanner";
 import WidgetAd from "../../components/widget/WidgetAd";
 import WidgetSocialShare from "../../components/widget/WidgetSocialShare";
 import WidgetPost from "../../components/widget/WidgetPost";
-import PostLayoutTwo from "../../components/post/layout/PostLayoutTwo";
 import WidgetCategory from "../../components/widget/WidgetCategory";
 import { client } from "../../client";
 import Loader from "../../components/common/Loader";
 import { useState, useEffect } from "react";
+import PostLayoutYT from "../../components/post/layout/PostLayoutYT";
 
 const POSTS_PER_PAGE = 6;
 
@@ -89,7 +89,7 @@ const PostCategory = ({ initialPosts }) => {
             <div className="col-lg-8">
               <div className="axil-content">
                 {postData.map((data) => (
-                  <PostLayoutTwo
+                  <PostLayoutYT
                     data={data}
                     postSizeMd={true}
                     key={data.slug.current}
