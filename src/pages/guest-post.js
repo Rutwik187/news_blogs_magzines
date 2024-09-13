@@ -45,7 +45,11 @@ const GuestPostForm = () => {
   return (
     <>
       <HeaderOne />
-      <Container fluid className="bg-danger text-white py-5">
+      <Container
+        fluid
+        style={{ backgroundColor: "#ad8726" }}
+        className=" text-white py-5"
+      >
         <Row className="justify-content-center">
           <Col
             md={6}
