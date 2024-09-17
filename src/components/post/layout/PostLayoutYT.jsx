@@ -34,7 +34,7 @@ const PostLayoutYT = ({ data, postSizeMd, postBgDark }) => {
         <div className="post-cat-group m-b-xs-10">
           <Link
             className={`post-cat cat-btn ${"bg-color-blue-one"}`}
-            href={`/category/${data.category?.slug}`}
+            href={`/category/video-interviews`}
           >
             {data.category?.title || "Video Interviews"}
           </Link>
