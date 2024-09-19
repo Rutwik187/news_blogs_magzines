@@ -22,7 +22,75 @@ const ContactPage = () => {
 
       <HeaderOne />
       <Breadcrumb aPage="Contact Us" />
-      <BreadcrumbBanner pageTitle="Contact Us" />
+      <div
+        style={{
+          position: "relative",
+          width: "100%",
+          height: "auto",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          padding: "2rem 0",
+        }}
+      >
+        {/* Background Image with Overlay */}
+        <div
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            backgroundImage: `url('/images/Contact_us.jpg')`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            zIndex: -1,
+            // filter: "brightness(0.8)", // Darken the image
+          }}
+        ></div>
+
+        <div
+          style={{
+            width: "90%",
+            height: "100%",
+            maxWidth: "1200px",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+            textAlign: "center",
+            padding: "0 1rem",
+            color: "white",
+          }}
+        >
+          <p
+            style={{
+              fontSize: "4rem",
+              fontWeight: "bolder",
+              marginBottom: "1rem",
+              color: "white",
+            }}
+          >
+            Contact Us
+          </p>
+          <p
+            style={{
+              fontSize: "2rem",
+              fontWeight: "lighter",
+              color: "white",
+            }}
+          >
+            Welcome to The Entrepreneurial Chronicles Magazine, where we
+            spotlight trailblazers from all sectors transforming the business
+            magazine landscape. Our mission is to inspire and empower new
+            leaders with groundbreaking ideas worldwide. Count on us for
+            reliable insights, advice, and industry trends, supporting both
+            established and aspiring leaders.
+          </p>
+        </div>
+      </div>
+      {/* <BreadcrumbBanner pageTitle="Contact Us" /> */}
 
       <div className="contact-form section-gap bg-grey-light-three">
         <div className="container">

@@ -50,7 +50,7 @@ const Magazines = () => {
           style={{
             width: "100%",
             // background: "white",
-            backgroundImage: `url('/images/mag_bg.png')`,
+            backgroundImage: `url('/images/mag_bg.jpg')`,
             backgroundRepeat: "repeat",
             // backgroundSize: "30%",
             display: "flex",
