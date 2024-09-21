@@ -24,7 +24,7 @@ const Document = () => {
           rel="alternate"
           type="application/rss+xml"
           title="The Entrepreneurial Chronicles Feed"
-          href="/api/rss"
+          href="/api/feed"
         />
 
         {/* Google Tag Manager Script */}

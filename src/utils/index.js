@@ -9,6 +9,11 @@ export async function fetchAllPostSlugs() {
   return slugs.map((post) => post.slug);
 }
 
+export async function fetchAllPost() {
+  const query = `*[_type == "post"] | order(publishedAt desc)`;
+  return await client.fetch(query);
+}
+
 export function generateSitemap(slugs) {
   const baseUrl = "https://www.theentrepreneurialchronicle.com";
 
