@@ -61,11 +61,11 @@ const Magazines = () => {
               left: 0,
               width: "100%",
               height: "100%",
-              backgroundImage: `url('/images/mag_bg.png')`,
+              backgroundImage: `url('/images/Add.jpg')`,
               backgroundSize: "cover",
               backgroundPosition: "center",
               zIndex: -1,
-              filter: "brightness(0.8)", // Darken the image
+              // filter: "brightness(0.8)", // Darken the image
             }}
           ></div>
 

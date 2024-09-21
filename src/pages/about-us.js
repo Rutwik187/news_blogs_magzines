@@ -28,7 +28,75 @@ const AboutUs = ({ aboutData }) => {
       />
       <HeaderOne />
       <Breadcrumb aPage="About Us" />
-      <BreadcrumbBanner pageTitle="About Us" />
+      <div
+        style={{
+          position: "relative",
+          width: "100%",
+          height: "auto",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          padding: "2rem 0",
+        }}
+      >
+        {/* Background Image with Overlay */}
+        <div
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            backgroundImage: `url('/images/About_us.jpg')`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            zIndex: -1,
+            // filter: "brightness(0.8)", // Darken the image
+          }}
+        ></div>
+
+        <div
+          style={{
+            width: "90%",
+            height: "100%",
+            maxWidth: "1200px",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+            textAlign: "center",
+            padding: "0 1rem",
+            color: "white",
+          }}
+        >
+          <p
+            style={{
+              fontSize: "4rem",
+              fontWeight: "bolder",
+              marginBottom: "1rem",
+              color: "white",
+            }}
+          >
+            About Us
+          </p>
+          <p
+            style={{
+              fontSize: "2rem",
+              fontWeight: "lighter",
+              color: "white",
+            }}
+          >
+            Welcome to The Entrepreneurial Chronicles Magazine, where we
+            spotlight trailblazers from all sectors transforming the business
+            magazine landscape. Our mission is to inspire and empower new
+            leaders with groundbreaking ideas worldwide. Count on us for
+            reliable insights, advice, and industry trends, supporting both
+            established and aspiring leaders.
+          </p>
+        </div>
+      </div>
+      {/* <BreadcrumbBanner pageTitle="About Us" /> */}
       <div className="axil-about-us section-gap-top p-b-xs-20">
         <div className="container">
           <figure className="m-b-xs-40 text-center">
