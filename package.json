@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@emailjs/browser": "^3.12.1",
-    "@portabletext/react": "^3.0.11",
+    "@portabletext/react": "^3.1.0",
     "@sanity/client": "^3.2.0",
     "@sanity/image-url": "^1.0.2",
     "@splidejs/react-splide": "github:splidejs/react-splide",
@@ -29,6 +29,7 @@
     "react-loader-spinner": "^6.1.6",
     "react-responsive-masonry": "^2.1.6",
     "react-slick": "^0.29.0",
+    "react-syntax-highlighter": "^15.5.0",
     "remark": "^14.0.2",
     "remark-html": "^15.0.1",
     "rss": "^1.2.2",

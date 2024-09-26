@@ -1,86 +1,105 @@
-import Link from "next/link";
-import { urlFor } from "../../client";
 import React from "react";
+import { PortableText } from "@portabletext/react";
 import Image from "next/image";
+import Link from "next/link";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { atomDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
 
-export const RichTextComponent = {
+const PortableTextComponent = {
   types: {
     image: ({ value }) => {
+      if (!value?.asset?._ref) {
+        return null;
+      }
       return (
-        <div className=" m-4 mx-auto h-60  w-auto flex flex-row">
+        <div className="relative w-full h-96 my-8">
           <Image
-            className="object-contain mx-auto my-3"
-            width={1000}
-            height={1000}
+            className="object-cover"
             src={urlFor(value).url()}
-            alt="Blog post Image"
+            alt={value.alt || " "}
             fill
           />
+          {value.caption && (
+            <div className="absolute bottom-2 left-2 bg-white bg-opacity-75 p-2 text-sm">
+              {value.caption}
+            </div>
+          )}
         </div>
       );
     },
-  },
-  marks: {
-    // Ex. 1: custom renderer for the em / italics decorator
-    em: ({ children }) => (
-      <em className="text-gray-600 font-semibold">{children}</em>
-    ),
-
-    // Ex. 2: rendering a custom `link` annotation
-    Link: ({ value, children }) => {
-      const target = (value?.href || "").startsWith("http")
-        ? "_blank"
-        : undefined;
+    code: ({ value }) => {
       return (
-        <a
-          href={value?.href}
-          target={target}
-          rel={target === "_blank" && "noindex nofollow"}
+        <SyntaxHighlighter
+          language={value.language || "text"}
+          style={atomDark}
+          className="rounded-md my-4"
         >
-          {children}
-        </a>
+          {value.code}
+        </SyntaxHighlighter>
       );
     },
   },
-
   list: {
-    // Ex. 1: customizing common list types
-    bullet: ({ children }) => <ul className="mt-xl">{children}</ul>,
-    number: ({ children }) => <ol className="mt-lg">{children}</ol>,
-
-    // Ex. 2: rendering custom lists
-    checkmarks: ({ children }) => (
-      <ol className="m-auto text-lg">{children}</ol>
-    ),
-  },
-
-  listItem: {
-    // Ex. 1: customizing common list types
     bullet: ({ children }) => (
-      <li style={{ listStyleType: "disclosure-closed" }}>{children}</li>
+      <ul className="ml-10 my-5 list-disc space-y-5">{children}</ul>
     ),
-
-    // Ex. 2: rendering custom list items
-    checkmarks: ({ children }) => <li>✅ {children}</li>,
+    number: ({ children }) => (
+      <ol className="ml-10 my-5 list-decimal space-y-5">{children}</ol>
+    ),
   },
   block: {
     h1: ({ children }) => (
-      <h1 className="py-10 text-5xl font-bold">{children}</h1>
+      <h1 className="text-5xl font-bold my-5">{children}</h1>
     ),
     h2: ({ children }) => (
-      <h1 className="py-10 text-4xl font-bold">{children}</h1>
+      <h2 className="text-4xl font-bold my-5">{children}</h2>
     ),
     h3: ({ children }) => (
-      <h1 className="py-10 text-3xl font-bold">{children}</h1>
+      <h3 className="text-3xl font-bold my-5">{children}</h3>
     ),
     h4: ({ children }) => (
-      <h1 className="py-10 text-2xl font-bold">{children}</h1>
+      <h4 className="text-2xl font-bold my-5">{children}</h4>
     ),
-
+    h5: ({ children }) => (
+      <h5 className="text-xl font-bold my-5">{children}</h5>
+    ),
+    h6: ({ children }) => (
+      <h6 className="text-lg font-bold my-5">{children}</h6>
+    ),
     blockquote: ({ children }) => (
-      <blockquote className="my-5 border-l-4 border-l-emphasize py-5 pl-5">
+      <blockquote className="border-l-4 border-gray-500 pl-5 py-5 my-5 italic">
         {children}
       </blockquote>
     ),
+    normal: ({ children }) => <p className="my-5">{children}</p>,
+  },
+  marks: {
+    link: ({ children, value }) => {
+      const rel = !value.href.startsWith("/")
+        ? "noreferrer noopener"
+        : undefined;
+      const target = value.blank ? "_blank" : undefined;
+      return (
+        <Link
+          href={value.href}
+          rel={rel}
+          target={target}
+          className="underline text-blue-500 hover:text-blue-700"
+        >
+          {children}
+        </Link>
+      );
+    },
+    code: ({ children }) => (
+      <code className="bg-gray-100 rounded-md p-1 font-mono text-sm">
+        {children}
+      </code>
+    ),
   },
 };
+
+const RichTextComponent = ({ content }) => {
+  return <PortableText value={content} components={PortableTextComponent} />;
+};
+
+export default RichTextComponent;

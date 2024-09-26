@@ -26,7 +26,7 @@ const MasterTalks = ({ postData, adBanner, pClass }) => {
     'slug': categories[0]->slug.current
   },
   publishedAt
-} | order(publishedAt desc)[0...5] 
+} | order(publishedAt desc)[0...7] 
 `;
   const { data, isLoading, error } = useQuery({
     queryKey: ["categoryFivePosts"],
