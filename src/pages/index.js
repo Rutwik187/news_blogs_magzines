@@ -2,6 +2,7 @@ import HeadMeta from "../components/elements/HeadMeta";
 import FooterTwo from "../components/footer/FooterTwo";
 import HeaderOne from "../components/header/HeaderOne";
 import MasterTalks from "../components/post/MasterTalks";
+import LogoSlider from "../components/post/LogoSlider";
 import Magazines from "../components/post/Magazines";
 import BusinessBulletin from "../components/post/BusinessBulletin";
 import SliderOne from "../components/slider/SliderOne";
@@ -22,6 +23,7 @@ const Home = () => {
       <WebProfiles />
       <MarketNews />
       <VideoSection />
+      <LogoSlider />
       <BusinessBulletin />
       <MasterTalks />
       <FooterTwo />
