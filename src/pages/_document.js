@@ -128,7 +128,6 @@ class MyDocument extends Document {
             }}
           />
 
-          {/* Google Tag Manager Script */}
           <script
             dangerouslySetInnerHTML={{
               __html: `
@@ -146,6 +145,8 @@ class MyDocument extends Document {
         </Head>
         <body>
           <Main />
+          <NextScript />
+          {/* Google Tag Manager Script */}
         </body>
       </Html>
     );
