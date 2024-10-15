@@ -58,7 +58,7 @@ const WidgetCategory = () => {
       </div>
       <div
         className="category-slider position-relative overflow-hidden"
-        style={{ height: "800px" }}
+        style={{ height: "1000px" }}
       >
         <div
           className="category-slide-inner transition"
@@ -69,32 +69,38 @@ const WidgetCategory = () => {
         >
           {categoryData?.map((data, index) => (
             <div key={data.slug?.current} className="category-item mb-4">
-              <Link
-                className="d-block position-relative overflow-hidden rounded shadow"
-                href={`/category/${data.slug?.current}`}
-                style={{ height: "180px" }}
-              >
-                <div
-                  style={{
-                    position: "relative",
-                    width: "100%",
-                    height: "100%",
-                  }}
+              {data.slug?.current === "trusted-brands" ? null : (
+                <Link
+                  className="d-block position-relative overflow-hidden rounded shadow"
+                  href={
+                    data.slug?.current === "magazines"
+                      ? "/magazines"
+                      : `/category/${data.slug?.current}`
+                  }
+                  style={{ height: "180px" }}
                 >
-                  <Image
-                    src={urlFor(data.category_image).url()}
-                    alt={data?.altText || data.title}
-                    layout="fill"
-                    objectFit="cover"
-                  />
-                </div>
-                <div
-                  className="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center"
-                  style={{ backgroundColor: "rgba(0,0,0,0.5)" }}
-                >
-                  <h4 className="text-white fs-4 fw-bold">{data.title}</h4>
-                </div>
-              </Link>
+                  <div
+                    style={{
+                      position: "relative",
+                      width: "100%",
+                      height: "100%",
+                    }}
+                  >
+                    <Image
+                      src={urlFor(data.category_image).url()}
+                      alt={data?.altText || data.title}
+                      layout="fill"
+                      objectFit="cover"
+                    />
+                  </div>
+                  <div
+                    className="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center"
+                    style={{ backgroundColor: "rgba(0,0,0,0.5)" }}
+                  >
+                    <h4 className="text-white fs-4 fw-bold">{data.title}</h4>
+                  </div>
+                </Link>
+              )}
             </div>
           ))}
         </div>
