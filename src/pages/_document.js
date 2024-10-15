@@ -127,10 +127,7 @@ class MyDocument extends Document {
               }),
             }}
           />
-        </Head>
-        <body>
-          <Main />
-          <NextScript />
+
           {/* Google Tag Manager Script */}
           <script
             dangerouslySetInnerHTML={{
@@ -146,6 +143,9 @@ class MyDocument extends Document {
             async
             src="https://www.googletagmanager.com/gtag/js?id=G-CFTSB5X8JY"
           />
+        </Head>
+        <body>
+          <Main />
         </body>
       </Html>
     );

@@ -27,6 +27,7 @@ const LogoSlider = () => {
                     alt={`Brand logo ${index + 1}`}
                     width={200}
                     height={80}
+                    quality={100}
                     objectFit="contain"
                   />
                 </div>
